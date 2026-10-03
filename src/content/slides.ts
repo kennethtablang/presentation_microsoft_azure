@@ -96,6 +96,7 @@ const intro: Slide[] = [
     title: "AI Concepts & AI Applications on Azure",
     subtitle: "From “What is AI?” to grounded agents in Microsoft Foundry",
     icon: "sparkles",
+    meta: ["Part 1 · AI concepts", "Part 2 · AI on Azure", "6 sessions · 14 modules"],
     notes: {
       say: [
         "This discussion has two parts. Part 1 builds the concepts; Part 2 puts them into practice in Microsoft Foundry.",
@@ -204,7 +205,7 @@ const closing: Slide[] = [
         type: "launch",
         items: [
           {
-            href: "/review/test",
+            href: "review/test",
             icon: "list",
             title: "Practice test",
             text: "Choose how many questions (1–200) and which domains. Practice mode explains every answer; exam mode scores you at the end.",
@@ -212,7 +213,7 @@ const closing: Slide[] = [
             tone: "blue",
           },
           {
-            href: "/review/flashcards",
+            href: "review/flashcards",
             icon: "layers",
             title: "Flashcards",
             text: "Flip through glossary terms and exam questions. Sort cards into “got it” and “still learning”, then drill the ones you missed.",
@@ -277,16 +278,3 @@ export const slides: Slide[] = allSlides.map((s) => {
     },
   };
 });
-
-/** Whether a slide contains content hidden until the presenter reveals it. */
-export function hasReveal(slide: Slide): boolean {
-  const check = (blocks: Block[] | undefined): boolean =>
-    !!blocks?.some((b) => {
-      if (b.type === "columns") return b.cols.some(check);
-      if (b.type === "quiz") return true;
-      if (b.type === "table") return b.revealCol !== undefined;
-      if (b.type === "callout") return !!b.answer;
-      return false;
-    });
-  return check(slide.blocks);
-}

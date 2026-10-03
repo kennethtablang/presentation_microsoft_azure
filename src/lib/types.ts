@@ -64,7 +64,28 @@ export type Block =
   | { type: "glossary"; terms: { term: string; def: string }[] }
   | { type: "columns"; ratio?: string; cols: Block[][] }
   | { type: "probability"; prompt: string; items: { token: string; p: number }[] }
-  | { type: "launch"; items: { href: string; icon: IconName; title: string; text: string; cta: string; tone?: Tone }[] };
+  | {
+      type: "launch";
+      /** `href` is relative to the course (e.g. "review/test") unless it starts with "/". */
+      items: { href: string; icon: IconName; title: string; text: string; cta: string; tone?: Tone }[];
+    }
+  | {
+      /** A spreadsheet-style grid with column letters, row numbers and an optional formula bar. */
+      type: "sheet";
+      title?: string;
+      formula?: string;
+      head: string[];
+      rows: string[][];
+      /** Cells to highlight, as "row:col" (0-based, data rows) → tone. */
+      mark?: Record<string, "good" | "bad" | "focus">;
+      caption?: string;
+    }
+  | {
+      /** Small illustrative chart drawn in SVG (shape only, not real data). */
+      type: "minicharts";
+      items: { kind: "bar" | "line" | "pie" | "scatter" | "histogram" | "column3d"; title: string; text: string; ok?: boolean }[];
+    }
+  | { type: "image"; src: string; alt: string; width: number; height: number; caption?: string };
 
 export type Notes = {
   time?: string;
@@ -86,7 +107,22 @@ export type Slide = {
   kicker?: string;
   title: string;
   subtitle?: string;
+  /** Pills shown under the title on a "title" slide. */
+  meta?: string[];
   icon?: IconName;
   blocks?: Block[];
   notes: Notes;
+};
+
+/** One multiple-choice item from a course's question bank. */
+export type ExamQuestion = {
+  id: number;
+  domain: string;
+  /** Optional item type, e.g. "Knowledge" or "Situational". */
+  part?: string;
+  q: string;
+  options: string[];
+  /** Indices into `options`; more than one for "(Select two.)" items. */
+  answer: number[];
+  why: string;
 };

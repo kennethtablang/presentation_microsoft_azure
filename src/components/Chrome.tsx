@@ -1,14 +1,15 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
-import { ChevronLeft, ChevronRight, GraduationCap, LayoutGrid, Maximize, Minimize, Moon, PanelLeft, Sun, X } from "lucide-react";
-import { slides } from "@/content/slides";
-import { deck, toggleFullscreen, toggleTheme, useFullscreen, useTheme } from "@/lib/stores";
+import Link from "next/link";
+import { ChevronLeft, ChevronRight, GraduationCap, LayoutGrid, Maximize, Minimize, Moon, PanelLeft, Repeat, Sun, X } from "lucide-react";
+import { useCourse, useDeckStore } from "@/lib/course-context";
+import { toggleFullscreen, toggleTheme, useFullscreen, useTheme } from "@/lib/stores";
 import { SlideFrame, SlideView } from "./SlideView";
 
 /** Opens the review center (practice test & flashcards) in a new tab, keeping the deck open. */
-export function openReview() {
-  window.open("/review/test", "_blank", "noopener");
+export function openReview(base: string) {
+  window.open(`${base}/review/test`, "_blank", "noopener");
 }
 
 /** A toolbar button that drops focus after clicking so Space/Enter keep driving the deck. */
@@ -59,6 +60,8 @@ export function Toolbar({
 }) {
   const theme = useTheme();
   const fullscreen = useFullscreen();
+  const course = useCourse();
+  const { deck } = useDeckStore();
   return (
     <nav className={`glass toolbar ${hidden ? "is-hidden" : ""}`} aria-label="Presentation controls">
       <ToolButton label="Slide list" shortcut="S" onClick={onSidebar} active={sidebar}>
@@ -79,7 +82,7 @@ export function Toolbar({
       <ToolButton label="Slide overview" shortcut="G" onClick={onOverview} active={overview}>
         <LayoutGrid size={20} />
       </ToolButton>
-      <ToolButton label="Practice test & flashcards" shortcut="E" onClick={openReview}>
+      <ToolButton label="Practice test & flashcards" shortcut="E" onClick={() => openReview(course.base)}>
         <GraduationCap size={20} />
       </ToolButton>
       <ToolButton label={theme === "dark" ? "Light mode" : "Dark mode"} shortcut="T" onClick={toggleTheme}>
@@ -95,6 +98,9 @@ export function Toolbar({
 export function Sidebar({ open, index, onClose }: { open: boolean; index: number; onClose: () => void }) {
   const [query, setQuery] = useState("");
   const listRef = useRef<HTMLDivElement>(null);
+  const course = useCourse();
+  const { deck } = useDeckStore();
+  const slides = course.slides;
 
   const groups = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -106,7 +112,7 @@ export function Sidebar({ open, index, onClose }: { open: boolean; index: number
       else out.push({ section: s.section, items: [{ i, title: s.title }] });
     });
     return out;
-  }, [query]);
+  }, [query, slides]);
 
   useEffect(() => {
     if (!open) return;
@@ -117,12 +123,17 @@ export function Sidebar({ open, index, onClose }: { open: boolean; index: number
     <aside className={`glass sidebar ${open ? "is-open" : ""}`} aria-label="Slides" aria-hidden={!open} inert={!open}>
       <div className="sidebar-head">
         <div>
-          <p className="kicker">AI-901</p>
+          <p className="kicker">{course.code}</p>
           <h2>Slides</h2>
         </div>
-        <ToolButton label="Close slide list" onClick={onClose}>
-          <X size={20} />
-        </ToolButton>
+        <div className="sidebar-actions">
+          <Link href="/" className="tool-btn" aria-label="Switch course" title="Switch course">
+            <Repeat size={18} />
+          </Link>
+          <ToolButton label="Close slide list" onClick={onClose}>
+            <X size={20} />
+          </ToolButton>
+        </div>
       </div>
       <input
         className="glass-input"
@@ -158,6 +169,9 @@ export function Sidebar({ open, index, onClose }: { open: boolean; index: number
 
 export function Overview({ index, onClose }: { index: number; onClose: () => void }) {
   const ref = useRef<HTMLDivElement>(null);
+  const course = useCourse();
+  const { deck } = useDeckStore();
+  const slides = course.slides;
   useEffect(() => {
     ref.current?.querySelector<HTMLElement>(".is-current")?.scrollIntoView({ block: "center" });
   }, []);

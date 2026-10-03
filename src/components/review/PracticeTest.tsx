@@ -3,13 +3,14 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { ArrowLeft, ArrowRight, Check, CheckCircle2, Flag, Layers, ListRestart, Play, RotateCcw, Shuffle, Timer, X, XCircle } from "lucide-react";
 import Link from "next/link";
-import { buildTest, domains, isFullyCorrect, pointsFor, shuffle, shuffleOptions, stem, type ExamQuestion } from "@/lib/review";
+import { useCourse } from "@/lib/course-context";
+import { buildTest, domainsOf, filterBank, isFullyCorrect, partsOf, pointsFor, shuffle, shuffleOptions, stem, type ExamQuestion } from "@/lib/review";
 import { useNow } from "@/lib/stores";
 
 type Mode = "practice" | "exam";
 /** Exam-mode time limit: none, about one minute per question, or a fixed number of minutes. */
 type TimeLimit = "off" | "auto" | number;
-type Settings = { count: number; domains: string[]; mode: Mode; timeLimit: TimeLimit };
+type Settings = { count: number; domains: string[]; parts: string[]; mode: Mode; timeLimit: TimeLimit };
 type Run = {
   questions: ExamQuestion[];
   picked: number[][];
@@ -24,7 +25,7 @@ type Run = {
   settings: Settings;
 };
 
-const PRESETS = [10, 25, 50, 100, 200];
+const PRESETS = [10, 25, 50, 100];
 const TIME_PRESETS = [15, 30, 45, 60, 90];
 const WARN_MS = 5 * 60_000;
 const DANGER_MS = 60_000;
@@ -34,7 +35,6 @@ function limitMinutes(limit: TimeLimit, mode: Mode, count: number): number | nul
   if (mode !== "exam" || limit === "off") return null;
   return limit === "auto" ? Math.max(1, count) : limit;
 }
-const PASS = 0.7;
 
 function fmt(ms: number) {
   const s = Math.max(0, Math.floor(ms / 1000));
@@ -60,10 +60,17 @@ function newRun(questions: ExamQuestion[], settings: Settings): Run {
 }
 
 export function PracticeTest() {
-  const [settings, setSettings] = useState<Settings>({ count: 25, domains: domains.map((d) => d.name), mode: "practice", timeLimit: "auto" });
+  const course = useCourse();
+  const [settings, setSettings] = useState<Settings>(() => ({
+    count: 25,
+    domains: domainsOf(course.bank).map((d) => d.name),
+    parts: partsOf(course.bank).map((p) => p.name),
+    mode: "practice",
+    timeLimit: "auto",
+  }));
   const [run, setRun] = useState<Run | null>(null);
 
-  const start = (s: Settings) => setRun(newRun(buildTest(s.count, s.domains), s));
+  const start = (s: Settings) => setRun(newRun(buildTest(filterBank(course.bank, s.domains, s.parts), s.count), s));
 
   if (!run) return <Setup settings={settings} onChange={setSettings} onStart={() => start(settings)} />;
   if (run.finishedAt !== null)
@@ -81,12 +88,16 @@ export function PracticeTest() {
 /* ───────────────────────── Setup ───────────────────────── */
 
 function Setup({ settings, onChange, onStart }: { settings: Settings; onChange: (s: Settings) => void; onStart: () => void }) {
-  const pool = domains.filter((d) => settings.domains.includes(d.name)).reduce((n, d) => n + d.count, 0);
+  const course = useCourse();
+  const max = course.bank.length;
+  const domains = useMemo(() => domainsOf(course.bank), [course]);
+  const parts = useMemo(() => partsOf(course.bank), [course]);
+  const pool = filterBank(course.bank, settings.domains, settings.parts).length;
   const count = Math.min(settings.count, pool);
   const [raw, setRaw] = useState(String(settings.count));
 
   const setCount = (n: number) => {
-    const v = Math.max(1, Math.min(200, Math.round(n) || 1));
+    const v = Math.max(1, Math.min(max, Math.round(n) || 1));
     onChange({ ...settings, count: v });
     setRaw(String(v));
   };
@@ -99,7 +110,9 @@ function Setup({ settings, onChange, onStart }: { settings: Settings; onChange: 
   return (
     <section className="review-setup">
       <div className="review-hero">
-        <p className="kicker">AI-901 practice exam · 200-item bank</p>
+        <p className="kicker">
+          {course.bankLabel} · {max}-item bank
+        </p>
         <h1>Practice test</h1>
         <p className="subtitle">Pick how many questions you want. Every start draws a new random set, and the answer choices are reshuffled too.</p>
       </div>
@@ -116,27 +129,54 @@ function Setup({ settings, onChange, onStart }: { settings: Settings; onChange: 
               type="number"
               inputMode="numeric"
               min={1}
-              max={200}
+              max={max}
               value={raw}
               onChange={(e) => {
                 setRaw(e.target.value);
                 const n = Number.parseInt(e.target.value, 10);
-                if (Number.isFinite(n) && n >= 1) onChange({ ...settings, count: Math.min(200, n) });
+                if (Number.isFinite(n) && n >= 1) onChange({ ...settings, count: Math.min(max, n) });
               }}
               onBlur={() => setCount(Number.parseInt(raw, 10))}
             />
             <div className="chip-row">
-              {PRESETS.map((n) => (
+              {PRESETS.filter((n) => n < max).map((n) => (
                 <button key={n} type="button" className={`chip ${settings.count === n ? "is-on" : ""}`} onClick={() => setCount(n)}>
                   {n}
                 </button>
               ))}
+              <button type="button" className={`chip ${settings.count === max ? "is-on" : ""}`} onClick={() => setCount(max)}>
+                All {max}
+              </button>
             </div>
           </div>
           {settings.count > pool && pool > 0 && (
-            <p className="setup-hint">Only {pool} questions match the selected domains, so the test will have {pool}.</p>
+            <p className="setup-hint">Only {pool} questions match your filters, so the test will have {pool}.</p>
           )}
         </div>
+
+        {parts.length > 0 && (
+          <div className="setup-row">
+            <span className="setup-label">Question type</span>
+            <div className="chip-row">
+              {parts.map((p) => (
+                <button
+                  key={p.name}
+                  type="button"
+                  className={`chip ${settings.parts.includes(p.name) ? "is-on" : ""}`}
+                  aria-pressed={settings.parts.includes(p.name)}
+                  onClick={() =>
+                    onChange({
+                      ...settings,
+                      parts: settings.parts.includes(p.name) ? settings.parts.filter((x) => x !== p.name) : [...settings.parts, p.name],
+                    })
+                  }
+                >
+                  {p.name} <span className="chip-count">{p.count}</span>
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
 
         <div className="setup-row">
           <div className="setup-label-row">
@@ -506,6 +546,8 @@ function Results({
   onRetakeMissed: (missed: ExamQuestion[]) => void;
   onNew: () => void;
 }) {
+  const course = useCourse();
+  const PASS = course.passMark;
   const [filter, setFilter] = useState<"missed" | "all">("missed");
   const stats = useMemo(() => {
     let points = 0;
@@ -560,7 +602,7 @@ function Results({
             <button type="button" className="ghost-btn" onClick={onNew}>
               <RotateCcw size={17} /> New test settings
             </button>
-            <Link href="/review/flashcards" className="ghost-btn">
+            <Link href={`${course.base}/review/flashcards`} className="ghost-btn">
               <Layers size={17} /> Flashcards
             </Link>
           </div>

@@ -10,8 +10,8 @@ const inter = Inter({ variable: "--font-inter", subsets: ["latin"], display: "sw
 const mono = JetBrains_Mono({ variable: "--font-mono", subsets: ["latin"], display: "swap" });
 
 export const metadata: Metadata = {
-  title: "AI-901 · AI Concepts & AI Applications on Azure",
-  description: "Web presentation for the AI-901 module discussion: AI concepts and AI applications and agents on Azure.",
+  title: { default: "Course presentations", template: "%s" },
+  description: "Presentations, practice tests and flashcards for Microsoft Azure AI-901 and CompTIA Data Analysis Essentials.",
 };
 
 export const viewport: Viewport = {
@@ -21,7 +21,7 @@ export const viewport: Viewport = {
   ],
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${inter.variable} ${mono.variable}`} data-theme="dark" suppressHydrationWarning>
       <head>

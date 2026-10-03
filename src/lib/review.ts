@@ -1,23 +1,23 @@
-import bank from "@/content/practice-exam.json";
-import { glossary1, glossary2 } from "@/content/glossary";
+import type { Course } from "@/courses/types";
+import type { ExamQuestion } from "./types";
 
-/** One item from the AI-901 practice exam (materials/AI901_Practice_Exam). */
-export type ExamQuestion = {
-  id: number;
-  domain: string;
-  q: string;
-  options: string[];
-  /** Indices into `options`; more than one for "(Select two.)" items. */
-  answer: number[];
-  why: string;
-};
+export type { ExamQuestion };
 
-export const examBank = bank as ExamQuestion[];
+/** Domains in a bank, in first-seen order, with question counts. */
+export function domainsOf(bank: ExamQuestion[]): { name: string; count: number }[] {
+  return Array.from(
+    bank.reduce((m, q) => m.set(q.domain, (m.get(q.domain) ?? 0) + 1), new Map<string, number>()),
+    ([name, count]) => ({ name, count }),
+  );
+}
 
-export const domains: { name: string; count: number }[] = Array.from(
-  examBank.reduce((m, q) => m.set(q.domain, (m.get(q.domain) ?? 0) + 1), new Map<string, number>()),
-  ([name, count]) => ({ name, count }),
-);
+/** Item types in a bank (e.g. Knowledge / Situational); empty when the bank has none. */
+export function partsOf(bank: ExamQuestion[]): { name: string; count: number }[] {
+  return Array.from(
+    bank.reduce((m, q) => (q.part ? m.set(q.part, (m.get(q.part) ?? 0) + 1) : m), new Map<string, number>()),
+    ([name, count]) => ({ name, count }),
+  );
+}
 
 /** Unbiased Fisher–Yates shuffle; returns a new array. Uses crypto randomness when available. */
 export function shuffle<T>(items: readonly T[]): T[] {
@@ -47,9 +47,13 @@ export function shuffleOptions(q: ExamQuestion): ExamQuestion {
   };
 }
 
-/** Builds a fresh test: a random subset of the chosen domains, with options reshuffled too. */
-export function buildTest(count: number, chosenDomains: string[]): ExamQuestion[] {
-  const pool = examBank.filter((q) => chosenDomains.includes(q.domain));
+/** Questions matching the chosen domains (and item types, when the bank has them). */
+export function filterBank(bank: ExamQuestion[], chosenDomains: string[], chosenParts?: string[]): ExamQuestion[] {
+  return bank.filter((q) => chosenDomains.includes(q.domain) && (!q.part || !chosenParts || chosenParts.includes(q.part)));
+}
+
+/** Builds a fresh test: a random subset of the pool, with options reshuffled too. */
+export function buildTest(pool: ExamQuestion[], count: number): ExamQuestion[] {
   return shuffle(pool)
     .slice(0, Math.max(1, Math.min(count, pool.length)))
     .map(shuffleOptions);
@@ -80,16 +84,19 @@ export type Flashcard = {
   detail?: string;
 };
 
-export const glossaryCards: Flashcard[] = [
-  ...glossary1.map(([term, def]) => ({ key: `g1-${term}`, kind: "term" as const, tag: "Part 1 glossary", front: term, back: def })),
-  ...glossary2.map(([term, def]) => ({ key: `g2-${term}`, kind: "term" as const, tag: "Part 2 glossary", front: term, back: def })),
-];
+export function glossaryCardsFor(course: Course): Flashcard[] {
+  return course.glossaries.flatMap((g, gi) =>
+    g.terms.map(([term, def]) => ({ key: `g${gi}-${term}`, kind: "term" as const, tag: g.label, front: term, back: def })),
+  );
+}
 
-export const questionCards: Flashcard[] = examBank.map((q) => ({
-  key: `q-${q.id}`,
-  kind: "question",
-  tag: q.domain,
-  front: q.q,
-  back: q.answer.map((a) => q.options[a]).join("  ·  "),
-  detail: q.why,
-}));
+export function questionCardsFor(course: Course): Flashcard[] {
+  return course.bank.map((q) => ({
+    key: `q-${q.id}`,
+    kind: "question" as const,
+    tag: q.domain,
+    front: q.q,
+    back: q.answer.map((a) => q.options[a]).join("  ·  "),
+    detail: q.why,
+  }));
+}

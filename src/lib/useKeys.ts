@@ -1,12 +1,14 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { deck, toggleFullscreen, toggleTheme } from "./stores";
+import { useDeckStore } from "./course-context";
+import { toggleFullscreen, toggleTheme } from "./stores";
 
 export type KeyActions = Partial<Record<"sidebar" | "notes" | "overview" | "presenter" | "help" | "review" | "escape", () => void>>;
 
 /** Global presentation shortcuts. Navigation keys are shared; panel keys are per view. */
 export function useDeckKeys(actions: KeyActions) {
+  const { deck } = useDeckStore();
   const ref = useRef(actions);
   useEffect(() => {
     ref.current = actions;
@@ -54,7 +56,7 @@ export function useDeckKeys(actions: KeyActions) {
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, []);
+  }, [deck]);
 }
 
 /** Moves a specular highlight across whichever glass surface the pointer is over. */

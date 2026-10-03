@@ -2,8 +2,8 @@
 
 import { useEffect, useRef, useState } from "react";
 import { X } from "lucide-react";
-import { slides } from "@/content/slides";
-import { deck, useDeck, useFullscreen } from "@/lib/stores";
+import { useCourse, useDeckStore } from "@/lib/course-context";
+import { useFullscreen } from "@/lib/stores";
 import { useDeckKeys, useGlassSheen } from "@/lib/useKeys";
 import { Backdrop, Help, Overview, Sidebar, ToolButton, Toolbar, openReview } from "./Chrome";
 import { NotesView } from "./NotesView";
@@ -11,12 +11,15 @@ import { SlideFrame, SlideView } from "./SlideView";
 
 const IDLE_MS = 2600;
 
-export function openPresenter(index: number) {
-  const win = window.open(`/presenter#${index + 1}`, "ai901-presenter", "popup,width=1440,height=900");
+export function openPresenter(base: string, index: number) {
+  const win = window.open(`${base}/presenter#${index + 1}`, `presenter${base.replace(/\W/g, "-")}`, "popup,width=1440,height=900");
   win?.focus();
 }
 
 export function Deck() {
+  const course = useCourse();
+  const { deck, useDeck } = useDeckStore();
+  const slides = course.slides;
   const { index, revealed, blackout } = useDeck();
   const fullscreen = useFullscreen();
   const [sidebar, setSidebar] = useState(false);
@@ -44,8 +47,8 @@ export function Deck() {
     sidebar: () => setSidebar((v) => !v),
     notes: () => setNotes((v) => !v),
     overview: () => setOverview((v) => !v),
-    presenter: () => openPresenter(index),
-    review: openReview,
+    presenter: () => openPresenter(course.base, index),
+    review: () => openReview(course.base),
     help: () => setHelp((v) => !v),
     escape: () => {
       setHelp(false);
@@ -72,8 +75,8 @@ export function Deck() {
   }, []);
 
   useEffect(() => {
-    document.title = `${index + 1}. ${slide.title} · AI-901`;
-  }, [index, slide.title]);
+    document.title = `${index + 1}. ${slide.title} · ${course.code}`;
+  }, [index, slide.title, course.code]);
 
   const chromeHidden = fullscreen && idle && !sidebar && !notes;
 

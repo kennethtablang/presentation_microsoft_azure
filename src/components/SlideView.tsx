@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useCourse } from "@/lib/course-context";
 import type { Slide } from "@/lib/types";
 import { BlockList } from "./Blocks";
 import { Icon } from "./Icon";
@@ -22,8 +23,9 @@ export function SlideView({
   revealed: boolean;
   still?: boolean;
 }) {
+  const course = useCourse();
   const variant = slide.variant ?? "default";
-  const ctx = { revealed, still };
+  const ctx = { revealed, still, base: course.base };
 
   if (variant === "title" || variant === "section" || variant === "end") {
     return (
@@ -37,11 +39,13 @@ export function SlideView({
           {slide.kicker && <p className="kicker">{slide.kicker}</p>}
           <h1>{slide.title}</h1>
           {slide.subtitle && <p className="subtitle">{slide.subtitle}</p>}
-          {variant === "title" && (
+          {variant === "title" && !!slide.meta?.length && (
             <div className="hero-meta">
-              <span className="glass pill">Part 1 · AI concepts</span>
-              <span className="glass pill">Part 2 · AI on Azure</span>
-              <span className="glass pill">6 sessions · 14 modules</span>
+              {slide.meta.map((m) => (
+                <span key={m} className="glass pill">
+                  {m}
+                </span>
+              ))}
             </div>
           )}
         </div>
@@ -64,9 +68,12 @@ export function SlideView({
 }
 
 function SlideFooter({ slide, index, total }: { slide: Slide; index: number; total: number }) {
+  const course = useCourse();
   return (
     <footer className="slide-foot">
-      <span>AI-901 · {slide.section}</span>
+      <span>
+        {course.code} · {slide.section}
+      </span>
       <span>
         {index + 1} / {total}
       </span>

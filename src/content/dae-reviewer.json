@@ -1,0 +1,2402 @@
+[
+ {
+  "id": 1,
+  "domain": "1. Defining the Analysis Objective",
+  "part": "Knowledge",
+  "q": "What is the FIRST step you should take before beginning any data analysis?",
+  "options": [
+   "Clearly define the business question the analysis is meant to answer",
+   "Build an initial chart so you can see the shape of the raw data",
+   "Import every available table into a spreadsheet so nothing is missed later",
+   "Remove duplicate records so the counts are accurate from the start"
+  ],
+  "answer": [
+   0
+  ],
+  "why": "Defining the analysis objective ensures the work answers the right question before any data is touched."
+ },
+ {
+  "id": 2,
+  "domain": "1. Defining the Analysis Objective",
+  "part": "Knowledge",
+  "q": "A 'success criterion' in a data analysis project is best described as:",
+  "options": [
+   "A measurable condition that confirms the objective has been met",
+   "The overall color scheme and layout of the final report",
+   "The total number of rows and columns contained in the dataset",
+   "The specific software tool chosen to perform the analysis"
+  ],
+  "answer": [
+   0
+  ],
+  "why": "Success criteria set clear, measurable conditions that define when the objective has been achieved."
+ },
+ {
+  "id": 3,
+  "domain": "1. Defining the Analysis Objective",
+  "part": "Knowledge",
+  "q": "Which of the following is a well-scoped analysis objective?",
+  "options": [
+   "Look at all of the sales data and see what stands out",
+   "Make the quarterly figures look clearer and more presentable",
+   "Determine which product category had the highest month-over-month growth in Q1",
+   "Find something interesting that leadership has not noticed yet"
+  ],
+  "answer": [
+   2
+  ],
+  "why": "A good objective is specific, measurable, and tied to a concrete decision."
+ },
+ {
+  "id": 4,
+  "domain": "1. Defining the Analysis Objective",
+  "part": "Knowledge",
+  "q": "A Key Performance Indicator (KPI) is best defined as:",
+  "options": [
+   "A standard chart format used for executive summary reporting",
+   "A specialized index used to speed up database table lookups",
+   "A measurable value showing how effectively an objective is being met",
+   "A raw, unprocessed value pulled directly from a source system"
+  ],
+  "answer": [
+   2
+  ],
+  "why": "A KPI is a quantifiable metric used to gauge progress toward a defined goal."
+ },
+ {
+  "id": 5,
+  "domain": "1. Defining the Analysis Objective",
+  "part": "Knowledge",
+  "q": "Why is it important to identify stakeholders before starting an analysis?",
+  "options": [
+   "To confirm that formulas will not be required for the final output",
+   "To deliberately increase the overall size and scope of the dataset",
+   "To justify taking additional time before delivering any findings",
+   "To understand who will use the results and what decisions they support"
+  ],
+  "answer": [
+   3
+  ],
+  "why": "Knowing the audience shapes what questions to answer and how to present results."
+ },
+ {
+  "id": 6,
+  "domain": "1. Defining the Analysis Objective",
+  "part": "Knowledge",
+  "q": "'Scope creep' during a data project refers to:",
+  "options": [
+   "Source data gradually becoming corrupted over the project timeline",
+   "Records being deleted by accident during routine cleaning work",
+   "The objective expanding uncontrollably beyond the original question",
+   "A chart growing too large to fit within the report page"
+  ],
+  "answer": [
+   2
+  ],
+  "why": "Scope creep is the uncontrolled expansion of a project's goals beyond what was originally agreed."
+ },
+ {
+  "id": 7,
+  "domain": "1. Defining the Analysis Objective",
+  "part": "Knowledge",
+  "q": "Which question best clarifies the analysis objective at the start of a project?",
+  "options": [
+   "How many worksheet tabs will the finished workbook contain?",
+   "What naming convention should be used for the saved file?",
+   "Which typeface and heading style should the final report use?",
+   "What specific decision is this analysis intended to inform?"
+  ],
+  "answer": [
+   3
+  ],
+  "why": "Tying analysis to a decision keeps the work focused and relevant."
+ },
+ {
+  "id": 8,
+  "domain": "1. Defining the Analysis Objective",
+  "part": "Knowledge",
+  "q": "A KPI differs from an ordinary metric in that a KPI is:",
+  "options": [
+   "Always expressed as a percentage rather than a raw count",
+   "A value that, by definition, cannot be measured precisely",
+   "Identical to a metric, since the two terms mean the same thing",
+   "A metric tied directly to a specific strategic objective or goal"
+  ],
+  "answer": [
+   3
+  ],
+  "why": "All KPIs are metrics, but only metrics tied directly to key objectives are KPIs."
+ },
+ {
+  "id": 9,
+  "domain": "1. Defining the Analysis Objective",
+  "part": "Knowledge",
+  "q": "Before analysis, defining the 'unit of analysis' means deciding:",
+  "options": [
+   "Which measurement unit to use, such as meters, dollars, or hours",
+   "Which software license type is required for the analysis tool",
+   "What screen resolution the final dashboard should be built for",
+   "What each row in your dataset represents, e.g., a customer or an order"
+  ],
+  "answer": [
+   3
+  ],
+  "why": "The unit of analysis defines what a single record represents, which shapes the entire dataset structure."
+ },
+ {
+  "id": 10,
+  "domain": "1. Defining the Analysis Objective",
+  "part": "Knowledge",
+  "q": "Which is an example of a 'leading' question that could bias an analysis objective?",
+  "options": [
+   "Which region recorded the largest number of product returns?",
+   "How did total sales change over the past four fiscal quarters?",
+   "What underlying factors most influenced our recent customer churn?",
+   "Why is our product so clearly the best option on the market?"
+  ],
+  "answer": [
+   3
+  ],
+  "why": "A leading question presumes a conclusion, biasing the analysis toward a predetermined answer."
+ },
+ {
+  "id": 11,
+  "domain": "1. Defining the Analysis Objective",
+  "part": "Knowledge",
+  "q": "Setting a clear objective at the outset helps prevent which common problem?",
+  "options": [
+   "Saving the finished file in the wrong folder or format",
+   "Being required to use a spreadsheet instead of a database",
+   "Producing a bar chart when a line chart would be clearer",
+   "Spending effort analyzing data irrelevant to the actual decision"
+  ],
+  "answer": [
+   3
+  ],
+  "why": "A clear objective keeps analysts from wasting effort on irrelevant data."
+ },
+ {
+  "id": 12,
+  "domain": "1. Defining the Analysis Objective",
+  "part": "Knowledge",
+  "q": "A well-formed 'business question' should ideally be:",
+  "options": [
+   "Written only after the analysis has already been completed",
+   "Specific, answerable with data, and relevant to a real decision",
+   "Focused mainly on which tools and software will be used",
+   "Broad and open-ended so that almost any answer will satisfy it"
+  ],
+  "answer": [
+   1
+  ],
+  "why": "Good business questions are specific, data-answerable, and decision-relevant."
+ },
+ {
+  "id": 13,
+  "domain": "1. Defining the Analysis Objective",
+  "part": "Knowledge",
+  "q": "When defining objectives, an 'actionable insight' means an insight that:",
+  "options": [
+   "Leads directly to a concrete decision or a specific action",
+   "Looks impressive and polished when placed on a summary slide",
+   "Consists of a raw data export handed off to another team",
+   "Is simply any numeric value produced by a spreadsheet formula"
+  ],
+  "answer": [
+   0
+  ],
+  "why": "Actionable insights drive real decisions rather than merely describing data."
+ },
+ {
+  "id": 14,
+  "domain": "1. Defining the Analysis Objective",
+  "part": "Knowledge",
+  "q": "A manager says only 'Sales seem off.' Which restatement best turns this into an objective?",
+  "options": [
+   "Change the chart colors so the numbers are easier to read",
+   "Identify which regions and products declined versus the prior quarter",
+   "Add more rows of recent transactions to the existing report",
+   "Export the entire sales database and share it with the manager"
+  ],
+  "answer": [
+   1
+  ],
+  "why": "Turning a vague concern into a specific, measurable question is the core of defining an objective."
+ },
+ {
+  "id": 15,
+  "domain": "2. Importing and Structuring Data",
+  "part": "Knowledge",
+  "q": "In a well-structured (tidy) dataset, each column should represent:",
+  "options": [
+   "A calculated formula applied to the surrounding data",
+   "A single variable or field measured across the observations",
+   "A finished chart summarizing the values in that section",
+   "A single complete record describing one observed entity"
+  ],
+  "answer": [
+   1
+  ],
+  "why": "In tidy data, each column is one variable, each row is one observation."
+ },
+ {
+  "id": 16,
+  "domain": "2. Importing and Structuring Data",
+  "part": "Knowledge",
+  "q": "In a tidy dataset, each row should represent:",
+  "options": [
+   "A single observation or record, such as one customer or order",
+   "A single variable measured across every record in the table",
+   "A summary total aggregating the values in that column",
+   "A descriptive header labeling the fields shown below it"
+  ],
+  "answer": [
+   0
+  ],
+  "why": "Each row is one observation; each column is one variable."
+ },
+ {
+  "id": 17,
+  "domain": "2. Importing and Structuring Data",
+  "part": "Knowledge",
+  "q": "A CSV file stores tabular data by separating values with:",
+  "options": [
+   "Tab characters placed between each field in a row",
+   "Semicolons that mark the end of every data column",
+   "Fixed-width spaces padding each field to equal length",
+   "Commas placed between each field value in a row"
+  ],
+  "answer": [
+   3
+  ],
+  "why": "CSV stands for Comma-Separated Values."
+ },
+ {
+  "id": 18,
+  "domain": "2. Importing and Structuring Data",
+  "part": "Knowledge",
+  "q": "Assigning the correct 'data type' to a column (e.g., date, number, text) matters because:",
+  "options": [
+   "It has no real practical effect on how the data behaves",
+   "It changes the file extension used when the data is saved",
+   "It reduces the overall storage size taken up by the file",
+   "It determines how values can be sorted, calculated, and validated"
+  ],
+  "answer": [
+   3
+  ],
+  "why": "Data types control valid operations, sorting behavior, and calculations."
+ },
+ {
+  "id": 19,
+  "domain": "2. Importing and Structuring Data",
+  "part": "Knowledge",
+  "q": "A field storing the value '2026-08-27' should be assigned which data type for analysis?",
+  "options": [
+   "Currency, so a monetary symbol is displayed alongside it",
+   "Text, so the exact characters are preserved as entered",
+   "Boolean, since the value resolves to either true or false",
+   "Date, so it can be sorted chronologically and used in calculations"
+  ],
+  "answer": [
+   3
+  ],
+  "why": "Assigning a Date type enables chronological sorting and date calculations."
+ },
+ {
+  "id": 20,
+  "domain": "2. Importing and Structuring Data",
+  "part": "Knowledge",
+  "q": "Which is a benefit of consistent field naming (e.g., 'first_name' rather than mixed styles)?",
+  "options": [
+   "It serves a purely decorative role with no practical benefit",
+   "It changes the underlying values stored within each field",
+   "It reduces confusion and errors when referencing or joining data",
+   "It noticeably increases the physical size of the saved file"
+  ],
+  "answer": [
+   2
+  ],
+  "why": "Consistent naming reduces reference errors, especially when joining datasets."
+ },
+ {
+  "id": 21,
+  "domain": "2. Importing and Structuring Data",
+  "part": "Knowledge",
+  "q": "'Structured data' is best described as data that:",
+  "options": [
+   "Consists only of images, audio, and video file content",
+   "Cannot be opened or manipulated inside a spreadsheet",
+   "Has no predefined format and cannot be neatly organized",
+   "Is organized into rows and columns following a defined schema"
+  ],
+  "answer": [
+   3
+  ],
+  "why": "Structured data follows a predefined model of rows, columns, and data types."
+ },
+ {
+  "id": 22,
+  "domain": "2. Importing and Structuring Data",
+  "part": "Knowledge",
+  "q": "Which of the following is an example of UNstructured data?",
+  "options": [
+   "A free-text customer review written in a support email",
+   "A comma-separated file exported from an ordering system",
+   "A normalized relational database table with defined keys",
+   "A spreadsheet listing monthly sales figures by region"
+  ],
+  "answer": [
+   0
+  ],
+  "why": "Free-text has no predefined schema, making it unstructured."
+ },
+ {
+  "id": 23,
+  "domain": "2. Importing and Structuring Data",
+  "part": "Knowledge",
+  "q": "A 'flat file' is best described as:",
+  "options": [
+   "A damaged file that can no longer be opened correctly",
+   "A file that contains no usable data records at all",
+   "A file whose contents have been compressed to save space",
+   "A single table of data with no relationships to other tables"
+  ],
+  "answer": [
+   3
+  ],
+  "why": "A flat file is a single, self-contained table without linked relationships."
+ },
+ {
+  "id": 24,
+  "domain": "2. Importing and Structuring Data",
+  "part": "Knowledge",
+  "q": "When importing a CSV, the 'header row' typically contains:",
+  "options": [
+   "A series of blank cells reserved for future entries",
+   "The column names or field labels for the data below",
+   "A totals row summarizing each column's numeric values",
+   "The very first complete data record in the dataset"
+  ],
+  "answer": [
+   1
+  ],
+  "why": "The header row labels each column so fields can be identified."
+ },
+ {
+  "id": 25,
+  "domain": "2. Importing and Structuring Data",
+  "part": "Knowledge",
+  "q": "In the context of importing data, a 'delimiter' is:",
+  "options": [
+   "A password required before the file can be opened",
+   "The character used to separate fields, such as a comma or tab",
+   "A cap on the maximum file size that can be imported",
+   "A category of chart used to display the imported data"
+  ],
+  "answer": [
+   1
+  ],
+  "why": "A delimiter marks the boundary between fields during import/parsing."
+ },
+ {
+  "id": 26,
+  "domain": "2. Importing and Structuring Data",
+  "part": "Knowledge",
+  "q": "Storing a phone number as text rather than a number is often preferred because:",
+  "options": [
+   "Text values always take up less storage space than numbers",
+   "Leading zeros and formatting like dashes are preserved as entered",
+   "It is a legal requirement in most data-handling standards",
+   "Numeric fields are technically unable to store any digits"
+  ],
+  "answer": [
+   1
+  ],
+  "why": "Numeric types strip leading zeros and symbols; text preserves the exact format."
+ },
+ {
+  "id": 27,
+  "domain": "2. Importing and Structuring Data",
+  "part": "Knowledge",
+  "q": "'Wide' format data differs from 'long' format in that wide format:",
+  "options": [
+   "Has one row per observation with variables spread across many columns",
+   "Cannot be analyzed until it is first converted to a database",
+   "Uses only a single column to store all of its values",
+   "Always contains more total rows than any other data arrangement"
+  ],
+  "answer": [
+   0
+  ],
+  "why": "Wide data spreads variables across columns; long data stacks them into fewer columns with more rows."
+ },
+ {
+  "id": 28,
+  "domain": "2. Importing and Structuring Data",
+  "part": "Knowledge",
+  "q": "Which practice improves the reliability of imported data?",
+  "options": [
+   "Mixing several different data types within a single column",
+   "Merging every cell so the layout looks cleaner on screen",
+   "Verifying that each column holds a single, consistent data type",
+   "Removing all column headers before the analysis begins"
+  ],
+  "answer": [
+   2
+  ],
+  "why": "Consistent data types per column prevent calculation and sorting errors."
+ },
+ {
+  "id": 29,
+  "domain": "2. Importing and Structuring Data",
+  "part": "Knowledge",
+  "q": "A dataset's 'schema' describes:",
+  "options": [
+   "A single representative value drawn from the dataset",
+   "The structure of the data: its fields, types, and organization",
+   "The category of chart chosen to present the results",
+   "The palette of colors used throughout the finished report"
+  ],
+  "answer": [
+   1
+  ],
+  "why": "A schema defines the structure, fields, and data types of a dataset."
+ },
+ {
+  "id": 30,
+  "domain": "2. Importing and Structuring Data",
+  "part": "Knowledge",
+  "q": "When a numeric column imports as text (e.g., '1,200' with a comma), the correct fix is to:",
+  "options": [
+   "Convert them to a numeric type after removing the thousands separator",
+   "Delete the entire column and re-enter the figures manually",
+   "Leave the values unchanged, since they still appear correct",
+   "Rename the file so the import behaves differently next time"
+  ],
+  "answer": [
+   0
+  ],
+  "why": "Converting to numeric enables calculations; the display separator must be handled during conversion."
+ },
+ {
+  "id": 31,
+  "domain": "3. Cleaning and Transforming Data",
+  "part": "Knowledge",
+  "q": "'Data cleaning' primarily aims to:",
+  "options": [
+   "Encrypt the dataset so unauthorized users cannot read it",
+   "Improve data quality by fixing errors, inconsistencies, and gaps",
+   "Make the finished spreadsheet more colorful and visually appealing",
+   "Increase the total number of rows available for analysis"
+  ],
+  "answer": [
+   1
+  ],
+  "why": "Cleaning improves accuracy and consistency before analysis."
+ },
+ {
+  "id": 32,
+  "domain": "3. Cleaning and Transforming Data",
+  "part": "Knowledge",
+  "q": "Which of the following is a common data quality issue?",
+  "options": [
+   "Category labels that follow a single, standardized naming style",
+   "Column totals that already reconcile with the source system",
+   "Duplicate records that appear more than once in the dataset",
+   "Dates that have been entered in a correct, consistent format"
+  ],
+  "answer": [
+   2
+  ],
+  "why": "Duplicates are a frequent quality problem that distorts counts and sums."
+ },
+ {
+  "id": 33,
+  "domain": "3. Cleaning and Transforming Data",
+  "part": "Knowledge",
+  "q": "Removing duplicate records is important because duplicates can:",
+  "options": [
+   "Reduce the total storage size taken up by the file",
+   "Inflate counts and skew aggregated results such as sums",
+   "Improve the overall accuracy of the reported figures",
+   "Never cause any measurable problems in the analysis"
+  ],
+  "answer": [
+   1
+  ],
+  "why": "Duplicates overstate counts and distort sums, averages, and other aggregates."
+ },
+ {
+  "id": 34,
+  "domain": "3. Cleaning and Transforming Data",
+  "part": "Knowledge",
+  "q": "A 'null' or blank value in a dataset represents:",
+  "options": [
+   "The specific numeric quantity of zero recorded on purpose",
+   "A short text label describing the adjacent data field",
+   "A negative number that fell below the allowed range",
+   "A missing or unknown value with no recorded content"
+  ],
+  "answer": [
+   3
+  ],
+  "why": "Null indicates absence of a value, which is distinct from zero."
+ },
+ {
+  "id": 35,
+  "domain": "3. Cleaning and Transforming Data",
+  "part": "Knowledge",
+  "q": "Why is a NULL different from a value of 0?",
+  "options": [
+   "Zero is a known measured quantity, while NULL means the value is missing",
+   "Zero cannot be stored in a numeric field, but NULL can",
+   "They are effectively the same and can be used interchangeably",
+   "NULL is always treated as larger than zero in calculations"
+  ],
+  "answer": [
+   0
+  ],
+  "why": "Zero is a real measured value; NULL means no value is recorded."
+ },
+ {
+  "id": 36,
+  "domain": "3. Cleaning and Transforming Data",
+  "part": "Knowledge",
+  "q": "Which approach handles missing values by filling them with a substitute (like the column mean)?",
+  "options": [
+   "Encryption, which scrambles the value so it is hidden",
+   "Imputation, which estimates and inserts a replacement value",
+   "Duplication, which copies a nearby record into the gap",
+   "Deletion, which removes the affected records entirely"
+  ],
+  "answer": [
+   1
+  ],
+  "why": "Imputation replaces missing values with estimated substitutes."
+ },
+ {
+  "id": 37,
+  "domain": "3. Cleaning and Transforming Data",
+  "part": "Knowledge",
+  "q": "'Trimming' text data typically means:",
+  "options": [
+   "Converting all of the text characters to uppercase",
+   "Translating the text into a different working language",
+   "Removing leading and trailing whitespace from the values",
+   "Deleting the column that contains the text values"
+  ],
+  "answer": [
+   2
+  ],
+  "why": "Trimming removes extra spaces that cause mismatches and lookup failures."
+ },
+ {
+  "id": 38,
+  "domain": "3. Cleaning and Transforming Data",
+  "part": "Knowledge",
+  "q": "Entries like 'NY', 'New York', and 'new york' for the same value should be:",
+  "options": [
+   "Deleted entirely so the inconsistency cannot cause errors",
+   "Left exactly as they are to preserve the original entry",
+   "Standardized to a single consistent form before grouping",
+   "Converted into numeric codes with no lookup reference"
+  ],
+  "answer": [
+   2
+  ],
+  "why": "Standardizing categorical values ensures accurate grouping and counts."
+ },
+ {
+  "id": 39,
+  "domain": "3. Cleaning and Transforming Data",
+  "part": "Knowledge",
+  "q": "An 'outlier' is best described as:",
+  "options": [
+   "A label placed at the top of a column to name the field",
+   "A blank cell where no value was ever recorded at all",
+   "The single most frequently occurring value in the dataset",
+   "A value that falls far outside the typical range of the data"
+  ],
+  "answer": [
+   3
+  ],
+  "why": "An outlier lies well outside the normal distribution of values."
+ },
+ {
+  "id": 40,
+  "domain": "3. Cleaning and Transforming Data",
+  "part": "Knowledge",
+  "q": "Before removing an outlier, an analyst should FIRST:",
+  "options": [
+   "Discard the whole dataset and request a fresh export",
+   "Investigate whether it is a data error or a genuine extreme value",
+   "Duplicate it so the unusual pattern is preserved for review",
+   "Delete it right away so it cannot distort the results"
+  ],
+  "answer": [
+   1
+  ],
+  "why": "Outliers may be legitimate; they should be understood before removal."
+ },
+ {
+  "id": 41,
+  "domain": "3. Cleaning and Transforming Data",
+  "part": "Knowledge",
+  "q": "'Data transformation' includes which of the following activities?",
+  "options": [
+   "Only deleting rows that contain one or more empty cells",
+   "Converting units, aggregating, or reshaping data into a usable form",
+   "Only renaming the file after the analysis is complete",
+   "Only changing the fill colors applied to certain cells"
+  ],
+  "answer": [
+   1
+  ],
+  "why": "Transformation reshapes or converts data into a form suitable for analysis."
+ },
+ {
+  "id": 42,
+  "domain": "3. Cleaning and Transforming Data",
+  "part": "Knowledge",
+  "q": "Standardizing date formats across a column (e.g., all as YYYY-MM-DD) helps to:",
+  "options": [
+   "Enable correct chronological sorting and reliable date calculations",
+   "Corrupt the underlying values so they can no longer be read",
+   "Hide the dates from anyone viewing the finished report",
+   "Increase the ambiguity of when each event actually occurred"
+  ],
+  "answer": [
+   0
+  ],
+  "why": "A consistent date format allows chronological sorting and accurate date math."
+ },
+ {
+  "id": 43,
+  "domain": "3. Cleaning and Transforming Data",
+  "part": "Knowledge",
+  "q": "'Normalization' of data values (e.g., scaling to a 0–1 range) is used to:",
+  "options": [
+   "Bring variables measured on different scales onto a comparable one",
+   "Delete outliers automatically without any prior investigation",
+   "Add duplicate rows to increase the size of the dataset",
+   "Encrypt the values so they cannot be read without a key"
+  ],
+  "answer": [
+   0
+  ],
+  "why": "Scaling normalization puts variables on a comparable range for fair comparison."
+ },
+ {
+  "id": 44,
+  "domain": "3. Cleaning and Transforming Data",
+  "part": "Knowledge",
+  "q": "Which of the following is an example of a data 'consistency' error?",
+  "options": [
+   "A customer's country stored as 'USA' in one row and 'United States' in another",
+   "A unique identifier that appears exactly once across the dataset",
+   "A date value that has been entered in the standard expected format",
+   "A person's name that has been spelled correctly throughout the file"
+  ],
+  "answer": [
+   0
+  ],
+  "why": "Consistency errors are the same concept represented in conflicting ways."
+ },
+ {
+  "id": 45,
+  "domain": "3. Cleaning and Transforming Data",
+  "part": "Knowledge",
+  "q": "'Data validation' rules (e.g., age must fall between 0 and 120) help by:",
+  "options": [
+   "Slowing down the pace at which data can be entered",
+   "Preventing invalid or impossible values from entering the dataset",
+   "Deleting values that are already known to be correct",
+   "Changing the fonts applied to the affected cells"
+  ],
+  "answer": [
+   1
+  ],
+  "why": "Validation rules block impossible or out-of-range entries at the source."
+ },
+ {
+  "id": 46,
+  "domain": "3. Cleaning and Transforming Data",
+  "part": "Knowledge",
+  "q": "Converting a 'Full Name' column into separate 'First Name' and 'Last Name' columns is:",
+  "options": [
+   "A deletion step that discards part of the recorded information",
+   "A duplication step that copies the name into a new column",
+   "A form of encryption that conceals the original name values",
+   "An example of splitting or parsing one field into several fields"
+  ],
+  "answer": [
+   3
+  ],
+  "why": "Splitting parses one field into multiple structured fields."
+ },
+ {
+  "id": 47,
+  "domain": "3. Cleaning and Transforming Data",
+  "part": "Knowledge",
+  "q": "Which is a valid reason to DELETE rows with missing values rather than impute them?",
+  "options": [
+   "Deleting rows is never acceptable under any circumstances",
+   "When the missing values are few and unlikely to bias the results",
+   "When the affected column is the most important in the dataset",
+   "When you intend to fabricate plausible-looking replacement data"
+  ],
+  "answer": [
+   1
+  ],
+  "why": "Row deletion is acceptable when missing data is minimal and non-systematic."
+ },
+ {
+  "id": 48,
+  "domain": "3. Cleaning and Transforming Data",
+  "part": "Knowledge",
+  "q": "'Deduplication' requires identifying a record as a duplicate based on:",
+  "options": [
+   "The position of the row relative to the others in the file",
+   "One or more key fields that uniquely identify each record",
+   "The type of chart selected to display the final results",
+   "The background fill color applied to the record's cells"
+  ],
+  "answer": [
+   1
+  ],
+  "why": "Duplicates are detected by comparing key identifying fields."
+ },
+ {
+  "id": 49,
+  "domain": "3. Cleaning and Transforming Data",
+  "part": "Knowledge",
+  "q": "A 'data type mismatch' error occurs when:",
+  "options": [
+   "The file has just been saved to disk without any content being changed",
+   "Every value in a column already shares the same expected data type",
+   "Cell color formatting has been applied across a wide range of cells",
+   "A value's type conflicts with the column's expected type, e.g., text in a numeric field"
+  ],
+  "answer": [
+   3
+  ],
+  "why": "Mismatches happen when a value doesn't match the column's defined type."
+ },
+ {
+  "id": 50,
+  "domain": "3. Cleaning and Transforming Data",
+  "part": "Knowledge",
+  "q": "Changing all text in a column to lowercase before matching is done to:",
+  "options": [
+   "Make the finished report look more visually appealing",
+   "Increase the overall storage size taken up by the file",
+   "Ensure that case differences do not cause false mismatches",
+   "Delete records whose text does not meet a condition"
+  ],
+  "answer": [
+   2
+  ],
+  "why": "Case-folding prevents 'Apple' and 'apple' from being treated as different."
+ },
+ {
+  "id": 51,
+  "domain": "3. Cleaning and Transforming Data",
+  "part": "Knowledge",
+  "q": "Which best describes 'aggregation' as a data transformation?",
+  "options": [
+   "Scrambling field values so they cannot be read directly",
+   "Splitting one populated column into several separate columns",
+   "Combining many detailed records into summary values like sums or averages",
+   "Removing duplicate records that appear more than once"
+  ],
+  "answer": [
+   2
+  ],
+  "why": "Aggregation rolls detailed records up into summary statistics."
+ },
+ {
+  "id": 52,
+  "domain": "3. Cleaning and Transforming Data",
+  "part": "Knowledge",
+  "q": "An entry of '999' used to mean 'no answer' in a survey age field is problematic because:",
+  "options": [
+   "It is guaranteed to always be the correct recorded value",
+   "It represents a completely valid and ordinary recorded age",
+   "It is a placeholder that distorts calculations if treated as real",
+   "It cannot physically be stored inside a numeric field"
+  ],
+  "answer": [
+   2
+  ],
+  "why": "Sentinel/placeholder codes distort averages and totals if not handled as missing."
+ },
+ {
+  "id": 53,
+  "domain": "4. Combining Datasets and Using Lookups",
+  "part": "Knowledge",
+  "q": "A 'lookup' function is used to:",
+  "options": [
+   "Retrieve a related value from another table using a matching key",
+   "Change the fill colors applied throughout an entire chart area",
+   "Permanently delete the rows that meet a specified matching condition",
+   "Sort the values contained within a single selected column"
+  ],
+  "answer": [
+   0
+  ],
+  "why": "Lookups fetch related values by matching a key across tables."
+ },
+ {
+  "id": 54,
+  "domain": "4. Combining Datasets and Using Lookups",
+  "part": "Knowledge",
+  "q": "To combine two datasets by matching records, they must share:",
+  "options": [
+   "A common key, that is, a matching field to join on",
+   "The same set of fill colors applied to their cells",
+   "An identical file name saved in the same folder",
+   "Exactly the same number of columns in each table"
+  ],
+  "answer": [
+   0
+  ],
+  "why": "A common key links records across datasets."
+ },
+ {
+  "id": 55,
+  "domain": "4. Combining Datasets and Using Lookups",
+  "part": "Knowledge",
+  "q": "A 'primary key' in a table is:",
+  "options": [
+   "A formula that recalculates whenever the data changes",
+   "A field that uniquely identifies each record in the table",
+   "A password that must be entered to open the table",
+   "Always the first column, regardless of its contents"
+  ],
+  "answer": [
+   1
+  ],
+  "why": "A primary key uniquely identifies every row in a table."
+ },
+ {
+  "id": 56,
+  "domain": "4. Combining Datasets and Using Lookups",
+  "part": "Knowledge",
+  "q": "A 'foreign key' is:",
+  "options": [
+   "A duplicate copy of a primary key stored for backup",
+   "A field that references the primary key of another table",
+   "An identifier assigned to records originating in another country",
+   "An encrypted value used to secure the record's contents"
+  ],
+  "answer": [
+   1
+  ],
+  "why": "A foreign key links to another table's primary key, forming a relationship."
+ },
+ {
+  "id": 57,
+  "domain": "4. Combining Datasets and Using Lookups",
+  "part": "Knowledge",
+  "q": "An 'inner join' returns:",
+  "options": [
+   "Only the rows that have matching keys in both tables",
+   "Only the rows that fail to match in either table",
+   "Every possible combination of rows from both tables",
+   "Every row from both tables regardless of any matches"
+  ],
+  "answer": [
+   0
+  ],
+  "why": "An inner join keeps only records with matches in both tables."
+ },
+ {
+  "id": 58,
+  "domain": "4. Combining Datasets and Using Lookups",
+  "part": "Knowledge",
+  "q": "A 'left join' returns:",
+  "options": [
+   "All rows from the left table plus matching rows from the right",
+   "Only the rows drawn from the right table in the join",
+   "Only the rows that successfully match in both tables",
+   "No rows at all unless every key matches perfectly"
+  ],
+  "answer": [
+   0
+  ],
+  "why": "A left join keeps all left-table rows, filling unmatched right values with nulls."
+ },
+ {
+  "id": 59,
+  "domain": "4. Combining Datasets and Using Lookups",
+  "part": "Knowledge",
+  "q": "If a lookup returns an error or a blank for a value, a likely cause is:",
+  "options": [
+   "Too many distinct fill colors have been applied to the source cells",
+   "The overall file is far too small for the program to process it",
+   "A required chart has been left out of the current workbook",
+   "The key value is missing from the lookup table or has extra spaces"
+  ],
+  "answer": [
+   3
+  ],
+  "why": "Lookup failures usually stem from missing keys or whitespace/format mismatches."
+ },
+ {
+  "id": 60,
+  "domain": "4. Combining Datasets and Using Lookups",
+  "part": "Knowledge",
+  "q": "'Concatenation' of data means:",
+  "options": [
+   "Joining text values from multiple fields into one",
+   "Deleting fields that are no longer needed for analysis",
+   "Splitting a single populated field into several fields",
+   "Encrypting text so it cannot be read without a key"
+  ],
+  "answer": [
+   0
+  ],
+  "why": "Concatenation combines multiple text values into a single string."
+ },
+ {
+  "id": 61,
+  "domain": "4. Combining Datasets and Using Lookups",
+  "part": "Knowledge",
+  "q": "When combining datasets, mismatched key formats (e.g., 'ID001' vs '1') will cause:",
+  "options": [
+   "Perfectly reliable matches between every pair of records",
+   "No effect whatsoever on how the records are joined",
+   "Noticeably faster processing of the combined result",
+   "Failed or incorrect matches between the two datasets"
+  ],
+  "answer": [
+   3
+  ],
+  "why": "Keys must be in a consistent format to match correctly."
+ },
+ {
+  "id": 62,
+  "domain": "4. Combining Datasets and Using Lookups",
+  "part": "Knowledge",
+  "q": "A 'one-to-many' relationship exists when:",
+  "options": [
+   "Every record matches exactly one record in the other table",
+   "One record in Table A relates to many records in Table B",
+   "There are no defined relationships between the two tables",
+   "The two tables are exact duplicates of one another"
+  ],
+  "answer": [
+   1
+  ],
+  "why": "One customer relating to many orders is a classic one-to-many relationship."
+ },
+ {
+  "id": 63,
+  "domain": "4. Combining Datasets and Using Lookups",
+  "part": "Knowledge",
+  "q": "Appending (stacking) two datasets vertically requires that they:",
+  "options": [
+   "Have all of their header rows removed beforehand",
+   "Be saved in two different file formats before merging",
+   "Share the same columns and overall structure",
+   "Contain completely different sets of columns and fields"
+  ],
+  "answer": [
+   2
+  ],
+  "why": "Appending stacks rows, so the column structures must align."
+ },
+ {
+  "id": 64,
+  "domain": "4. Combining Datasets and Using Lookups",
+  "part": "Knowledge",
+  "q": "The main risk of joining on a non-unique key is:",
+  "options": [
+   "The result will end up with fewer columns than intended",
+   "Unintended row multiplication, a 'fan-out' of duplicated records",
+   "The join will complete noticeably faster than expected",
+   "There is no real risk associated with this kind of join"
+  ],
+  "answer": [
+   1
+  ],
+  "why": "Joining on non-unique keys can multiply rows unexpectedly and distort totals."
+ },
+ {
+  "id": 65,
+  "domain": "4. Combining Datasets and Using Lookups",
+  "part": "Knowledge",
+  "q": "An 'approximate match' lookup is most appropriate for:",
+  "options": [
+   "Matching exact customer identifiers between two systems",
+   "Matching email addresses that must agree character for character",
+   "Matching product SKUs that must be identical to be valid",
+   "Placing a value into a range or bracket, such as tax brackets"
+  ],
+  "answer": [
+   3
+  ],
+  "why": "Approximate match suits range-based lookups like grading or tax brackets."
+ },
+ {
+  "id": 66,
+  "domain": "4. Combining Datasets and Using Lookups",
+  "part": "Knowledge",
+  "q": "Before joining two tables, verifying key uniqueness helps prevent:",
+  "options": [
+   "Duplicate or inflated rows from appearing in the output",
+   "Proper formatting from being applied to the final table",
+   "Faster completion of the overall analysis process",
+   "Correct, expected results appearing in the joined output"
+  ],
+  "answer": [
+   0
+  ],
+  "why": "Checking key uniqueness avoids accidental record multiplication."
+ },
+ {
+  "id": 67,
+  "domain": "5. Performing Analyses and Calculations",
+  "part": "Knowledge",
+  "q": "The 'mean' of a dataset is:",
+  "options": [
+   "The value that occurs most frequently across the data",
+   "The middle value once all the numbers are sorted in order",
+   "The difference between the largest and smallest values",
+   "The sum of all the values divided by how many there are"
+  ],
+  "answer": [
+   3
+  ],
+  "why": "The mean is the arithmetic average."
+ },
+ {
+  "id": 68,
+  "domain": "5. Performing Analyses and Calculations",
+  "part": "Knowledge",
+  "q": "The 'median' is:",
+  "options": [
+   "The average obtained by summing and dividing all values",
+   "The middle value once the data has been sorted in order",
+   "The value that appears most often in the dataset",
+   "The gap between the maximum and minimum values"
+  ],
+  "answer": [
+   1
+  ],
+  "why": "The median is the central value in an ordered dataset."
+ },
+ {
+  "id": 69,
+  "domain": "5. Performing Analyses and Calculations",
+  "part": "Knowledge",
+  "q": "The 'mode' is:",
+  "options": [
+   "The value that occurs most frequently in the dataset",
+   "The average calculated across all values in the set",
+   "The middle value found once the data is sorted",
+   "The difference between the highest and lowest values"
+  ],
+  "answer": [
+   0
+  ],
+  "why": "The mode is the value that appears most often."
+ },
+ {
+  "id": 70,
+  "domain": "5. Performing Analyses and Calculations",
+  "part": "Knowledge",
+  "q": "When a dataset contains extreme outliers, which measure of central tendency is LEAST affected?",
+  "options": [
+   "The total, because it reflects the full magnitude of the data",
+   "The median, because it depends only on the middle position",
+   "The mean, because it incorporates every single value",
+   "The sum, because it adds together all of the values"
+  ],
+  "answer": [
+   1
+  ],
+  "why": "The median is resistant to outliers, unlike the mean."
+ },
+ {
+  "id": 71,
+  "domain": "5. Performing Analyses and Calculations",
+  "part": "Knowledge",
+  "q": "'Range' as a measure of spread is calculated as:",
+  "options": [
+   "The maximum value minus the minimum value in the data",
+   "The middle value once the numbers have been sorted",
+   "The count of how many values appear in the dataset",
+   "The average of all values across the entire dataset"
+  ],
+  "answer": [
+   0
+  ],
+  "why": "Range is the difference between the maximum and minimum."
+ },
+ {
+  "id": 72,
+  "domain": "5. Performing Analyses and Calculations",
+  "part": "Knowledge",
+  "q": "'Standard deviation' measures:",
+  "options": [
+   "The single value that appears most often in the data",
+   "The number of records contained in the dataset",
+   "How spread out the values are around the mean",
+   "The typical average value across the whole dataset"
+  ],
+  "answer": [
+   2
+  ],
+  "why": "Standard deviation quantifies dispersion around the mean."
+ },
+ {
+  "id": 73,
+  "domain": "5. Performing Analyses and Calculations",
+  "part": "Knowledge",
+  "q": "A value increasing from 200 to 250 represents a percentage change of:",
+  "options": [
+   "A 20% increase relative to the new value",
+   "A 25% increase relative to the original value",
+   "A 5% increase across the two figures",
+   "A change of 50 measured in absolute units"
+  ],
+  "answer": [
+   1
+  ],
+  "why": "(250-200)/200 = 0.25 = 25% increase."
+ },
+ {
+  "id": 74,
+  "domain": "5. Performing Analyses and Calculations",
+  "part": "Knowledge",
+  "q": "'Correlation' describes:",
+  "options": [
+   "A guarantee that one variable directly causes the other",
+   "The strength and direction of a relationship between two variables",
+   "A row that has been duplicated within the dataset",
+   "A record whose value is missing from the dataset"
+  ],
+  "answer": [
+   1
+  ],
+  "why": "Correlation measures how two variables move together, not causation."
+ },
+ {
+  "id": 75,
+  "domain": "5. Performing Analyses and Calculations",
+  "part": "Knowledge",
+  "q": "The principle 'correlation does not imply causation' means:",
+  "options": [
+   "Two variables that move together always cause each other",
+   "Causation between any two variables is effectively impossible",
+   "A relationship between variables does not prove one causes the other",
+   "Correlation is meaningless and should never be measured"
+  ],
+  "answer": [
+   2
+  ],
+  "why": "Variables can correlate without a direct causal link, possibly via a third factor."
+ },
+ {
+  "id": 76,
+  "domain": "5. Performing Analyses and Calculations",
+  "part": "Knowledge",
+  "q": "A 'trend' in time-series data refers to:",
+  "options": [
+   "The general direction in which values move over time",
+   "A descriptive label placed at the top of a column",
+   "A duplicate row mistakenly included in the dataset",
+   "A single isolated data point at one moment in time"
+  ],
+  "answer": [
+   0
+  ],
+  "why": "A trend is the overall long-term direction of the data over time."
+ },
+ {
+  "id": 77,
+  "domain": "5. Performing Analyses and Calculations",
+  "part": "Knowledge",
+  "q": "A 'moving average' is used to:",
+  "options": [
+   "Permanently delete older data from the series",
+   "Introduce additional outliers into the dataset",
+   "Encrypt the values so they cannot be read directly",
+   "Smooth out short-term fluctuations to reveal a trend"
+  ],
+  "answer": [
+   3
+  ],
+  "why": "Moving averages smooth noise to highlight the underlying trend."
+ },
+ {
+  "id": 78,
+  "domain": "5. Performing Analyses and Calculations",
+  "part": "Knowledge",
+  "q": "Which spreadsheet function computes the total of a range of cells?",
+  "options": [
+   "LEN, which reports the length of a text string",
+   "MAX, which returns the single largest value present",
+   "COUNT, which tallies how many numeric entries exist",
+   "SUM, which adds together all the values in the range"
+  ],
+  "answer": [
+   3
+  ],
+  "why": "SUM totals the values in a range."
+ },
+ {
+  "id": 79,
+  "domain": "5. Performing Analyses and Calculations",
+  "part": "Knowledge",
+  "q": "The COUNT function returns:",
+  "options": [
+   "The combined total of all the values in a range",
+   "The average of all the values within the range",
+   "The single largest value found within the range",
+   "The number of numeric entries contained in a range"
+  ],
+  "answer": [
+   3
+  ],
+  "why": "COUNT tallies how many numeric values are present."
+ },
+ {
+  "id": 80,
+  "domain": "5. Performing Analyses and Calculations",
+  "part": "Knowledge",
+  "q": "A conditional function such as COUNTIF is used to:",
+  "options": [
+   "Count only the cells that meet a specified condition",
+   "Sort the cells into ascending or descending order",
+   "Count every cell in the range without exception",
+   "Delete the cells that do not meet a condition"
+  ],
+  "answer": [
+   0
+  ],
+  "why": "COUNTIF counts only entries that satisfy a given criterion."
+ },
+ {
+  "id": 81,
+  "domain": "5. Performing Analyses and Calculations",
+  "part": "Knowledge",
+  "q": "A 'weighted average' differs from a simple average in that it:",
+  "options": [
+   "Cannot be calculated using standard spreadsheet formulas",
+   "Is always numerically smaller than a simple average",
+   "Gives some values more influence based on assigned weights",
+   "Ignores most of the values when producing a result"
+  ],
+  "answer": [
+   2
+  ],
+  "why": "Weighted averages account for the relative importance of each value."
+ },
+ {
+  "id": 82,
+  "domain": "5. Performing Analyses and Calculations",
+  "part": "Knowledge",
+  "q": "'Descriptive statistics' primarily aim to:",
+  "options": [
+   "Summarize and describe the main features of a dataset",
+   "Predict future outcomes based on the observed data",
+   "Encrypt the dataset so it is protected from access",
+   "Join two separate tables into one combined dataset"
+  ],
+  "answer": [
+   0
+  ],
+  "why": "Descriptive statistics summarize what the data shows."
+ },
+ {
+  "id": 83,
+  "domain": "5. Performing Analyses and Calculations",
+  "part": "Knowledge",
+  "q": "For the values 10, 12, 12, and 100, the MEAN is most heavily influenced by:",
+  "options": [
+   "The value 10, which is the smallest in the set",
+   "The value 12, which appears twice in the set",
+   "The value 100, which is the outlier in the set",
+   "The value 0, which is not present in the set"
+  ],
+  "answer": [
+   2
+  ],
+  "why": "The outlier 100 pulls the mean upward, illustrating outlier sensitivity."
+ },
+ {
+  "id": 84,
+  "domain": "5. Performing Analyses and Calculations",
+  "part": "Knowledge",
+  "q": "Month-over-month 'rate of growth' is best expressed as:",
+  "options": [
+   "A single raw total covering the entire period",
+   "A percentage change between two consecutive months",
+   "The physical file size of the monthly data export",
+   "A plain count of the records added each month"
+  ],
+  "answer": [
+   1
+  ],
+  "why": "Growth rate is a percentage change between periods."
+ },
+ {
+  "id": 85,
+  "domain": "6. Summarizing and Visualizing Results",
+  "part": "Knowledge",
+  "q": "Which chart type is BEST for showing a trend over time?",
+  "options": [
+   "A word cloud sizing terms by how often they appear",
+   "A line chart plotting values across a continuous time axis",
+   "A pie chart dividing the total into proportional slices",
+   "A single-value card displaying one summary number"
+  ],
+  "answer": [
+   1
+  ],
+  "why": "Line charts excel at showing change over continuous time."
+ },
+ {
+  "id": 86,
+  "domain": "6. Summarizing and Visualizing Results",
+  "part": "Knowledge",
+  "q": "A 'bar chart' is most appropriate for:",
+  "options": [
+   "Comparing values across distinct, separate categories",
+   "Showing the parts that make up a single whole",
+   "Showing correlation between two continuous variables",
+   "Displaying just one summary number on its own"
+  ],
+  "answer": [
+   0
+  ],
+  "why": "Bar charts compare discrete categories effectively."
+ },
+ {
+  "id": 87,
+  "domain": "6. Summarizing and Visualizing Results",
+  "part": "Knowledge",
+  "q": "A 'pie chart' is best used to show:",
+  "options": [
+   "A dense time series with many closely spaced points",
+   "The correlation between two continuous measurements",
+   "Parts of a whole, or proportions, for a few categories",
+   "A detailed trend measured across many years"
+  ],
+  "answer": [
+   2
+  ],
+  "why": "Pie charts show composition, but only work well with a few categories."
+ },
+ {
+  "id": 88,
+  "domain": "6. Summarizing and Visualizing Results",
+  "part": "Knowledge",
+  "q": "A 'scatter plot' is best suited to reveal:",
+  "options": [
+   "The count of records that fall into each category",
+   "The relationship or correlation between two numeric variables",
+   "A single aggregated total for the whole dataset",
+   "A ranked list ordering items from highest to lowest"
+  ],
+  "answer": [
+   1
+  ],
+  "why": "Scatter plots visualize the relationship between two continuous variables."
+ },
+ {
+  "id": 89,
+  "domain": "6. Summarizing and Visualizing Results",
+  "part": "Knowledge",
+  "q": "A common way to MISLEAD a reader with a bar chart is to:",
+  "options": [
+   "Sort the bars so they read from largest to smallest",
+   "Clearly label both axes with their units and scale",
+   "Start the y-axis at a value other than zero to exaggerate differences",
+   "Give the chart a clear and descriptive title"
+  ],
+  "answer": [
+   2
+  ],
+  "why": "A truncated y-axis visually exaggerates small differences."
+ },
+ {
+  "id": 90,
+  "domain": "6. Summarizing and Visualizing Results",
+  "part": "Knowledge",
+  "q": "A 'pivot table' is used to:",
+  "options": [
+   "Encrypt the underlying data so it cannot be read",
+   "Draw a scatter plot of two continuous variables",
+   "Summarize and aggregate data by grouping selected fields",
+   "Delete duplicate records from the source dataset"
+  ],
+  "answer": [
+   2
+  ],
+  "why": "Pivot tables quickly aggregate and cross-tabulate data."
+ },
+ {
+  "id": 91,
+  "domain": "6. Summarizing and Visualizing Results",
+  "part": "Knowledge",
+  "q": "The MAIN purpose of a data visualization is to:",
+  "options": [
+   "Conceal the underlying data from the audience",
+   "Communicate insights clearly and support decisions",
+   "Increase the overall file size of the deliverable",
+   "Decorate the report so it looks more professional"
+  ],
+  "answer": [
+   1
+  ],
+  "why": "Visualizations should clarify the message and aid decisions."
+ },
+ {
+  "id": 92,
+  "domain": "6. Summarizing and Visualizing Results",
+  "part": "Knowledge",
+  "q": "A 'dashboard' typically provides:",
+  "options": [
+   "A single raw data table with no summarization",
+   "An encrypted file that requires a key to open",
+   "A long written list of the formulas that were used",
+   "An at-a-glance view of key metrics and visualizations"
+  ],
+  "answer": [
+   3
+  ],
+  "why": "Dashboards consolidate key metrics into an at-a-glance view."
+ },
+ {
+  "id": 93,
+  "domain": "6. Summarizing and Visualizing Results",
+  "part": "Knowledge",
+  "q": "When choosing a chart, the FIRST consideration should be:",
+  "options": [
+   "Which file format the finished chart will be saved in",
+   "Which combination of colors looks the most attractive",
+   "Which font size will fill the available space best",
+   "The message or question the chart is meant to answer"
+  ],
+  "answer": [
+   3
+  ],
+  "why": "Chart choice should follow from the insight you need to communicate."
+ },
+ {
+  "id": 94,
+  "domain": "6. Summarizing and Visualizing Results",
+  "part": "Knowledge",
+  "q": "Which of the following is a best practice for clear visualizations?",
+  "options": [
+   "Apply 3D effects to every chart for visual interest",
+   "Label the axes, add a descriptive title, and avoid clutter",
+   "Remove all labels so the chart looks cleaner",
+   "Use many colors that carry no particular meaning"
+  ],
+  "answer": [
+   1
+  ],
+  "why": "Clear labels, honest scales, and minimal clutter improve comprehension."
+ },
+ {
+  "id": 95,
+  "domain": "7. Data Integrity, Ethics, and Sharing Results",
+  "part": "Knowledge",
+  "q": "'Data integrity' refers to:",
+  "options": [
+   "The palette of colors used across the charts",
+   "The total number of tables contained in the database",
+   "The accuracy, consistency, and reliability of data over its lifecycle",
+   "The physical file size of the stored dataset"
+  ],
+  "answer": [
+   2
+  ],
+  "why": "Data integrity is the maintenance of accuracy and consistency throughout the data's life."
+ },
+ {
+  "id": 96,
+  "domain": "7. Data Integrity, Ethics, and Sharing Results",
+  "part": "Knowledge",
+  "q": "Personally Identifiable Information (PII) includes:",
+  "options": [
+   "Data that can identify an individual, such as a name, email, or ID",
+   "Aggregated totals that cannot be traced back to any one person",
+   "The descriptive header labels placed at the top of each column",
+   "The colors that were chosen for a particular chart or dashboard"
+  ],
+  "answer": [
+   0
+  ],
+  "why": "PII is any data that can identify a specific person and must be protected."
+ },
+ {
+  "id": 97,
+  "domain": "7. Data Integrity, Ethics, and Sharing Results",
+  "part": "Knowledge",
+  "q": "A key ethical practice when sharing analysis results is to:",
+  "options": [
+   "Present results honestly, including limitations and uncertainty",
+   "Fabricate supporting figures to strengthen the conclusion",
+   "Remove all references to where the data originated",
+   "Conceal any findings that reflect poorly on the outcome"
+  ],
+  "answer": [
+   0
+  ],
+  "why": "Ethical reporting requires transparency about limitations and honesty in findings."
+ },
+ {
+  "id": 98,
+  "domain": "7. Data Integrity, Ethics, and Sharing Results",
+  "part": "Knowledge",
+  "q": "'Anonymization' of data is performed to:",
+  "options": [
+   "Increase the overall storage size of the file",
+   "Introduce additional duplicate records into the data",
+   "Make the dataset impossible to analyze in any way",
+   "Protect individual privacy by removing or masking identifying details"
+  ],
+  "answer": [
+   3
+  ],
+  "why": "Anonymization protects privacy by stripping identifying information."
+ },
+ {
+  "id": 99,
+  "domain": "7. Data Integrity, Ethics, and Sharing Results",
+  "part": "Knowledge",
+  "q": "'Cherry-picking' data is an ethical violation because it:",
+  "options": [
+   "Makes use of all of the available evidence fairly",
+   "Selectively presents only the data that supports a desired conclusion",
+   "Improves the overall accuracy of the reported results",
+   "Removes duplicate records before the analysis begins"
+  ],
+  "answer": [
+   1
+  ],
+  "why": "Cherry-picking presents a biased subset to mislead, misrepresenting reality."
+ },
+ {
+  "id": 100,
+  "domain": "7. Data Integrity, Ethics, and Sharing Results",
+  "part": "Knowledge",
+  "q": "Before sharing a report widely, an analyst should verify:",
+  "options": [
+   "Only that the chosen color scheme looks consistent from slide to slide",
+   "The accuracy of the data, appropriate access permissions, and protection of sensitive info",
+   "Nothing in particular, since sharing a finished report carries no real risk",
+   "Only that the saved file has been given an appropriate descriptive name"
+  ],
+  "answer": [
+   1
+  ],
+  "why": "Responsible sharing checks accuracy, access control, and protection of sensitive data."
+ },
+ {
+  "id": 101,
+  "domain": "1. Defining the Analysis Objective",
+  "part": "Situational",
+  "q": "A marketing manager tells you, 'Our campaign isn't working — figure out why.' Before pulling any data, what is your BEST next step?",
+  "options": [
+   "Assume the underlying concern is click-through rate and quietly proceed with that metric",
+   "Build a polished dashboard right away so the manager has something concrete to review",
+   "Export every campaign table you can find and immediately start exploring the raw numbers",
+   "Ask what 'working' means and which metric defines success, such as conversions or ROI"
+  ],
+  "answer": [
+   3
+  ],
+  "why": "A vague request must be translated into a specific, measurable objective by clarifying the success metric before analysis begins."
+ },
+ {
+  "id": 102,
+  "domain": "1. Defining the Analysis Objective",
+  "part": "Situational",
+  "q": "Your dean asks for 'a report on student performance.' Which clarifying question BEST scopes the objective?",
+  "options": [
+   "What color scheme and visual theme should be applied across the charts in the report?",
+   "Which cohort, subject, and time period should the report cover, and what decision will it support?",
+   "Roughly how many pages long should the finished report be when it is submitted?",
+   "Which font family would you prefer to see used for the headings and the body text?"
+  ],
+  "answer": [
+   1
+  ],
+  "why": "Scoping requires nailing down population, timeframe, and the decision the report informs."
+ },
+ {
+  "id": 103,
+  "domain": "1. Defining the Analysis Objective",
+  "part": "Situational",
+  "q": "A stakeholder keeps adding new questions mid-project: 'Also add region, and gender, and last year too.' This situation is an example of:",
+  "options": [
+   "A routine data-cleaning task that is expected during any project",
+   "Sound objective-setting done collaboratively with the stakeholder",
+   "A join error that appeared when combining the source tables",
+   "Scope creep that should be documented and re-negotiated with the stakeholder"
+  ],
+  "answer": [
+   3
+  ],
+  "why": "Uncontrolled expansion of the request beyond the agreed objective is scope creep."
+ },
+ {
+  "id": 104,
+  "domain": "1. Defining the Analysis Objective",
+  "part": "Situational",
+  "q": "You are asked to 'prove that our new product is the best.' Why is this objective problematic?",
+  "options": [
+   "It is a leading objective that presumes its conclusion and invites biased analysis",
+   "It describes a goal that simply cannot be measured with data",
+   "It is far too narrow and specific to produce any useful result",
+   "It is perfectly neutral and does not steer the analysis at all"
+  ],
+  "answer": [
+   0
+  ],
+  "why": "An objective that assumes its own conclusion biases the entire analysis."
+ },
+ {
+  "id": 105,
+  "domain": "1. Defining the Analysis Objective",
+  "part": "Situational",
+  "q": "An operations lead wants to reduce delivery delays but hasn't defined a target. What should you establish FIRST?",
+  "options": [
+   "The overall color theme that the final delivery-tracking dashboard should follow",
+   "The total number of individual delivery records that the source dataset contains",
+   "A measurable success criterion, e.g., cutting average delay from three days to under one",
+   "Which chart type will best display the delivery delay figures once they are ready"
+  ],
+  "answer": [
+   2
+  ],
+  "why": "A measurable success criterion turns a goal into something the analysis can actually evaluate."
+ },
+ {
+  "id": 106,
+  "domain": "1. Defining the Analysis Objective",
+  "part": "Situational",
+  "q": "Two departments define 'active user' differently. Before analyzing 'active users,' you should:",
+  "options": [
+   "Quietly pick one of the two definitions and proceed without noting it",
+   "Report both figures side by side without flagging that they differ",
+   "Ignore the discrepancy since the two definitions are probably close",
+   "Agree on a single shared definition of the metric with the stakeholders"
+  ],
+  "answer": [
+   3
+  ],
+  "why": "Ambiguous metric definitions must be reconciled up front to avoid inconsistent results."
+ },
+ {
+  "id": 107,
+  "domain": "2. Importing and Structuring Data",
+  "part": "Situational",
+  "q": "You import a CSV and a column of order totals shows as left-aligned text like '1,250.00'. What is the MOST likely issue and fix?",
+  "options": [
+   "Nothing is wrong, since the values still display in a readable form",
+   "The whole file is corrupt and should be downloaded again from the source",
+   "The column imported as text; convert it to numeric after handling the thousands separator",
+   "The column serves no purpose and can simply be deleted from the sheet"
+  ],
+  "answer": [
+   2
+  ],
+  "why": "Left-aligned numbers usually signal a text import; converting to numeric enables calculations."
+ },
+ {
+  "id": 108,
+  "domain": "2. Importing and Structuring Data",
+  "part": "Situational",
+  "q": "A dataset has one row per customer with 12 separate columns Jan_Sales through Dec_Sales. To analyze monthly trends easily, you should:",
+  "options": [
+   "Reshape it from wide to long, with a Month column and a Sales column",
+   "Leave it in wide form and hope the analysis still works out",
+   "Merge all twelve monthly columns into a single combined cell",
+   "Delete eleven of the columns and keep only the most recent month"
+  ],
+  "answer": [
+   0
+  ],
+  "why": "Converting wide to long (one row per month) makes time-series analysis and charting far easier."
+ },
+ {
+  "id": 109,
+  "domain": "2. Importing and Structuring Data",
+  "part": "Situational",
+  "q": "A ZIP or postal code column contains values like 01234 but they appear as 1234 after import. The correct handling is to:",
+  "options": [
+   "Delete the rows whose codes lost a leading zero during import",
+   "Store the field as text so the leading zeros are preserved as entered",
+   "Multiply every value in the column by ten to restore the digits",
+   "Accept the loss of the leading zero as an unavoidable outcome"
+  ],
+  "answer": [
+   1
+  ],
+  "why": "Numeric types strip leading zeros; postal codes should be stored as text."
+ },
+ {
+  "id": 110,
+  "domain": "2. Importing and Structuring Data",
+  "part": "Situational",
+  "q": "You receive data where each row mixes a customer AND their most recent order in one record, making the unit of analysis unclear. This is a problem because:",
+  "options": [
+   "It is ambiguous whether a row represents a customer or an order, which distorts counts",
+   "It noticeably reduces the overall storage size that the dataset takes up on disk",
+   "It improves the accuracy of any totals or averages calculated from the data",
+   "It is actually the ideal structure for nearly any analysis you might run"
+  ],
+  "answer": [
+   0
+  ],
+  "why": "A dataset must have a clear, consistent unit of analysis for counts and aggregates to be valid."
+ },
+ {
+  "id": 111,
+  "domain": "2. Importing and Structuring Data",
+  "part": "Situational",
+  "q": "A colleague sends a spreadsheet with merged cells spanning several header columns. Before analysis you should:",
+  "options": [
+   "Convert the entire spreadsheet into a static image so the layout is preserved",
+   "Analyze the file exactly as it was received without altering any of the headers",
+   "Add several more merged cells so that the header layout looks a little tidier",
+   "Unmerge the cells and build a single clean header row so the fields parse correctly"
+  ],
+  "answer": [
+   3
+  ],
+  "why": "Merged header cells break structured parsing; a single clean header row is required."
+ },
+ {
+  "id": 112,
+  "domain": "2. Importing and Structuring Data",
+  "part": "Situational",
+  "q": "A date column mixes formats: '08/27/2026', '2026-08-27', and 'Aug 27, 2026'. The BEST structuring step is to:",
+  "options": [
+   "Leave the formats mixed, since all three clearly still refer to real dates",
+   "Delete the entire column because the inconsistent formats make it unusable",
+   "Convert all of the varied dates into plain text values and simply stop there",
+   "Standardize every value to one date format and set the column's type to Date"
+  ],
+  "answer": [
+   3
+  ],
+  "why": "A single consistent date type enables correct sorting and date calculations."
+ },
+ {
+  "id": 113,
+  "domain": "2. Importing and Structuring Data",
+  "part": "Situational",
+  "q": "You must combine sales files from three regions that use different column orders but the same fields. Before appending them you should:",
+  "options": [
+   "Randomize the row order within each of the files before combining them together",
+   "Delete the smallest of the three regional files in order to simplify the overall merge",
+   "Stack the three files in whatever order they each happen to arrive in from the regions",
+   "Align the columns and field names so that the same data lands in the same column"
+  ],
+  "answer": [
+   3
+  ],
+  "why": "Appending requires matching column structures so values align correctly."
+ },
+ {
+  "id": 114,
+  "domain": "3. Cleaning and Transforming Data",
+  "part": "Situational",
+  "q": "A customer list shows the same person twice: 'Juan Dela Cruz' and ' Juan Dela Cruz' (leading space), inflating your counts. The fix is to:",
+  "options": [
+   "Add a third identical copy so the count is at least consistent",
+   "Keep both entries so no potential customer is ever lost",
+   "Trim the whitespace first, then deduplicate on the cleaned key",
+   "Delete the customer entirely to avoid any double counting"
+  ],
+  "answer": [
+   2
+  ],
+  "why": "Trimming whitespace first ensures the two entries match so deduplication works."
+ },
+ {
+  "id": 115,
+  "domain": "3. Cleaning and Transforming Data",
+  "part": "Situational",
+  "q": "A 'Country' field contains 'PH', 'Philippines', and 'philippines' for the same country, splitting your group totals. You should:",
+  "options": [
+   "Standardize all of the variants to one consistent value before grouping",
+   "Report the three spellings as if they were three separate countries",
+   "Delete the entire country field so the inconsistency disappears",
+   "Convert the country names into arbitrary numeric codes instead"
+  ],
+  "answer": [
+   0
+  ],
+  "why": "Standardizing categorical variants ensures accurate grouping and counts."
+ },
+ {
+  "id": 116,
+  "domain": "3. Cleaning and Transforming Data",
+  "part": "Situational",
+  "q": "An 'Age' column contains a value of 999, which is a survey placeholder for 'no answer.' If left in, it will:",
+  "options": [
+   "Actually improve the overall accuracy of the reported average age across respondents",
+   "Have no measurable effect whatsoever on any statistic that you happen to calculate",
+   "Be recognized as a placeholder and then ignored automatically by the spreadsheet program",
+   "Distort the mean and other statistics, so it must be treated as a missing value"
+  ],
+  "answer": [
+   3
+  ],
+  "why": "Sentinel placeholder codes must be converted to NULL, or they corrupt statistics."
+ },
+ {
+  "id": 117,
+  "domain": "3. Cleaning and Transforming Data",
+  "part": "Situational",
+  "q": "A sales column has three blank cells out of 5,000 rows. Removing those rows is reasonable because:",
+  "options": [
+   "Missing data should never be filled in through imputation methods",
+   "The missing values are minimal and unlikely to bias the overall results",
+   "Rows containing any blank cell cannot be analyzed under any method",
+   "Blank cells should always be interpreted as a recorded zero"
+  ],
+  "answer": [
+   1
+  ],
+  "why": "When missing data is minimal and non-systematic, row deletion is a defensible choice."
+ },
+ {
+  "id": 118,
+  "domain": "3. Cleaning and Transforming Data",
+  "part": "Situational",
+  "q": "You spot one transaction of ₱9,000,000 in a dataset where all others fall under ₱10,000. Before removing it you should:",
+  "options": [
+   "Delete the record immediately so it cannot skew the totals",
+   "Duplicate the record so the unusual pattern is clearly preserved",
+   "Investigate whether it is a data-entry error or a legitimate large sale",
+   "Discard the whole dataset and request a completely fresh export"
+  ],
+  "answer": [
+   2
+  ],
+  "why": "Outliers may be genuine; investigate the cause before deciding to remove."
+ },
+ {
+  "id": 119,
+  "domain": "3. Cleaning and Transforming Data",
+  "part": "Situational",
+  "q": "Two columns store price as '₱1,200' stored as text and you need to sum them. The transformation required is to:",
+  "options": [
+   "Strip the currency symbol and separators, convert to numeric, then sum",
+   "Concatenate the two text values into one longer string",
+   "Sort the price column before attempting the calculation",
+   "Change the font of the price cells to a numeric-looking style"
+  ],
+  "answer": [
+   0
+  ],
+  "why": "Text-formatted currency must be converted to numeric before arithmetic."
+ },
+ {
+  "id": 120,
+  "domain": "3. Cleaning and Transforming Data",
+  "part": "Situational",
+  "q": "A lookup keeps failing on email addresses. You find some are 'USER@MAIL.COM' and others 'user@mail.com'. The cleaning step is to:",
+  "options": [
+   "Add extra spaces around the addresses to force them to align",
+   "Delete every row whose email case does not already match",
+   "Leave the mixed capitalization exactly as it was received",
+   "Standardize the case, e.g., lowercase, on both sides before matching"
+  ],
+  "answer": [
+   3
+  ],
+  "why": "Case-folding both sides prevents case differences from causing false mismatches."
+ },
+ {
+  "id": 121,
+  "domain": "3. Cleaning and Transforming Data",
+  "part": "Situational",
+  "q": "A 'Full Name' column must feed a mail-merge that greets people by first name only. The needed transformation is to:",
+  "options": [
+   "Merge the name column together with the mailing address field",
+   "Delete the name column since it is not needed for the merge",
+   "Split or parse the name into separate First and Last name fields",
+   "Encrypt the name column so the values are protected in transit"
+  ],
+  "answer": [
+   2
+  ],
+  "why": "Parsing one field into structured parts enables first-name personalization."
+ },
+ {
+  "id": 122,
+  "domain": "3. Cleaning and Transforming Data",
+  "part": "Situational",
+  "q": "You need to compare exam scores (0–100) with attendance (0–30 days) in one model, but their scales differ wildly. A reasonable transformation is to:",
+  "options": [
+   "Leave the two variables incomparable and analyze them separately",
+   "Add the two raw values together to create one combined figure",
+   "Delete one of the two variables so only a single scale remains",
+   "Normalize or scale both variables onto a common comparable range"
+  ],
+  "answer": [
+   3
+  ],
+  "why": "Scaling variables to a comparable range allows fair comparison across different units."
+ },
+ {
+  "id": 123,
+  "domain": "3. Cleaning and Transforming Data",
+  "part": "Situational",
+  "q": "An entry-error check reveals a 'quantity' field with a negative value of -5 for items sold. The BEST action is to:",
+  "options": [
+   "Silently multiply it by negative one and move on without a note",
+   "Delete the entire table because one value is clearly wrong",
+   "Keep the negative value, treating it as a valid quantity sold",
+   "Flag it as an invalid value and investigate or correct the entry"
+  ],
+  "answer": [
+   3
+  ],
+  "why": "Impossible values should be flagged and investigated; silent changes hide data-quality issues."
+ },
+ {
+  "id": 124,
+  "domain": "4. Combining Datasets and Using Lookups",
+  "part": "Situational",
+  "q": "You join a Customers table to an Orders table on CustomerID and the row count unexpectedly triples. The MOST likely cause is:",
+  "options": [
+   "Neither of the two tables actually contains any key column",
+   "The join type used was an inner join rather than a left join",
+   "CustomerID is not unique in one table, so matching rows multiply",
+   "The chart built from the result was configured incorrectly"
+  ],
+  "answer": [
+   2
+  ],
+  "why": "Joining on a non-unique key fans out rows, inflating the result set."
+ },
+ {
+  "id": 125,
+  "domain": "4. Combining Datasets and Using Lookups",
+  "part": "Situational",
+  "q": "A VLOOKUP returns #N/A for several product IDs that you know exist. The MOST likely reason is:",
+  "options": [
+   "A required chart is missing from the worksheet holding the data",
+   "Trailing spaces or format differences in the key block an exact match",
+   "The lookup formula itself is fundamentally impossible to write",
+   "The workbook file is simply far too large to process correctly"
+  ],
+  "answer": [
+   1
+  ],
+  "why": "Whitespace or format mismatches in the lookup key are a classic cause of failed matches."
+ },
+ {
+  "id": 126,
+  "domain": "4. Combining Datasets and Using Lookups",
+  "part": "Situational",
+  "q": "You need every customer to appear in a report even if they have no orders yet. The correct join is:",
+  "options": [
+   "No join at all, working from the customer table on its own",
+   "A left join keeping all customers and their orders where they exist",
+   "An inner join returning only customers who placed an order",
+   "A join deliberately configured to drop customers without orders"
+  ],
+  "answer": [
+   1
+  ],
+  "why": "A left join preserves all customers, filling missing order data with nulls."
+ },
+ {
+  "id": 127,
+  "domain": "4. Combining Datasets and Using Lookups",
+  "part": "Situational",
+  "q": "You only want customers who actually placed at least one order. The correct join is:",
+  "options": [
+   "No join at all, since the orders table already lists customers",
+   "An inner join returning only records that match in both tables",
+   "A full outer join that combines all rows from both tables",
+   "A left join that keeps every customer in the final result"
+  ],
+  "answer": [
+   1
+  ],
+  "why": "An inner join returns only records that match in both tables."
+ },
+ {
+  "id": 128,
+  "domain": "4. Combining Datasets and Using Lookups",
+  "part": "Situational",
+  "q": "Two systems store CustomerID as 'C001' in one and '1' in the other. Before joining you must:",
+  "options": [
+   "Delete one of the two tables to avoid the formatting conflict",
+   "Sort both tables by CustomerID before running the join",
+   "Join the two tables as they are and accept the mismatches",
+   "Standardize the key format so the values in each table actually match"
+  ],
+  "answer": [
+   3
+  ],
+  "why": "Keys must share a consistent format to match across tables."
+ },
+ {
+  "id": 129,
+  "domain": "4. Combining Datasets and Using Lookups",
+  "part": "Situational",
+  "q": "You want to bucket exam scores into letter grades (90–100 = A, 80–89 = B, and so on). The appropriate lookup style is:",
+  "options": [
+   "An inner join performed on the students' full names",
+   "A concatenation that joins the score and the letter together",
+   "An approximate or range match against a grade-bracket table",
+   "An exact match against a table of every possible score"
+  ],
+  "answer": [
+   2
+  ],
+  "why": "Range-based classification (grades, tax brackets) calls for an approximate/range lookup."
+ },
+ {
+  "id": 130,
+  "domain": "4. Combining Datasets and Using Lookups",
+  "part": "Situational",
+  "q": "After a join, totals are far higher than the source system reports. Your FIRST diagnostic check should be:",
+  "options": [
+   "Delete the report and rebuild it from scratch without checking",
+   "Verify key uniqueness and whether the join multiplied the rows",
+   "Switch the chart type to see whether the totals then look right",
+   "Apply additional colors to the table to make it easier to read"
+  ],
+  "answer": [
+   1
+  ],
+  "why": "Inflated post-join totals usually trace to non-unique keys causing row multiplication."
+ },
+ {
+  "id": 131,
+  "domain": "4. Combining Datasets and Using Lookups",
+  "part": "Situational",
+  "q": "You must enrich an orders file with product prices from a separate catalog. The right technique is to:",
+  "options": [
+   "Estimate each price by guessing based on the product name",
+   "Retype the correct price manually into every single order row",
+   "Use a lookup keyed on ProductID to pull prices from the catalog",
+   "Delete the price column entirely since it is stored elsewhere"
+  ],
+  "answer": [
+   2
+  ],
+  "why": "A lookup on a shared key efficiently pulls related values from another table."
+ },
+ {
+  "id": 132,
+  "domain": "4. Combining Datasets and Using Lookups",
+  "part": "Situational",
+  "q": "You are appending this quarter's sales to last quarter's file, but this quarter added a new 'DiscountCode' column. Before appending you should decide:",
+  "options": [
+   "To randomize the column order in both files before merging",
+   "How to reconcile the extra column so the two structures align",
+   "To delete this quarter's data because its columns do not match",
+   "Nothing at all; simply stack the two files on top of each other"
+  ],
+  "answer": [
+   1
+  ],
+  "why": "Appending requires aligned structures; the mismatched column must be reconciled first."
+ },
+ {
+  "id": 133,
+  "domain": "5. Performing Analyses and Calculations",
+  "part": "Situational",
+  "q": "Employee salaries are ₱20k, ₱22k, ₱23k, and ₱500k (the CEO). To describe a 'typical' salary, which measure is most appropriate?",
+  "options": [
+   "The median, because it resists the influence of the extreme outlier",
+   "The maximum, because it reflects the top of the pay scale",
+   "The range, because it captures the full spread of the salaries",
+   "The mean, because it makes use of every value in the set"
+  ],
+  "answer": [
+   0
+  ],
+  "why": "With a strong outlier, the median better represents the typical value than the mean."
+ },
+ {
+  "id": 134,
+  "domain": "5. Performing Analyses and Calculations",
+  "part": "Situational",
+  "q": "Monthly revenue jumps around a lot week to week, hiding the overall direction. To reveal the underlying trend you would apply:",
+  "options": [
+   "A moving average that smooths the short-term fluctuations",
+   "A deduplication pass to remove repeated revenue records",
+   "An inner join between the revenue and calendar tables",
+   "A pie chart breaking revenue into proportional weekly slices"
+  ],
+  "answer": [
+   0
+  ],
+  "why": "Moving averages smooth noise to expose the underlying trend."
+ },
+ {
+  "id": 135,
+  "domain": "5. Performing Analyses and Calculations",
+  "part": "Situational",
+  "q": "Sales rose from ₱200,000 to ₱250,000. The percentage increase is:",
+  "options": [
+   "A 20% increase relative to the original sales figure",
+   "A 25% increase relative to the original sales figure",
+   "A 50% increase relative to the original sales figure",
+   "A 5% increase relative to the original sales figure"
+  ],
+  "answer": [
+   1
+  ],
+  "why": "(250,000 − 200,000) / 200,000 = 0.25 = 25%."
+ },
+ {
+  "id": 136,
+  "domain": "5. Performing Analyses and Calculations",
+  "part": "Situational",
+  "q": "You find that ice-cream sales and drowning incidents both rise in the same months and strongly correlate. The correct interpretation is:",
+  "options": [
+   "Buying more ice cream is directly causing more drownings",
+   "The data must be wrong because the two cannot be related",
+   "The rise in drownings is what causes ice-cream sales to increase",
+   "Correlation does not imply causation; a third factor like hot weather drives both"
+  ],
+  "answer": [
+   3
+  ],
+  "why": "Correlated variables may share a common cause rather than causing each other."
+ },
+ {
+  "id": 137,
+  "domain": "5. Performing Analyses and Calculations",
+  "part": "Situational",
+  "q": "You must report how many students scored above 75. The most direct spreadsheet function is:",
+  "options": [
+   "LEN, measuring the length of each score's text value",
+   "MAX, returning the single highest score in the column",
+   "SUM, adding together all of the scores in the column",
+   "COUNTIF, counting the entries that satisfy the condition '>75'"
+  ],
+  "answer": [
+   3
+  ],
+  "why": "COUNTIF counts only entries meeting the specified condition."
+ },
+ {
+  "id": 138,
+  "domain": "5. Performing Analyses and Calculations",
+  "part": "Situational",
+  "q": "A course grade weights the final exam at 50% and two quizzes at 25% each. Computing the grade requires a:",
+  "options": [
+   "Median that reports the middle of the three scores",
+   "Weighted average that reflects each component's assigned weight",
+   "Simple average that treats every component equally",
+   "Mode that reports whichever score occurs most often"
+  ],
+  "answer": [
+   1
+  ],
+  "why": "When components carry different weights, a weighted average is required."
+ },
+ {
+  "id": 139,
+  "domain": "5. Performing Analyses and Calculations",
+  "part": "Situational",
+  "q": "Two datasets share the same mean, but one has a much larger standard deviation. This tells you that dataset:",
+  "options": [
+   "Is guaranteed to contain no outliers of any kind",
+   "Is essentially identical to the other in every respect",
+   "Has values that are more spread out around the mean",
+   "Contains noticeably fewer records than the other dataset"
+  ],
+  "answer": [
+   2
+  ],
+  "why": "A larger standard deviation indicates greater dispersion around the mean."
+ },
+ {
+  "id": 140,
+  "domain": "5. Performing Analyses and Calculations",
+  "part": "Situational",
+  "q": "You want to summarize a dataset's central tendency and spread before deciding on next steps. You are applying:",
+  "options": [
+   "Inferential statistics used to predict beyond the sample",
+   "Data encryption used to protect the values from access",
+   "A left join used to combine two related tables",
+   "Descriptive statistics used to summarize the dataset's features"
+  ],
+  "answer": [
+   3
+  ],
+  "why": "Summarizing the main features of a dataset is descriptive statistics."
+ },
+ {
+  "id": 141,
+  "domain": "6. Summarizing and Visualizing Results",
+  "part": "Situational",
+  "q": "You must show how monthly website traffic changed across 24 months. The BEST chart is a:",
+  "options": [
+   "Single-value card showing the total traffic across all months",
+   "Scatter plot of the month names against one another",
+   "Pie chart dividing total traffic into monthly proportional slices",
+   "Line chart plotting traffic across the continuous 24-month axis"
+  ],
+  "answer": [
+   3
+  ],
+  "why": "Line charts are ideal for showing change over continuous time."
+ },
+ {
+  "id": 142,
+  "domain": "6. Summarizing and Visualizing Results",
+  "part": "Situational",
+  "q": "You want to compare total sales across six product categories for a single month. The BEST chart is a:",
+  "options": [
+   "Scatter plot relating category names to one another",
+   "3D exploded pie chart with a separate slice per category",
+   "Line chart plotting a single month as one connected point",
+   "Bar chart comparing the six categories side by side"
+  ],
+  "answer": [
+   3
+  ],
+  "why": "Bar charts compare values across discrete categories clearly."
+ },
+ {
+  "id": 143,
+  "domain": "6. Summarizing and Visualizing Results",
+  "part": "Situational",
+  "q": "A colleague's bar chart makes a 2% difference look enormous. You notice the y-axis starts at 95 instead of 0. This is:",
+  "options": [
+   "A routine data-cleaning step performed before charting",
+   "A misleading truncated axis that visually exaggerates the difference",
+   "A recognized best practice for drawing clear bar charts",
+   "A necessary requirement whenever bar charts are created"
+  ],
+  "answer": [
+   1
+  ],
+  "why": "A truncated y-axis visually overstates small differences and misleads readers."
+ },
+ {
+  "id": 144,
+  "domain": "6. Summarizing and Visualizing Results",
+  "part": "Situational",
+  "q": "You need to explore whether study hours relate to exam scores across 200 students. The BEST visualization is a:",
+  "options": [
+   "Pie chart dividing the students into proportional score bands",
+   "Word cloud sizing student names by how often they appear",
+   "Scatter plot of study hours against exam scores per student",
+   "Single bar summarizing the average score for all students"
+  ],
+  "answer": [
+   2
+  ],
+  "why": "Scatter plots reveal the relationship between two continuous variables."
+ },
+ {
+  "id": 145,
+  "domain": "6. Summarizing and Visualizing Results",
+  "part": "Situational",
+  "q": "An executive wants an at-a-glance view of five key metrics that is updated regularly. You should build a:",
+  "options": [
+   "Single pie chart attempting to show all five metrics at once",
+   "Dashboard consolidating the five key metrics and their visuals",
+   "Long written paragraph describing each metric in full detail",
+   "Raw data dump containing every underlying transaction row"
+  ],
+  "answer": [
+   1
+  ],
+  "why": "Dashboards present key metrics at a glance for quick decision-making."
+ },
+ {
+  "id": 146,
+  "domain": "6. Summarizing and Visualizing Results",
+  "part": "Situational",
+  "q": "You have detailed transaction rows and need sales summarized by region and month quickly. The most efficient tool is a:",
+  "options": [
+   "Word cloud sizing region names by their sales volume",
+   "Pivot table that groups and aggregates the data by region and month",
+   "A single formula placed in one cell of the worksheet",
+   "Scatter plot relating each transaction to the next one"
+  ],
+  "answer": [
+   1
+  ],
+  "why": "Pivot tables rapidly group and aggregate detailed data into summaries."
+ },
+ {
+  "id": 147,
+  "domain": "7. Data Integrity, Ethics, and Sharing Results",
+  "part": "Situational",
+  "q": "You are about to email a spreadsheet containing customer names, emails, and ID numbers to an external vendor. Before sending you should:",
+  "options": [
+   "Mask or remove PII the vendor does not need and verify access permissions",
+   "Add several more personal fields so the vendor has full context",
+   "Post the file to a public location so it is easy for them to reach",
+   "Send the file as-is quickly so the vendor is not kept waiting"
+  ],
+  "answer": [
+   0
+  ],
+  "why": "Responsible sharing means minimizing and protecting PII and controlling access."
+ },
+ {
+  "id": 148,
+  "domain": "7. Data Integrity, Ethics, and Sharing Results",
+  "part": "Situational",
+  "q": "Your analysis shows the campaign underperformed, but your manager asks you to 'only show the good weeks.' The ethical response is to:",
+  "options": [
+   "Present only the good weeks exactly as the manager requested",
+   "Present the complete, honest results including the underperformance and its limitations",
+   "Fabricate stronger numbers so the campaign appears successful",
+   "Permanently delete the underperforming weeks from the dataset"
+  ],
+  "answer": [
+   1
+  ],
+  "why": "Selectively showing only favorable data is cherry-picking, an ethical violation."
+ },
+ {
+  "id": 149,
+  "domain": "7. Data Integrity, Ethics, and Sharing Results",
+  "part": "Situational",
+  "q": "You want to share aggregated regional trends from a health dataset without exposing individuals. You should:",
+  "options": [
+   "Publish the raw individual patient records for full transparency",
+   "Add patient names to the summary so the trends are easier to read",
+   "Anonymize the data by removing or masking identifying details before sharing",
+   "Email the complete unmodified dataset directly to the recipients"
+  ],
+  "answer": [
+   2
+  ],
+  "why": "Anonymization protects privacy while still allowing aggregate insights to be shared."
+ },
+ {
+  "id": 150,
+  "domain": "7. Data Integrity, Ethics, and Sharing Results",
+  "part": "Situational",
+  "q": "After finishing a report, you realize one source table was last updated two years ago. The responsible action is to:",
+  "options": [
+   "Hide the report so no one notices the outdated information",
+   "Manually change the dates so the source appears more recent",
+   "Verify the data's currency and disclose the limitation, or refresh the source",
+   "Publish the report without any comment about the stale source"
+  ],
+  "answer": [
+   2
+  ],
+  "why": "Data integrity requires verifying accuracy and being transparent about limitations."
+ }
+]

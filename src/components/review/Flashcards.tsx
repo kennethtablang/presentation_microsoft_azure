@@ -1,9 +1,10 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { ArrowLeft, ArrowRight, Check, ListChecks, Play, RotateCcw, Shuffle, Undo2, X } from "lucide-react";
 import Link from "next/link";
-import { domains, glossaryCards, questionCards, shuffle, type Flashcard } from "@/lib/review";
+import { useCourse } from "@/lib/course-context";
+import { domainsOf, glossaryCardsFor, questionCardsFor, shuffle, type Flashcard } from "@/lib/review";
 
 type Grade = "known" | "learning" | null;
 type Settings = { terms: boolean; questions: boolean; domains: string[]; count: number };
@@ -11,8 +12,19 @@ type Session = { cards: Flashcard[]; grades: Grade[]; index: number; flipped: bo
 
 const PRESETS = [10, 20, 50, 100];
 
-function poolFor(s: Settings): Flashcard[] {
-  return [...(s.terms ? glossaryCards : []), ...(s.questions ? questionCards.filter((c) => s.domains.includes(c.tag)) : [])];
+type Cards = { glossaryCards: Flashcard[]; questionCards: Flashcard[]; domains: { name: string; count: number }[] };
+
+/** The active course's cards, built once per course. */
+function useCards(): Cards {
+  const course = useCourse();
+  return useMemo(
+    () => ({ glossaryCards: glossaryCardsFor(course), questionCards: questionCardsFor(course), domains: domainsOf(course.bank) }),
+    [course],
+  );
+}
+
+function poolFor(s: Settings, c: Cards): Flashcard[] {
+  return [...(s.terms ? c.glossaryCards : []), ...(s.questions ? c.questionCards.filter((q) => s.domains.includes(q.tag)) : [])];
 }
 
 function newSession(cards: Flashcard[], settings: Settings, round = 1): Session {
@@ -20,11 +32,12 @@ function newSession(cards: Flashcard[], settings: Settings, round = 1): Session 
 }
 
 export function Flashcards() {
-  const [settings, setSettings] = useState<Settings>({ terms: true, questions: true, domains: domains.map((d) => d.name), count: 20 });
+  const cards = useCards();
+  const [settings, setSettings] = useState<Settings>(() => ({ terms: true, questions: true, domains: cards.domains.map((d) => d.name), count: 20 }));
   const [session, setSession] = useState<Session | null>(null);
 
   const startFresh = (s: Settings) => {
-    const pool = poolFor(s);
+    const pool = poolFor(s, cards);
     setSession(newSession(shuffle(pool).slice(0, Math.min(s.count, pool.length)), s));
   };
 
@@ -50,10 +63,14 @@ export function Flashcards() {
 /* ───────────────────────── Setup ───────────────────────── */
 
 function Setup({ settings, onChange, onStart }: { settings: Settings; onChange: (s: Settings) => void; onStart: () => void }) {
-  const pool = poolFor(settings).length;
+  const course = useCourse();
+  const cards = useCards();
+  const { glossaryCards, questionCards, domains } = cards;
+  const total = glossaryCards.length + questionCards.length;
+  const pool = poolFor(settings, cards).length;
   const [raw, setRaw] = useState(String(settings.count));
   const setCount = (n: number) => {
-    const v = Math.max(1, Math.min(252, Math.round(n) || 1));
+    const v = Math.max(1, Math.min(total, Math.round(n) || 1));
     onChange({ ...settings, count: v });
     setRaw(String(v));
   };
@@ -72,7 +89,7 @@ function Setup({ settings, onChange, onStart }: { settings: Settings; onChange: 
           <div className="mode-grid">
             <button type="button" className={`mode-card ${settings.terms ? "is-on" : ""}`} aria-pressed={settings.terms} onClick={() => onChange({ ...settings, terms: !settings.terms })}>
               <strong>Glossary terms · {glossaryCards.length}</strong>
-              <span>Term on the front, definition on the back. From the Part 1 and Part 2 glossaries.</span>
+              <span>Term on the front, definition on the back. From the {course.code} course glossary.</span>
             </button>
             <button
               type="button"
@@ -81,7 +98,7 @@ function Setup({ settings, onChange, onStart }: { settings: Settings; onChange: 
               onClick={() => onChange({ ...settings, questions: !settings.questions })}
             >
               <strong>Exam questions · {questionCards.length}</strong>
-              <span>Question on the front, answer and rationale on the back. From the AI-901 practice exam.</span>
+              <span>Question on the front, answer and rationale on the back. From the {course.bankLabel}.</span>
             </button>
           </div>
         </div>
@@ -131,12 +148,12 @@ function Setup({ settings, onChange, onStart }: { settings: Settings; onChange: 
               type="number"
               inputMode="numeric"
               min={1}
-              max={252}
+              max={total}
               value={raw}
               onChange={(e) => {
                 setRaw(e.target.value);
                 const n = Number.parseInt(e.target.value, 10);
-                if (Number.isFinite(n) && n >= 1) onChange({ ...settings, count: Math.min(252, n) });
+                if (Number.isFinite(n) && n >= 1) onChange({ ...settings, count: Math.min(total, n) });
               }}
               onBlur={() => setCount(Number.parseInt(raw, 10))}
             />
@@ -288,6 +305,7 @@ function Summary({
   onNewDeck: () => void;
   onSettings: () => void;
 }) {
+  const course = useCourse();
   const total = session.cards.length;
   const known = total - learning.length;
   const pct = total ? known / total : 0;
@@ -320,7 +338,7 @@ function Summary({
             <button type="button" className="ghost-btn" onClick={onSettings}>
               Deck settings
             </button>
-            <Link href="/review/test" className="ghost-btn">
+            <Link href={`${course.base}/review/test`} className="ghost-btn">
               <ListChecks size={17} /> Practice test
             </Link>
           </div>

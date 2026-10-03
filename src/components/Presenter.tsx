@@ -2,8 +2,9 @@
 
 import { useState } from "react";
 import { ChevronLeft, ChevronRight, Eye, EyeOff, Maximize, Minimize, Moon, Pause, Play, RotateCcw, Square, Sun, Type } from "lucide-react";
-import { hasReveal, slides } from "@/content/slides";
-import { deck, toggleFullscreen, toggleTheme, useDeck, useFullscreen, useNow, useTheme } from "@/lib/stores";
+import { useCourse, useDeckStore } from "@/lib/course-context";
+import { hasReveal } from "@/lib/deck-store";
+import { toggleFullscreen, toggleTheme, useFullscreen, useNow, useTheme } from "@/lib/stores";
 import { useDeckKeys, useGlassSheen } from "@/lib/useKeys";
 import { Backdrop, Help, ToolButton } from "./Chrome";
 import { NotesView } from "./NotesView";
@@ -21,6 +22,9 @@ function fmt(ms: number) {
 }
 
 export function Presenter() {
+  const course = useCourse();
+  const { deck, useDeck } = useDeckStore();
+  const slides = course.slides;
   const { index, revealed, blackout } = useDeck();
   const now = useNow();
   const theme = useTheme();
@@ -49,7 +53,7 @@ export function Presenter() {
       <Backdrop />
       <header className="glass presenter-bar">
         <div className="presenter-title">
-          <span className="kicker">Presenter view</span>
+          <span className="kicker">Presenter view · {course.code}</span>
           <strong>{slide.section}</strong>
         </div>
         <div className="presenter-clock">
