@@ -1,4 +1,15 @@
-# AI-901 · AI Concepts & AI Applications on Azure
+# Certification course presentations
+
+Two separate courses with the same liquid-glass design. Students pick one on the home page (`/`):
+
+| Course | Deck | Practice test | Flashcards |
+| --- | --- | --- | --- |
+| Microsoft Azure AI-901 | `/azure` | `/azure/review/test` (200-item practice exam) | `/azure/review/flashcards` |
+| CompTIA Data Analysis Essentials | `/comptia` | `/comptia/review/test` (150-item DAE reviewer) | `/comptia/review/flashcards` |
+
+The courses never mix. Each has its own slides, presenter view (`/<course>/presenter`), question bank, glossary and sync channel. Old links (`/presenter`, `/review/...`) redirect to the Azure versions.
+
+## Azure AI-901
 
 A web slide deck (Next.js 16) for the module discussion in `../materials`. It has 98 slides covering both parts, all 14 modules, the examples, activities, both quizzes and both glossaries.
 
@@ -50,6 +61,13 @@ Open it with **E**, the graduation-cap toolbar button, or the "Practice test and
 The question bank lives in `src/content/practice-exam.json` (parsed from the docx); the logic is in `src/lib/review.ts`.
 
 ## Editing content
+
+Courses are defined in `src/courses/` (`azure.ts`, `comptia.ts`); the shared components read the active course from context.
+
+- CompTIA slides: `src/content/comptia/slides-a.ts` (intro, modules 1–2), `slides-b.ts` (modules 3–4), `slides-c.ts` (modules 5–6, close); glossary in `glossary.ts`; question bank `src/content/dae-reviewer.json`
+- The course outline image used on slide 4 is `public/comptia/course-outline.png` (from `materials/image.png`)
+
+### Azure content
 
 - `src/content/part1.ts`, `src/content/part2.ts`: the slides for each part
 - `src/content/slides.ts`: intro, quizzes, glossaries, closing, and the final slide order
