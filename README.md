@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AI-901 · AI Concepts & AI Applications on Azure
 
-## Getting Started
+A web slide deck (Next.js 16) for the module discussion in `../materials`. It has 98 slides covering both parts, all 14 modules, the examples, activities, both quizzes and both glossaries.
 
-First, run the development server:
+## Run
 
 ```bash
-npm run dev
+npm install
+npm run dev          # http://localhost:3000
 # or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run build && npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Presenting
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| Key | Action |
+| --- | --- |
+| → Space PgDn | Next slide (reveals hidden answers first) |
+| ← PgUp | Previous slide |
+| Home / End | First / last slide |
+| F | Full screen |
+| P | Presenter view: opens `/presenter` in a new window and stays in sync |
+| N | Speaker notes drawer |
+| S | Slide list sidebar, with search |
+| G | Overview grid |
+| T | Dark / light mode |
+| R | Reveal / hide answers |
+| B | Blank the screen |
+| ? | Shortcut help |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Presenter view** shows the current slide, the next slide, a timer, the clock, and the notes. You can change the notes size. Both windows can control the deck.
+- **Notes** for each slide have a *Talk track*, *Ask the class* prompts with expected answers, and *Go deeper* points.
+- The URL hash (`#12`) tracks the slide, so a refresh or a shared link opens the same slide.
 
-## Learn More
+## Editing content
 
-To learn more about Next.js, take a look at the following resources:
+- `src/content/part1.ts`, `src/content/part2.ts`: the slides for each part
+- `src/content/slides.ts`: intro, quizzes, glossaries, closing, and the final slide order
+- `src/content/extraNotes.ts`: extra discussion notes, merged into slides by id
+- `src/lib/types.ts`: the block types you can use (cards, table, flow, quiz, bars, code, …)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Design
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The liquid-glass look comes from `src/app/globals.css`: backdrop blur + saturation, a specular rim highlight, and a sheen that follows the pointer over animated color fields. Apple devices use SF Pro (via `-apple-system`); other systems fall back to Inter.

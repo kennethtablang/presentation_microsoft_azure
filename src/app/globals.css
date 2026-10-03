@@ -859,7 +859,9 @@ kbd {
   min-height: 0;
   display: flex;
   flex-direction: column;
+  justify-content: safe center;
   gap: 22px;
+  padding-bottom: 12px;
 }
 
 .slide-foot {
@@ -1174,9 +1176,9 @@ kbd {
   letter-spacing: 0.04em;
   padding: 4px 12px;
   border-radius: 999px;
-  color: var(--tone);
-  background: color-mix(in srgb, var(--tone) 16%, transparent);
-  border: 1px solid color-mix(in srgb, var(--tone) 35%, transparent);
+  color: var(--text);
+  background: color-mix(in srgb, var(--tone) 28%, transparent);
+  border: 1px solid color-mix(in srgb, var(--tone) 50%, transparent);
   margin-left: auto;
 }
 
@@ -1303,7 +1305,8 @@ td .reveal.is-shown {
 }
 
 .flow-icon {
-  color: var(--blue);
+  color: var(--text);
+  opacity: 0.85;
   margin-bottom: 4px;
 }
 
@@ -1593,7 +1596,8 @@ td .reveal.is-shown {
 }
 
 .eq-part svg {
-  color: var(--blue);
+  color: var(--text);
+  opacity: 0.85;
   margin-bottom: 2px;
 }
 
@@ -1677,12 +1681,12 @@ td .reveal.is-shown {
 .quiz {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 12px;
 }
 
 .quiz-q {
   --radius: 24px;
-  padding: 16px 24px 14px;
+  padding: 14px 24px 12px;
 }
 
 .quiz-stem {

@@ -1,6 +1,7 @@
 import type { Block, Slide } from "@/lib/types";
 import { part1 } from "./part1";
 import { part2 } from "./part2";
+import { extraNotes } from "./extraNotes";
 
 type Q = { q: string; options: string[]; answer: number; why: string };
 
@@ -263,7 +264,7 @@ const closing: Slide[] = [
   },
 ];
 
-export const slides: Slide[] = [
+const allSlides: Slide[] = [
   ...intro,
   ...part1,
   ...quizSlides("quiz1", "Part 1", "Part 1 · Quiz & glossary", "Part 1 exit quiz", quiz1),
@@ -273,6 +274,20 @@ export const slides: Slide[] = [
   ...glossarySlides("gloss2", "Part 2", "Part 2 · Quiz & glossary", "Part 2 glossary", glossary2),
   ...closing,
 ];
+
+export const slides: Slide[] = allSlides.map((s) => {
+  const extra = extraNotes[s.id];
+  if (!extra) return s;
+  return {
+    ...s,
+    notes: {
+      time: s.notes.time ?? extra.time,
+      say: [...(s.notes.say ?? []), ...(extra.say ?? [])],
+      ask: [...(s.notes.ask ?? []), ...(extra.ask ?? [])],
+      deeper: [...(s.notes.deeper ?? []), ...(extra.deeper ?? [])],
+    },
+  };
+});
 
 /** Whether a slide contains content hidden until the presenter reveals it. */
 export function hasReveal(slide: Slide): boolean {
