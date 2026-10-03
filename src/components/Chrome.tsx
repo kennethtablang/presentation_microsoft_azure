@@ -1,10 +1,15 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
-import { ChevronLeft, ChevronRight, Keyboard, LayoutGrid, Maximize, Minimize, Moon, NotebookPen, PanelLeft, Presentation, Sun, X } from "lucide-react";
+import { ChevronLeft, ChevronRight, GraduationCap, Keyboard, LayoutGrid, Maximize, Minimize, Moon, NotebookPen, PanelLeft, Presentation, Sun, X } from "lucide-react";
 import { slides } from "@/content/slides";
 import { deck, toggleFullscreen, toggleTheme, useFullscreen, useTheme } from "@/lib/stores";
 import { SlideFrame, SlideView } from "./SlideView";
+
+/** Opens the review center (practice test & flashcards) in a new tab, keeping the deck open. */
+export function openReview() {
+  window.open("/review/test", "_blank", "noopener");
+}
 
 /** A toolbar button that drops focus after clicking so Space/Enter keep driving the deck. */
 export function ToolButton({
@@ -84,6 +89,9 @@ export function Toolbar({
       </ToolButton>
       <ToolButton label="Slide overview" shortcut="G" onClick={onOverview} active={overview}>
         <LayoutGrid size={20} />
+      </ToolButton>
+      <ToolButton label="Practice test & flashcards" shortcut="E" onClick={openReview}>
+        <GraduationCap size={20} />
       </ToolButton>
       <ToolButton label="Presenter view" shortcut="P" onClick={onPresenter}>
         <Presentation size={20} />
@@ -191,7 +199,7 @@ export function Overview({ index, onClose }: { index: number; onClose: () => voi
             aria-label={`Go to slide ${i + 1}: ${s.title}`}
           >
             <SlideFrame className="is-thumb">
-              <SlideView slide={s} index={i} total={slides.length} revealed={false} />
+              <SlideView slide={s} index={i} total={slides.length} revealed={false} still />
             </SlideFrame>
             <span className="thumb-label">
               <b>{i + 1}</b> {s.title}
@@ -213,6 +221,7 @@ const shortcuts: [string, string][] = [
   ["S", "Slide list sidebar"],
   ["G", "Overview grid"],
   ["T", "Dark / light mode"],
+  ["E", "Practice test & flashcards (new tab)"],
   ["R", "Reveal / hide answers"],
   ["B", "Blank screen"],
   ["Esc", "Close panels"],

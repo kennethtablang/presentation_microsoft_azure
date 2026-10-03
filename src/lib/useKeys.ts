@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import { deck, toggleFullscreen, toggleTheme } from "./stores";
 
-export type KeyActions = Partial<Record<"sidebar" | "notes" | "overview" | "presenter" | "help" | "escape", () => void>>;
+export type KeyActions = Partial<Record<"sidebar" | "notes" | "overview" | "presenter" | "help" | "review" | "escape", () => void>>;
 
 /** Global presentation shortcuts. Navigation keys are shared; panel keys are per view. */
 export function useDeckKeys(actions: KeyActions) {
@@ -41,6 +41,7 @@ export function useDeckKeys(actions: KeyActions) {
         g: a.overview,
         o: a.overview,
         p: a.presenter,
+        e: a.review,
         "?": a.help,
         h: a.help,
         Escape: a.escape,

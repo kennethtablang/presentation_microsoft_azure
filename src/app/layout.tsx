@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import { themeBootScript } from "@/lib/theme-boot";
 import "./globals.css";
+import "./review.css";
 
 // SF Pro (Apple's system font) is used first on Apple devices via -apple-system;
 // Inter is the closest open fallback for Windows, Android and Linux.

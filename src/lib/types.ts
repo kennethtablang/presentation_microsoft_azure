@@ -63,7 +63,8 @@ export type Block =
   | { type: "scatter"; points: { label: string; x: number; y: number; group: number }[]; caption?: string }
   | { type: "glossary"; terms: { term: string; def: string }[] }
   | { type: "columns"; ratio?: string; cols: Block[][] }
-  | { type: "probability"; prompt: string; items: { token: string; p: number }[] };
+  | { type: "probability"; prompt: string; items: { token: string; p: number }[] }
+  | { type: "launch"; items: { href: string; icon: IconName; title: string; text: string; cta: string; tone?: Tone }[] };
 
 export type Notes = {
   time?: string;

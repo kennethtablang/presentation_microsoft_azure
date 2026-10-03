@@ -2,7 +2,8 @@ import { Fragment, type CSSProperties } from "react";
 import type { Block } from "@/lib/types";
 import { Icon } from "./Icon";
 
-type Ctx = { revealed: boolean };
+/** `still` renders links as plain boxes (thumbnails sit inside buttons, and links can't nest there). */
+type Ctx = { revealed: boolean; still?: boolean };
 
 const calloutMeta = {
   say: { label: "Say", icon: "quote" },
@@ -332,6 +333,35 @@ function BlockView({ block, ctx }: { block: Block; ctx: Ctx }) {
             </div>
           ))}
         </dl>
+      );
+
+    case "launch":
+      return (
+        <div className="launch">
+          {block.items.map((it) => {
+            const body = (
+              <>
+                <span className="chip-icon">
+                  <Icon name={it.icon} size={28} />
+                </span>
+                <h3>{it.title}</h3>
+                <p>{it.text}</p>
+                <span className="launch-cta">
+                  {it.cta} <Icon name="arrow" size={20} />
+                </span>
+              </>
+            );
+            return ctx.still ? (
+              <div key={it.href} className={`glass launch-card tone-${it.tone ?? "blue"}`}>
+                {body}
+              </div>
+            ) : (
+              <a key={it.href} href={it.href} target="_blank" rel="noopener" className={`glass launch-card tone-${it.tone ?? "blue"}`}>
+                {body}
+              </a>
+            );
+          })}
+        </div>
       );
 
     case "columns":

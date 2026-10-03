@@ -5,7 +5,7 @@ import { X } from "lucide-react";
 import { slides } from "@/content/slides";
 import { deck, useDeck, useFullscreen } from "@/lib/stores";
 import { useDeckKeys, useGlassSheen } from "@/lib/useKeys";
-import { Backdrop, Help, Overview, Sidebar, ToolButton, Toolbar } from "./Chrome";
+import { Backdrop, Help, Overview, Sidebar, ToolButton, Toolbar, openReview } from "./Chrome";
 import { NotesView } from "./NotesView";
 import { SlideFrame, SlideView } from "./SlideView";
 
@@ -35,6 +35,7 @@ export function Deck() {
     notes: () => setNotes((v) => !v),
     overview: () => setOverview((v) => !v),
     presenter: () => openPresenter(index),
+    review: openReview,
     help: () => setHelp((v) => !v),
     escape: () => {
       setHelp(false);

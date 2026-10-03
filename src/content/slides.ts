@@ -3,6 +3,7 @@ import { part1 } from "./part1";
 import { part2 } from "./part2";
 import { extraNotes } from "./extraNotes";
 import { notesV2 } from "./notesV2";
+import { glossary1, glossary2 } from "./glossary";
 
 type Q = { q: string; options: string[]; answer: number; why: string };
 
@@ -42,64 +43,6 @@ const quiz2: Q[] = [
   { q: "In agentic retrieval, a complex question is first broken into:", options: ["Smaller sub-questions", "Separate image files", "Short audio segments", "Individual billing units"], answer: A, why: "Sub-questions each retrieve their best passages." },
   { q: "An agent must not quote files the user cannot open. Which principle is this?", options: ["Fairness", "Inclusiveness", "Transparency", "Privacy and security"], answer: D, why: "Permission-aware retrieval protects private data." },
   { q: "What is the best practice at the end of each lab?", options: ["Upgrade to the largest model", "Share the project link publicly", "Delete unused resources to save credit", "Turn off content filters for speed"], answer: C, why: "Deleting resources avoids using up credit." },
-];
-
-const glossary1 = [
-  ["Agent", "An LLM-based system that uses instructions, tools, and memory to take actions toward a goal."],
-  ["Bounding box", "A rectangle marking where a detected object sits in an image."],
-  ["Chunking", "Splitting documents into smaller passages before embedding them for retrieval."],
-  ["Computer vision", "AI that interprets images and video."],
-  ["Embedding", "A numeric vector that represents the meaning of text, images, or other data."],
-  ["Feature", "An input value a model uses to make a prediction."],
-  ["Generative AI", "AI that creates new content such as text, code, images, or audio."],
-  ["Grounding", "Supplying source data so a model's answer is based on, and traceable to, that data."],
-  ["Hallucination", "A fluent output that is factually wrong or unsupported."],
-  ["Inferencing", "Using a trained model to predict on new data."],
-  ["Information extraction", "Pulling structured fields from unstructured documents and images."],
-  ["Label", "The known answer a model learns to predict during training."],
-  ["Large language model", "A model trained on massive text data to understand and generate language."],
-  ["Machine learning", "Building models that learn patterns from data rather than following hand-written rules."],
-  ["Model", "The learned function that maps inputs to outputs."],
-  ["Named entity recognition", "Identifying people, places, dates, and other entities in text."],
-  ["NLP", "AI that analyzes and understands human language in text."],
-  ["OCR", "Optical character recognition: reading printed or handwritten text from images."],
-  ["Prompt", "The input text or instruction sent to a generative model."],
-  ["Prompt engineering", "Designing prompts to get more accurate, useful outputs."],
-  ["RAG", "Retrieval-augmented generation: retrieve relevant data, add it to the prompt, then generate."],
-  ["Responsible AI", "Fairness, reliability and safety, privacy and security, inclusiveness, transparency, accountability."],
-  ["Semantic segmentation", "Classifying every pixel in an image by the object it belongs to."],
-  ["Sentiment analysis", "Scoring text as positive, negative, neutral, or mixed."],
-  ["Speech recognition", "Converting spoken audio to text."],
-  ["Speech synthesis", "Converting text to spoken audio."],
-  ["SSML", "Speech Synthesis Markup Language, used to control voice, pitch, and pace."],
-  ["System prompt", "Hidden instructions that set a model's role, tone, and rules."],
-  ["Token", "A unit of text (word or sub-word) that an LLM reads and generates."],
-  ["Vector search", "Finding items whose embeddings are most similar to a query's embedding."],
-];
-
-const glossary2 = [
-  ["Agentic retrieval", "Retrieval that plans the search, splits complex questions, and ranks the best passages."],
-  ["Analyzer", "In Content Understanding, a reusable definition of what to extract from content."],
-  ["Azure Content Understanding", "Foundry Tool that extracts structured data from documents, images, audio, and video."],
-  ["Azure Language", "Foundry Tool for sentiment, entities, key phrases, and PII detection."],
-  ["Azure Speech", "Foundry Tool for speech to text, text to speech, and speech translation."],
-  ["Chat playground", "A Foundry page for testing a deployed model with instructions and settings."],
-  ["Content credentials", "Hidden labels showing that an image or video was AI-generated."],
-  ["Content filters", "Built-in safeguards that block harmful inputs and outputs."],
-  ["Deployment", "Making a model from the catalog available for use in your project."],
-  ["Foundry IQ", "The knowledge layer that connects agents to organizational data for grounded, cited answers."],
-  ["Foundry Tools", "Ready-made AI services in Foundry for specific tasks (language, speech, content understanding)."],
-  ["Knowledge base", "A searchable collection built from connected knowledge sources, used by agents."],
-  ["Knowledge source", "A place where data lives, such as files, SharePoint, or storage."],
-  ["Microsoft Azure", "Microsoft's cloud platform for renting computing, storage, and AI services."],
-  ["Microsoft Foundry", "Azure's platform that brings together AI models, Foundry Tools, and agents."],
-  ["Model catalog", "The Foundry library of AI models from Microsoft and other providers."],
-  ["Multimodal model", "A model that accepts more than one input type, such as text and images."],
-  ["Project", "A Foundry workspace holding models, agents, files, and settings."],
-  ["Resource group", "An Azure container that groups related resources for management and cleanup."],
-  ["RBAC", "Role-based access control: granting permissions based on a person's role."],
-  ["Scalability", "The ability of a system to handle growth in users or data."],
-  ["Schema", "The list of fields, with types and descriptions, that an analyzer extracts."],
 ];
 
 function quizSlides(prefix: string, part: "Part 1" | "Part 2", section: string, label: string, qs: Q[]): Slide[] {
@@ -249,6 +192,45 @@ const intro: Slide[] = [
 ];
 
 const closing: Slide[] = [
+  {
+    id: "review-center",
+    part: "Close",
+    section: "Close",
+    kicker: "Review · on your own or in class",
+    title: "Practice test and flashcards",
+    subtitle: "Built from the 200-item AI-901 practice exam and both glossaries. Everything reshuffles on every start.",
+    blocks: [
+      {
+        type: "launch",
+        items: [
+          {
+            href: "/review/test",
+            icon: "list",
+            title: "Practice test",
+            text: "Choose how many questions (1–200) and which domains. Practice mode explains every answer; exam mode scores you at the end.",
+            cta: "Start a practice test",
+            tone: "blue",
+          },
+          {
+            href: "/review/flashcards",
+            icon: "layers",
+            title: "Flashcards",
+            text: "Flip through glossary terms and exam questions. Sort cards into “got it” and “still learning”, then drill the ones you missed.",
+            cta: "Open flashcards",
+            tone: "violet",
+          },
+        ],
+      },
+    ],
+    notes: {
+      say: ["Before we close: everything you need to review is in one place. The practice test draws from the 200-question AI-901 practice exam, and the flashcards cover both glossaries plus the exam questions."],
+      ask: [{ q: "How many questions will you try tonight?", a: "Suggest 25 in practice mode first, then a 50-question run in exam mode before the real exam." }],
+      deeper: [
+        "Press E at any time during the deck to open the review center in a new tab.",
+        "Questions and answer choices are reshuffled on every start, so retakes test understanding rather than memorized positions.",
+      ],
+    },
+  },
   {
     id: "thanks",
     part: "Close",

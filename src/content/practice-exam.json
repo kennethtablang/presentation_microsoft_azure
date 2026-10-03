@@ -1,0 +1,3031 @@
+[
+ {
+  "id": 1,
+  "domain": "NLP & Text Analysis Fundamentals",
+  "q": "Which capability identifies people, places, and organizations in text?",
+  "options": [
+   "Key phrase extraction",
+   "Sentiment analysis of the text",
+   "Named entity recognition",
+   "Language detection of the text"
+  ],
+  "answer": [
+   2
+  ],
+  "why": "NER classifies text spans into categories such as Person, Location, and Organization."
+ },
+ {
+  "id": 2,
+  "domain": "NLP & Text Analysis Fundamentals",
+  "q": "Which technique labels reviews as positive, negative, neutral, or mixed?",
+  "options": [
+   "Sentiment analysis",
+   "Key phrase extraction",
+   "Entity linking",
+   "Summarization only"
+  ],
+  "answer": [
+   0
+  ],
+  "why": "Sentiment analysis returns sentiment labels and confidence scores."
+ },
+ {
+  "id": 3,
+  "domain": "NLP & Text Analysis Fundamentals",
+  "q": "Which technique condenses a long document into its key sentences?",
+  "options": [
+   "Language detection",
+   "Lemmatization",
+   "Tokenization",
+   "Summarization"
+  ],
+  "answer": [
+   3
+  ],
+  "why": "Summarization (extractive or abstractive) shortens text while keeping key points."
+ },
+ {
+  "id": 4,
+  "domain": "NLP & Text Analysis Fundamentals",
+  "q": "Key phrase extraction is best described as:",
+  "options": [
+   "Scoring the sentiment per sentence",
+   "Finding the main talking points",
+   "Removing all personal identifiers",
+   "Translating between languages"
+  ],
+  "answer": [
+   1
+  ],
+  "why": "Key phrase extraction pulls the main concepts from unstructured text."
+ },
+ {
+  "id": 5,
+  "domain": "NLP & Text Analysis Fundamentals",
+  "q": "Which Language feature detects and redacts names, phones, and emails?",
+  "options": [
+   "Language understanding",
+   "Orchestration workflow",
+   "PII detection",
+   "Custom classification"
+  ],
+  "answer": [
+   2
+  ],
+  "why": "PII detection identifies and can redact sensitive information."
+ },
+ {
+  "id": 6,
+  "domain": "NLP & Text Analysis Fundamentals",
+  "q": "Which capability returns the ISO code for text of unknown origin?",
+  "options": [
+   "Text translation",
+   "Sentiment analysis",
+   "Entity recognition",
+   "Language detection"
+  ],
+  "answer": [
+   3
+  ],
+  "why": "Language detection returns the language name, ISO code, and confidence."
+ },
+ {
+  "id": 7,
+  "domain": "NLP & Text Analysis Fundamentals",
+  "q": "Which process splits raw text into words or subword tokens?",
+  "options": [
+   "Vectorization",
+   "Tokenization",
+   "Stemming",
+   "Normalization"
+  ],
+  "answer": [
+   1
+  ],
+  "why": "Tokenization divides text into tokens as an NLP preprocessing step."
+ },
+ {
+  "id": 8,
+  "domain": "NLP & Text Analysis Fundamentals",
+  "q": "Reducing 'running', 'ran', and 'runs' to 'run' is called:",
+  "options": [
+   "Clustering",
+   "Tokenization",
+   "Lemmatization",
+   "Vectorization"
+  ],
+  "answer": [
+   2
+  ],
+  "why": "Stemming/lemmatization normalizes word variants to a root form."
+ },
+ {
+  "id": 9,
+  "domain": "NLP & Text Analysis Fundamentals",
+  "q": "Which representation places similar phrases close in vector space?",
+  "options": [
+   "Regex patterns",
+   "Word counts",
+   "One-hot codes",
+   "Embeddings"
+  ],
+  "answer": [
+   3
+  ],
+  "why": "Embeddings are dense vectors encoding semantic meaning."
+ },
+ {
+  "id": 10,
+  "domain": "NLP & Text Analysis Fundamentals",
+  "q": "Entity linking differs from NER because it also:",
+  "options": [
+   "Scores the entity's sentiment value",
+   "Links to a knowledge base",
+   "Redacts the entity from output",
+   "Translates the entity"
+  ],
+  "answer": [
+   1
+  ],
+  "why": "Entity linking connects a recognized entity to a known knowledge base record."
+ },
+ {
+  "id": 11,
+  "domain": "NLP & Text Analysis Fundamentals",
+  "q": "Which measure weights a term by frequency relative to a corpus?",
+  "options": [
+   "TF-IDF",
+   "BLEU",
+   "Perplexity",
+   "F1 score"
+  ],
+  "answer": [
+   0
+  ],
+  "why": "TF-IDF weights term importance across a document corpus."
+ },
+ {
+  "id": 12,
+  "domain": "NLP & Text Analysis Fundamentals",
+  "q": "Which two are text analysis techniques? (Select two.)",
+  "options": [
+   "Image object detection",
+   "Key phrase extraction",
+   "Sentiment analysis",
+   "Image classification"
+  ],
+  "answer": [
+   1,
+   2
+  ],
+  "why": "Key phrase extraction and sentiment analysis are NLP; the others are vision."
+ },
+ {
+  "id": 13,
+  "domain": "NLP & Text Analysis Fundamentals",
+  "q": "The Azure AI Language service is an example of which workload?",
+  "options": [
+   "Knowledge mining over documents",
+   "Natural language processing",
+   "Anomaly detection on metrics",
+   "Computer vision image workloads"
+  ],
+  "answer": [
+   1
+  ],
+  "why": "Azure AI Language provides NLP capabilities."
+ },
+ {
+  "id": 14,
+  "domain": "NLP & Text Analysis Fundamentals",
+  "q": "'The food was great but service was terrible' likely returns:",
+  "options": [
+   "Mixed",
+   "Neutral only",
+   "Positive only",
+   "Negative only"
+  ],
+  "answer": [
+   0
+  ],
+  "why": "Text with both positive and negative opinions returns mixed sentiment."
+ },
+ {
+  "id": 15,
+  "domain": "NLP & Text Analysis Fundamentals",
+  "q": "Opinion mining provides sentiment at which level?",
+  "options": [
+   "Detected-language level only",
+   "Character level only",
+   "Specific aspects in text",
+   "Document-level sentiment only"
+  ],
+  "answer": [
+   2
+  ],
+  "why": "Opinion mining links sentiment to specific aspects, not the whole document."
+ },
+ {
+  "id": 16,
+  "domain": "NLP & Text Analysis Fundamentals",
+  "q": "Which best helps a legal team grasp key points of many contracts?",
+  "options": [
+   "Text tokenization",
+   "PII detection and redaction",
+   "Language detection of the text",
+   "Extractive summarization"
+  ],
+  "answer": [
+   3
+  ],
+  "why": "Extractive summarization surfaces the key sentences."
+ },
+ {
+  "id": 17,
+  "domain": "NLP & Text Analysis Fundamentals",
+  "q": "A 'corpus' in NLP refers to:",
+  "options": [
+   "A single sentence of text",
+   "A large text collection",
+   "The list of common stop words",
+   "A neural network layer"
+  ],
+  "answer": [
+   1
+  ],
+  "why": "A corpus is a body of text used for analysis or training."
+ },
+ {
+  "id": 18,
+  "domain": "NLP & Text Analysis Fundamentals",
+  "q": "Which are often removed because they add little meaning?",
+  "options": [
+   "Stop words",
+   "Named entities",
+   "Embeddings",
+   "Key phrases"
+  ],
+  "answer": [
+   0
+  ],
+  "why": "Stop words such as 'the' and 'is' are frequently removed."
+ },
+ {
+  "id": 19,
+  "domain": "NLP & Text Analysis Fundamentals",
+  "q": "Which assigns your own categories using a model you train?",
+  "options": [
+   "Prebuilt key phrase extraction",
+   "Prebuilt sentiment",
+   "Custom classification",
+   "Language detection"
+  ],
+  "answer": [
+   2
+  ],
+  "why": "Custom text classification trains on your labeled examples."
+ },
+ {
+  "id": 20,
+  "domain": "NLP & Text Analysis Fundamentals",
+  "q": "Custom NER is most appropriate when:",
+  "options": [
+   "You only need language detection",
+   "Prebuilt types miss your domain",
+   "You only need speech translation",
+   "You only need to summarize text"
+  ],
+  "answer": [
+   1
+  ],
+  "why": "Custom NER extracts entity types specific to your domain."
+ },
+ {
+  "id": 21,
+  "domain": "NLP & Text Analysis Fundamentals",
+  "q": "Which metric evaluates machine-translated text quality?",
+  "options": [
+   "BLEU score",
+   "R-squared",
+   "Silhouette score",
+   "AUC value"
+  ],
+  "answer": [
+   0
+  ],
+  "why": "BLEU compares candidate translations to references."
+ },
+ {
+  "id": 22,
+  "domain": "NLP & Text Analysis Fundamentals",
+  "q": "Which two does Azure AI Translator support? (Select two.)",
+  "options": [
+   "Facial recognition",
+   "Text translation",
+   "Depth estimation",
+   "Language detection"
+  ],
+  "answer": [
+   1,
+   3
+  ],
+  "why": "Translator performs translation and can detect source language."
+ },
+ {
+  "id": 23,
+  "domain": "NLP & Text Analysis Fundamentals",
+  "q": "A 'confidence score' from text analytics represents:",
+  "options": [
+   "The count of tokens processed",
+   "Model certainty, 0 to 1",
+   "The billed cost of the call",
+   "The endpoint response latency"
+  ],
+  "answer": [
+   1
+  ],
+  "why": "Confidence scores express model certainty, usually 0 to 1."
+ },
+ {
+  "id": 24,
+  "domain": "NLP & Text Analysis Fundamentals",
+  "q": "Which best fits key phrase extraction over summarization?",
+  "options": [
+   "Translating a page",
+   "Writing an abstract",
+   "Tagging ticket topics",
+   "Detecting profanity"
+  ],
+  "answer": [
+   2
+  ],
+  "why": "Key phrase extraction yields concise topic terms for tagging."
+ },
+ {
+  "id": 25,
+  "domain": "NLP & Text Analysis Fundamentals",
+  "q": "Language models process text as sequences of:",
+  "options": [
+   "Tokens",
+   "Pixels",
+   "Waveforms",
+   "Bounding boxes"
+  ],
+  "answer": [
+   0
+  ],
+  "why": "Language models operate over tokens."
+ },
+ {
+  "id": 26,
+  "domain": "NLP & Text Analysis Fundamentals",
+  "q": "Which captures meaning by context, so 'bank' can differ?",
+  "options": [
+   "Static one-hot encoding",
+   "Contextual embeddings",
+   "Stop-word removal only",
+   "Simple word-frequency counts"
+  ],
+  "answer": [
+   1
+  ],
+  "why": "Contextual embeddings vary a word's vector by context."
+ },
+ {
+  "id": 27,
+  "domain": "NLP & Text Analysis Fundamentals",
+  "q": "The transformer's attention mechanism primarily lets the model:",
+  "options": [
+   "Encrypt the input tokens",
+   "Compress input images",
+   "Shrink vocabulary",
+   "Weigh token relevance"
+  ],
+  "answer": [
+   3
+  ],
+  "why": "Self-attention lets tokens attend to each other, capturing dependencies."
+ },
+ {
+  "id": 28,
+  "domain": "NLP & Text Analysis Fundamentals",
+  "q": "Which does NER NOT typically provide?",
+  "options": [
+   "A document summary",
+   "The recognized entity text",
+   "Entity category",
+   "Confidence score"
+  ],
+  "answer": [
+   0
+  ],
+  "why": "NER returns entity, category, and score—not a summary."
+ },
+ {
+  "id": 29,
+  "domain": "NLP & Text Analysis Fundamentals",
+  "q": "For an email with mixed languages, language detection returns:",
+  "options": [
+   "All languages equally",
+   "No language result at all",
+   "The predominant language",
+   "A processing error message"
+  ],
+  "answer": [
+   2
+  ],
+  "why": "Language detection returns the predominant language."
+ },
+ {
+  "id": 30,
+  "domain": "NLP & Text Analysis Fundamentals",
+  "q": "Which is unstructured data that NLP is designed to process?",
+  "options": [
+   "A structured database table",
+   "Free-form feedback text",
+   "A numeric sensor CSV file",
+   "A camera pixel matrix"
+  ],
+  "answer": [
+   1
+  ],
+  "why": "NLP targets unstructured natural language text."
+ },
+ {
+  "id": 31,
+  "domain": "NLP & Text Analysis Fundamentals",
+  "q": "Which two are Azure AI Language features? (Select two.)",
+  "options": [
+   "Audio speaker recognition",
+   "Image captioning for photos",
+   "Question answering",
+   "Conversational understanding"
+  ],
+  "answer": [
+   2,
+   3
+  ],
+  "why": "CLU and question answering are Language features."
+ },
+ {
+  "id": 32,
+  "domain": "NLP & Text Analysis Fundamentals",
+  "q": "Turning a name into '********' in text is a function of:",
+  "options": [
+   "Tokenization",
+   "Summarization",
+   "Translation",
+   "PII redaction"
+  ],
+  "answer": [
+   3
+  ],
+  "why": "PII detection can identify and redact sensitive spans."
+ },
+ {
+  "id": 33,
+  "domain": "NLP & Text Analysis Fundamentals",
+  "q": "'Grounding' data in an NLP context means:",
+  "options": [
+   "Adding factual context",
+   "Encrypting the weights",
+   "Shuffling training data",
+   "Setting temperature zero"
+  ],
+  "answer": [
+   0
+  ],
+  "why": "Grounding supplies relevant factual context to improve accuracy."
+ },
+ {
+  "id": 34,
+  "domain": "NLP & Text Analysis Fundamentals",
+  "q": "A model that predicts the next word is performing:",
+  "options": [
+   "Image segmentation",
+   "Tabular regression",
+   "Language modeling",
+   "Data clustering"
+  ],
+  "answer": [
+   2
+  ],
+  "why": "Predicting the next token is core language modeling."
+ },
+ {
+  "id": 35,
+  "domain": "NLP & Text Analysis Fundamentals",
+  "q": "Which best illustrates 'semantic similarity'?",
+  "options": [
+   "Matching by exact string equality",
+   "Matching meaning, not words",
+   "Sorting the words alphabetically",
+   "Counting the characters only"
+  ],
+  "answer": [
+   1
+  ],
+  "why": "Semantic similarity matches by meaning rather than exact wording."
+ },
+ {
+  "id": 36,
+  "domain": "NLP & Text Analysis Fundamentals",
+  "q": "Which helps detect themes across a week of social posts?",
+  "options": [
+   "Key phrase extraction",
+   "Optical flow in video",
+   "Speech synthesis output",
+   "Image object detection"
+  ],
+  "answer": [
+   0
+  ],
+  "why": "Key phrase extraction surfaces recurring themes across text items."
+ },
+ {
+  "id": 37,
+  "domain": "NLP & Text Analysis Fundamentals",
+  "q": "A 'neutral' sentiment with high confidence means the text:",
+  "options": [
+   "Had no language",
+   "Could not process",
+   "Was fully empty",
+   "Lacks clear opinion"
+  ],
+  "answer": [
+   3
+  ],
+  "why": "Neutral indicates no clearly positive or negative opinion."
+ },
+ {
+  "id": 38,
+  "domain": "NLP & Text Analysis Fundamentals",
+  "q": "Which two are NLP use cases? (Select two.)",
+  "options": [
+   "Detecting line defects",
+   "Predicting equipment failure",
+   "Routing tickets by intent",
+   "Summarizing transcripts"
+  ],
+  "answer": [
+   2,
+   3
+  ],
+  "why": "Ticket routing and transcript summarization are NLP tasks."
+ },
+ {
+  "id": 39,
+  "domain": "NLP & Text Analysis Fundamentals",
+  "q": "'Text-to-text' generation from a prompt is characteristic of:",
+  "options": [
+   "Convolutional networks",
+   "Large language models",
+   "K-means clustering",
+   "Simple decision trees"
+  ],
+  "answer": [
+   1
+  ],
+  "why": "LLMs take text prompts and generate text output."
+ },
+ {
+  "id": 40,
+  "domain": "NLP & Text Analysis Fundamentals",
+  "q": "Extractive vs abstractive summarization differ in that extractive:",
+  "options": [
+   "Rewrites the text in new words",
+   "Requires spoken audio input",
+   "Only works for English text",
+   "Selects existing sentences"
+  ],
+  "answer": [
+   3
+  ],
+  "why": "Extractive picks existing sentences; abstractive paraphrases."
+ },
+ {
+  "id": 41,
+  "domain": "Speech & Translation",
+  "q": "Which capability converts spoken audio into text?",
+  "options": [
+   "Language detection",
+   "Text-to-speech",
+   "Speech-to-text",
+   "Speech translation"
+  ],
+  "answer": [
+   2
+  ],
+  "why": "Speech-to-text transcribes spoken audio into text."
+ },
+ {
+  "id": 42,
+  "domain": "Speech & Translation",
+  "q": "Which capability generates audio from text?",
+  "options": [
+   "Key phrases",
+   "Text-to-speech",
+   "Sentiment analysis",
+   "Speech recognition"
+  ],
+  "answer": [
+   1
+  ],
+  "why": "Text-to-speech produces spoken audio from text."
+ },
+ {
+  "id": 43,
+  "domain": "Speech & Translation",
+  "q": "A hands-free assistant that hears and replies uses which two? (Select two.)",
+  "options": [
+   "Speech-to-text",
+   "Image generation",
+   "Object detection",
+   "Text-to-speech"
+  ],
+  "answer": [
+   0,
+   3
+  ],
+  "why": "Voice assistants use recognition (in) and synthesis (out)."
+ },
+ {
+  "id": 44,
+  "domain": "Speech & Translation",
+  "q": "Which outputs spoken audio in a target language from speech?",
+  "options": [
+   "Text summarization",
+   "Custom vision image models",
+   "Speech translation",
+   "Anomaly detection"
+  ],
+  "answer": [
+   2
+  ],
+  "why": "Speech translation recognizes speech and outputs a translation."
+ },
+ {
+  "id": 45,
+  "domain": "Speech & Translation",
+  "q": "Custom Neural Voice is used to:",
+  "options": [
+   "Redact PII from audio",
+   "Build a branded voice",
+   "Detect the languages",
+   "Cluster documents"
+  ],
+  "answer": [
+   1
+  ],
+  "why": "Custom Neural Voice creates a distinctive synthetic voice."
+ },
+ {
+  "id": 46,
+  "domain": "Speech & Translation",
+  "q": "Speaker recognition is primarily used to:",
+  "options": [
+   "Transcribe the audio",
+   "Generate an output image",
+   "Translate the spoken text",
+   "Identify who is speaking"
+  ],
+  "answer": [
+   3
+  ],
+  "why": "Speaker recognition identifies or verifies a speaker."
+ },
+ {
+  "id": 47,
+  "domain": "Speech & Translation",
+  "q": "Which markup controls pitch, pauses, and pronunciation in speech?",
+  "options": [
+   "SSML",
+   "YAML",
+   "JSON",
+   "HTML"
+  ],
+  "answer": [
+   0
+  ],
+  "why": "SSML gives fine-grained control over synthesized speech."
+ },
+ {
+  "id": 48,
+  "domain": "Speech & Translation",
+  "q": "Which is needed for live captions of customer calls?",
+  "options": [
+   "Text-to-speech synthesis",
+   "Real-time speech-to-text",
+   "Form field recognition",
+   "Image classification"
+  ],
+  "answer": [
+   1
+  ],
+  "why": "Real-time speech-to-text produces live captions."
+ },
+ {
+  "id": 49,
+  "domain": "Speech & Translation",
+  "q": "Which two can a multimodal model accept besides text? (Select two.)",
+  "options": [
+   "Spoken audio",
+   "Disk volumes",
+   "Compiled binaries",
+   "Images"
+  ],
+  "answer": [
+   0,
+   3
+  ],
+  "why": "Multimodal models accept text, images, and audio."
+ },
+ {
+  "id": 50,
+  "domain": "Speech & Translation",
+  "q": "Batch transcription is best suited for:",
+  "options": [
+   "Image content analysis",
+   "Real-time conversation chat",
+   "Live streaming captioning",
+   "Pre-recorded audio at scale"
+  ],
+  "answer": [
+   3
+  ],
+  "why": "Batch transcription processes stored audio asynchronously."
+ },
+ {
+  "id": 51,
+  "domain": "Speech & Translation",
+  "q": "'Diarization' in transcription refers to:",
+  "options": [
+   "Attributing speech to speakers",
+   "Redacting profanity from audio",
+   "Translating the transcript",
+   "Compressing the audio file"
+  ],
+  "answer": [
+   0
+  ],
+  "why": "Diarization labels which speaker said what."
+ },
+ {
+  "id": 52,
+  "domain": "Speech & Translation",
+  "q": "To take spoken prompts and reply with speech via one model, use:",
+  "options": [
+   "A simple rules engine",
+   "A relational SQL database",
+   "A deployed multimodal model",
+   "A tabular regression model"
+  ],
+  "answer": [
+   2
+  ],
+  "why": "A multimodal model handles spoken input and spoken responses."
+ },
+ {
+  "id": 53,
+  "domain": "Speech & Translation",
+  "q": "Which scenario best fits text-to-speech?",
+  "options": [
+   "Clustering customers",
+   "Reading e-books aloud",
+   "Forecasting sales",
+   "Detecting photo objects"
+  ],
+  "answer": [
+   1
+  ],
+  "why": "Text-to-speech supports accessibility such as reading aloud."
+ },
+ {
+  "id": 54,
+  "domain": "Speech & Translation",
+  "q": "Besides plain text, Azure AI Translator also supports:",
+  "options": [
+   "Speaker identity verification",
+   "Anomaly detection on metrics",
+   "Image object detection",
+   "Document layout translation"
+  ],
+  "answer": [
+   3
+  ],
+  "why": "Translator offers document translation preserving layout."
+ },
+ {
+  "id": 55,
+  "domain": "Speech & Translation",
+  "q": "Which two can real-time speech translation output? (Select two.)",
+  "options": [
+   "Translated speech",
+   "A trained model",
+   "Translated text",
+   "A bounding box"
+  ],
+  "answer": [
+   0,
+   2
+  ],
+  "why": "Speech translation outputs translated text and speech."
+ },
+ {
+  "id": 56,
+  "domain": "Speech & Translation",
+  "q": "Pronunciation assessment is designed to:",
+  "options": [
+   "Score spoken accuracy",
+   "Translate documents",
+   "Extract named entities",
+   "Generate output images"
+  ],
+  "answer": [
+   0
+  ],
+  "why": "Pronunciation assessment scores accuracy, fluency, and completeness."
+ },
+ {
+  "id": 57,
+  "domain": "Speech & Translation",
+  "q": "A global portal enabling cross-language text chat would use:",
+  "options": [
+   "Object detection",
+   "Speech synthesis",
+   "Text translation",
+   "Depth mapping"
+  ],
+  "answer": [
+   2
+  ],
+  "why": "Text translation enables cross-language written chat."
+ },
+ {
+  "id": 58,
+  "domain": "Speech & Translation",
+  "q": "Whisper models in Azure OpenAI are primarily used for:",
+  "options": [
+   "Image generation",
+   "Tabular regression",
+   "Web crawling",
+   "Speech-to-text"
+  ],
+  "answer": [
+   3
+  ],
+  "why": "Whisper is a speech recognition model."
+ },
+ {
+  "id": 59,
+  "domain": "Speech & Translation",
+  "q": "A valid consideration when deploying speech synthesis for a brand:",
+  "options": [
+   "Disable all scores",
+   "Pick a voice, use SSML",
+   "Encrypt text into images",
+   "Remove all the vowels"
+  ],
+  "answer": [
+   1
+  ],
+  "why": "Choosing neural voices and using SSML keeps output on-brand."
+ },
+ {
+  "id": 60,
+  "domain": "Speech & Translation",
+  "q": "Subtitling a foreign video needs which two? (Select two.)",
+  "options": [
+   "Form filling",
+   "Speech-to-text",
+   "Image classification",
+   "Translation"
+  ],
+  "answer": [
+   1,
+   3
+  ],
+  "why": "Transcribe, then translate the text or speech."
+ },
+ {
+  "id": 61,
+  "domain": "Speech & Translation",
+  "q": "Which statement about neural voices is TRUE?",
+  "options": [
+   "They cannot use SSML tuning",
+   "They sound natural and human",
+   "They need no text input",
+   "They support one language"
+  ],
+  "answer": [
+   1
+  ],
+  "why": "Neural voices produce natural speech and support SSML."
+ },
+ {
+  "id": 62,
+  "domain": "Speech & Translation",
+  "q": "Real-time transcription is preferred over batch when:",
+  "options": [
+   "You analyze images",
+   "There is no audio",
+   "Files run overnight",
+   "Audio streams live"
+  ],
+  "answer": [
+   3
+  ],
+  "why": "Real-time transcription suits low-latency live audio."
+ },
+ {
+  "id": 63,
+  "domain": "Speech & Translation",
+  "q": "Which is NOT a Speech service capability?",
+  "options": [
+   "Character recognition",
+   "Speech-to-text transcription",
+   "Speech translation",
+   "Text-to-speech synthesis"
+  ],
+  "answer": [
+   0
+  ],
+  "why": "OCR is a Vision capability, not part of Speech."
+ },
+ {
+  "id": 64,
+  "domain": "Speech & Translation",
+  "q": "A feature letting a visually impaired user hear text depends on:",
+  "options": [
+   "Data clustering",
+   "Object detection",
+   "Speech synthesis",
+   "Linear regression"
+  ],
+  "answer": [
+   2
+  ],
+  "why": "Screen readers rely on text-to-speech."
+ },
+ {
+  "id": 65,
+  "domain": "Speech & Translation",
+  "q": "Which two most affect speech-to-text accuracy? (Select two.)",
+  "options": [
+   "File creation date",
+   "Microphone color",
+   "Background noise",
+   "Speaker accent"
+  ],
+  "answer": [
+   2,
+   3
+  ],
+  "why": "Noise and accent/clarity affect recognition accuracy."
+ },
+ {
+  "id": 66,
+  "domain": "Conversational AI, CLU & Question Answering",
+  "q": "Conversational Language Understanding (CLU) is used to:",
+  "options": [
+   "Find intents and entities",
+   "Detect data anomalies",
+   "Translate whole documents",
+   "Generate output images"
+  ],
+  "answer": [
+   0
+  ],
+  "why": "CLU classifies intent and extracts entities from utterances."
+ },
+ {
+  "id": 67,
+  "domain": "Conversational AI, CLU & Question Answering",
+  "q": "In CLU, an 'intent' represents:",
+  "options": [
+   "The bot reply",
+   "The user's goal",
+   "A data value",
+   "A confidence"
+  ],
+  "answer": [
+   1
+  ],
+  "why": "An intent captures what the user wants to do."
+ },
+ {
+  "id": 68,
+  "domain": "Conversational AI, CLU & Question Answering",
+  "q": "In CLU, an 'entity' represents:",
+  "options": [
+   "The user's overall goal",
+   "The Azure deployment region",
+   "The training algorithm",
+   "Extracted info like a date"
+  ],
+  "answer": [
+   3
+  ],
+  "why": "Entities are data values pulled from utterances."
+ },
+ {
+  "id": 69,
+  "domain": "Conversational AI, CLU & Question Answering",
+  "q": "An 'utterance' in CLU is:",
+  "options": [
+   "A REST API endpoint",
+   "A saved model checkpoint",
+   "The user's input phrase",
+   "An intent category label"
+  ],
+  "answer": [
+   2
+  ],
+  "why": "An utterance is the user's spoken or typed input."
+ },
+ {
+  "id": 70,
+  "domain": "Conversational AI, CLU & Question Answering",
+  "q": "Which feature routes an utterance to CLU, QnA, or LUIS projects?",
+  "options": [
+   "Orchestration workflow",
+   "Text summarization",
+   "PII detection and redaction",
+   "Key phrase extraction"
+  ],
+  "answer": [
+   0
+  ],
+  "why": "Orchestration workflow routes utterances to the right project."
+ },
+ {
+  "id": 71,
+  "domain": "Conversational AI, CLU & Question Answering",
+  "q": "Custom question answering is best suited to:",
+  "options": [
+   "Generating photorealistic art",
+   "Building a QnA knowledge base",
+   "Detecting transaction fraud",
+   "Forecasting future revenue"
+  ],
+  "answer": [
+   1
+  ],
+  "why": "Custom question answering builds a QnA knowledge base for bots."
+ },
+ {
+  "id": 72,
+  "domain": "Conversational AI, CLU & Question Answering",
+  "q": "A QnA knowledge base can be created from:",
+  "options": [
+   "Only handwritten notes",
+   "Only from SQL databases",
+   "Only from image files",
+   "FAQ pages and documents"
+  ],
+  "answer": [
+   3
+  ],
+  "why": "You can import FAQ URLs, files, and documents."
+ },
+ {
+  "id": 73,
+  "domain": "Conversational AI, CLU & Question Answering",
+  "q": "Which framework builds and deploys bots on Azure?",
+  "options": [
+   "Azure Bot Service",
+   "Azure Kubernetes",
+   "Azure Data Factory",
+   "Azure Synapse"
+  ],
+  "answer": [
+   0
+  ],
+  "why": "Azure Bot Service builds and deploys bots across channels."
+ },
+ {
+  "id": 74,
+  "domain": "Conversational AI, CLU & Question Answering",
+  "q": "'Chit-chat' added to a QnA base is used to:",
+  "options": [
+   "Detect the languages",
+   "Analyze uploaded images",
+   "Handle casual small talk",
+   "Encrypt the user data"
+  ],
+  "answer": [
+   2
+  ],
+  "why": "Chit-chat gives bots friendly small-talk responses."
+ },
+ {
+  "id": 75,
+  "domain": "Conversational AI, CLU & Question Answering",
+  "q": "After training a CLU model, what makes it callable?",
+  "options": [
+   "Exporting to CSV",
+   "Publishing the model",
+   "Deleting intents",
+   "Running summaries"
+  ],
+  "answer": [
+   1
+  ],
+  "why": "You must deploy/publish the model to expose an endpoint."
+ },
+ {
+  "id": 76,
+  "domain": "Conversational AI, CLU & Question Answering",
+  "q": "Which two must you define when authoring CLU? (Select two.)",
+  "options": [
+   "Bounding boxes",
+   "Neural voices",
+   "Entities",
+   "Intents"
+  ],
+  "answer": [
+   2,
+   3
+  ],
+  "why": "CLU authoring defines intents and entities."
+ },
+ {
+  "id": 77,
+  "domain": "Conversational AI, CLU & Question Answering",
+  "q": "A bot answering handbook questions and escalating uses mainly:",
+  "options": [
+   "Image object detection",
+   "Audio speaker recognition",
+   "Image generation output",
+   "Custom question answering"
+  ],
+  "answer": [
+   3
+  ],
+  "why": "Custom question answering serves handbook Q&A."
+ },
+ {
+  "id": 78,
+  "domain": "Conversational AI, CLU & Question Answering",
+  "q": "In orchestration, a received utterance is:",
+  "options": [
+   "The request always errors",
+   "The utterance becomes art",
+   "Routed to the right project",
+   "The utterance is ignored"
+  ],
+  "answer": [
+   2
+  ],
+  "why": "The orchestrator routes utterances to the best project."
+ },
+ {
+  "id": 79,
+  "domain": "Conversational AI, CLU & Question Answering",
+  "q": "An Azure Bot Service bot can be surfaced on:",
+  "options": [
+   "Only physical kiosks",
+   "Web chat and Teams",
+   "Only the email channel",
+   "Only the fax channel"
+  ],
+  "answer": [
+   1
+  ],
+  "why": "Bot Service supports many channels including web chat and Teams."
+ },
+ {
+  "id": 80,
+  "domain": "Conversational AI, CLU & Question Answering",
+  "q": "Which best distinguishes CLU from question answering?",
+  "options": [
+   "CLU finds intent; QnA retrieves",
+   "CLU only handles images",
+   "QnA only handles audio",
+   "The two are identical"
+  ],
+  "answer": [
+   0
+  ],
+  "why": "CLU drives actions via intent; QnA retrieves stored answers."
+ },
+ {
+  "id": 81,
+  "domain": "Conversational AI, CLU & Question Answering",
+  "q": "A CLU confidence threshold is used to:",
+  "options": [
+   "Translates the output text",
+   "Sets the model's price",
+   "Encrypts the model file",
+   "Decide if intent is reliable"
+  ],
+  "answer": [
+   3
+  ],
+  "why": "Apps compare top-intent confidence to a threshold before acting."
+ },
+ {
+  "id": 82,
+  "domain": "Conversational AI, CLU & Question Answering",
+  "q": "Which is a well-formed intent name for a travel bot?",
+  "options": [
+   "A JSON payload",
+   "BookFlight",
+   "A numeric score",
+   "https://"
+  ],
+  "answer": [
+   1
+  ],
+  "why": "Intents describe user goals, e.g., BookFlight."
+ },
+ {
+  "id": 83,
+  "domain": "Conversational AI, CLU & Question Answering",
+  "q": "To improve CLU accuracy, you should:",
+  "options": [
+   "Add varied labeled utterances",
+   "Disable model training",
+   "Remove every training utterance",
+   "Randomize the entity labels"
+  ],
+  "answer": [
+   0
+  ],
+  "why": "More diverse labeled utterances improve recognition."
+ },
+ {
+  "id": 84,
+  "domain": "Conversational AI, CLU & Question Answering",
+  "q": "Which two does a CLU endpoint return? (Select two.)",
+  "options": [
+   "Extracted entities",
+   "A compiled executable",
+   "Predicted intent",
+   "A rendered 3D model"
+  ],
+  "answer": [
+   0,
+   2
+  ],
+  "why": "CLU returns the predicted intent and extracted entities."
+ },
+ {
+  "id": 85,
+  "domain": "Conversational AI, CLU & Question Answering",
+  "q": "A prebuilt entity (like date/time) is useful because it:",
+  "options": [
+   "Encrypts the input data",
+   "Translates spoken speech",
+   "Works without training",
+   "Generates output images"
+  ],
+  "answer": [
+   2
+  ],
+  "why": "Prebuilt entities recognize common types out of the box."
+ },
+ {
+  "id": 86,
+  "domain": "Conversational AI, CLU & Question Answering",
+  "q": "Which is NOT a good fit for a conversational bot?",
+  "options": [
+   "Answering HR questions",
+   "Guiding account setup",
+   "Triaging incoming IT tickets",
+   "Large physics simulations"
+  ],
+  "answer": [
+   3
+  ],
+  "why": "Heavy numerical simulation is not a conversational AI use case."
+ },
+ {
+  "id": 87,
+  "domain": "Conversational AI, CLU & Question Answering",
+  "q": "Active learning in question answering helps you:",
+  "options": [
+   "Refine the knowledge base",
+   "Translate the documents",
+   "Detect image objects",
+   "Generate synthetic voices"
+  ],
+  "answer": [
+   0
+  ],
+  "why": "Active learning suggests question variations to refine QnA pairs."
+ },
+ {
+  "id": 88,
+  "domain": "Conversational AI, CLU & Question Answering",
+  "q": "A 'multi-turn' conversation in question answering is:",
+  "options": [
+   "A scheduled batch job",
+   "A single question and answer",
+   "Follow-ups toward an answer",
+   "An image-processing pipeline"
+  ],
+  "answer": [
+   2
+  ],
+  "why": "Multi-turn QnA uses follow-up prompts to reach the answer."
+ },
+ {
+  "id": 89,
+  "domain": "Conversational AI, CLU & Question Answering",
+  "q": "A bot uses a predicted intent mainly to:",
+  "options": [
+   "Change the pricing plan",
+   "Pick the right dialog",
+   "Encrypt the network",
+   "Retrain the vision model"
+  ],
+  "answer": [
+   1
+  ],
+  "why": "The bot maps the intent to a dialog or action."
+ },
+ {
+  "id": 90,
+  "domain": "Conversational AI, CLU & Question Answering",
+  "q": "Which two are reasons to use orchestration? (Select two.)",
+  "options": [
+   "Compress input images",
+   "One endpoint, many projects",
+   "Combine intent and Q&A",
+   "Render output video"
+  ],
+  "answer": [
+   1,
+   2
+  ],
+  "why": "Orchestration unifies routing across projects behind one endpoint."
+ },
+ {
+  "id": 91,
+  "domain": "Conversational AI, CLU & Question Answering",
+  "q": "A benefit of managed Language features vs building from scratch:",
+  "options": [
+   "It always has zero cost",
+   "No model testing is required",
+   "No training data is needed",
+   "Prebuilt tooling saves effort"
+  ],
+  "answer": [
+   3
+  ],
+  "why": "Managed features provide ready tooling and endpoints."
+ },
+ {
+  "id": 92,
+  "domain": "Conversational AI, CLU & Question Answering",
+  "q": "In 'What time do you open Sunday?', 'Sunday' is likely a(n):",
+  "options": [
+   "Entity",
+   "Intent",
+   "Score",
+   "Slot"
+  ],
+  "answer": [
+   0
+  ],
+  "why": "'Sunday' is a data value (entity); the intent might be GetHours."
+ },
+ {
+  "id": 93,
+  "domain": "Conversational AI, CLU & Question Answering",
+  "q": "Which practice improves a QnA bot's reliability?",
+  "options": [
+   "Delete the knowledge base weekly",
+   "Review unanswered questions",
+   "Remove all defined synonyms",
+   "Turn off all confidence scores"
+  ],
+  "answer": [
+   1
+  ],
+  "why": "Reviewing gaps and expanding the KB improves coverage."
+ },
+ {
+  "id": 94,
+  "domain": "Conversational AI, CLU & Question Answering",
+  "q": "Synonyms in a QnA base help the bot:",
+  "options": [
+   "Compress the files",
+   "Generate spoken audio",
+   "Detect faces in images",
+   "Match varied wordings"
+  ],
+  "answer": [
+   3
+  ],
+  "why": "Synonyms map varied phrasings to the same answer."
+ },
+ {
+  "id": 95,
+  "domain": "Conversational AI, CLU & Question Answering",
+  "q": "How do Bot Service and Azure AI Language relate?",
+  "options": [
+   "Bot Service makes images",
+   "The two are unrelated",
+   "Bot hosts; Language understands",
+   "Language builds virtual machines"
+  ],
+  "answer": [
+   2
+  ],
+  "why": "Bot Service delivers the bot; Language provides understanding and Q&A."
+ },
+ {
+  "id": 96,
+  "domain": "Conversational AI, CLU & Question Answering",
+  "q": "A 'None' intent in CLU is used to:",
+  "options": [
+   "Generate output images",
+   "Catch unmatched utterances",
+   "Store user passwords",
+   "Translate the text"
+  ],
+  "answer": [
+   1
+  ],
+  "why": "The None intent catches out-of-scope utterances."
+ },
+ {
+  "id": 97,
+  "domain": "Conversational AI, CLU & Question Answering",
+  "q": "Which two help judge CLU model quality? (Select two.)",
+  "options": [
+   "Frames per second",
+   "Precision",
+   "Disk IOPS",
+   "Recall"
+  ],
+  "answer": [
+   1,
+   3
+  ],
+  "why": "Precision and recall are standard classification metrics."
+ },
+ {
+  "id": 98,
+  "domain": "Conversational AI, CLU & Question Answering",
+  "q": "Before an app can call a custom QnA project, you must:",
+  "options": [
+   "Disable the prediction endpoint",
+   "Convert to a vision model",
+   "Delete all QnA pairs",
+   "Deploy the knowledge base"
+  ],
+  "answer": [
+   3
+  ],
+  "why": "Deploying the knowledge base exposes a callable endpoint."
+ },
+ {
+  "id": 99,
+  "domain": "Conversational AI, CLU & Question Answering",
+  "q": "Best first step when designing a conversational solution:",
+  "options": [
+   "Define intents and scope",
+   "Generate 3D scene assets",
+   "Encrypt all messages",
+   "Buy the biggest GPUs"
+  ],
+  "answer": [
+   0
+  ],
+  "why": "Defining scope (intents/scenarios) is the foundational step."
+ },
+ {
+  "id": 100,
+  "domain": "Generative AI & Prompt Engineering",
+  "q": "A large language model is trained to:",
+  "options": [
+   "Compress video files",
+   "Classify input images",
+   "Predict and generate text",
+   "Detect equipment sensor faults"
+  ],
+  "answer": [
+   2
+  ],
+  "why": "LLMs learn language patterns to predict and generate text."
+ },
+ {
+  "id": 101,
+  "domain": "Generative AI & Prompt Engineering",
+  "q": "Which technique gives the model worked examples in the prompt?",
+  "options": [
+   "Model fine-tuning",
+   "Data grounding",
+   "Zero-shot prompting",
+   "Few-shot prompting"
+  ],
+  "answer": [
+   3
+  ],
+  "why": "Few-shot prompting includes examples to steer responses."
+ },
+ {
+  "id": 102,
+  "domain": "Generative AI & Prompt Engineering",
+  "q": "Adding relevant context in the prompt to improve quality is called:",
+  "options": [
+   "Diarization",
+   "Grounding",
+   "Tokenization",
+   "Quantization"
+  ],
+  "answer": [
+   1
+  ],
+  "why": "Grounding injects relevant context for accurate responses."
+ },
+ {
+  "id": 103,
+  "domain": "Generative AI & Prompt Engineering",
+  "q": "A system message (system prompt) is used to:",
+  "options": [
+   "Set role, tone, and rules",
+   "Encrypt the API request",
+   "Render an output image",
+   "Store the API access key"
+  ],
+  "answer": [
+   0
+  ],
+  "why": "The system message sets persona, tone, and guardrails."
+ },
+ {
+  "id": 104,
+  "domain": "Generative AI & Prompt Engineering",
+  "q": "Which parameter controls output randomness in an LLM?",
+  "options": [
+   "Latency",
+   "Deployment region",
+   "Token cost",
+   "Temperature"
+  ],
+  "answer": [
+   3
+  ],
+  "why": "Temperature adjusts randomness; lower is more deterministic."
+ },
+ {
+  "id": 105,
+  "domain": "Generative AI & Prompt Engineering",
+  "q": "Fine-tuning differs from prompt engineering because it:",
+  "options": [
+   "It needs no training data",
+   "Updates model weights",
+   "Only edits the prompt",
+   "It runs entirely in-browser"
+  ],
+  "answer": [
+   1
+  ],
+  "why": "Fine-tuning updates parameters with new training data."
+ },
+ {
+  "id": 106,
+  "domain": "Generative AI & Prompt Engineering",
+  "q": "Retrieval-Augmented Generation (RAG) improves responses by:",
+  "options": [
+   "Maximizing the temperature",
+   "Dropping the system prompt",
+   "Grounding with retrieved docs",
+   "Disabling all embeddings"
+  ],
+  "answer": [
+   2
+  ],
+  "why": "RAG retrieves relevant content and grounds the model."
+ },
+ {
+  "id": 107,
+  "domain": "Generative AI & Prompt Engineering",
+  "q": "Confident but false LLM output is commonly called a:",
+  "options": [
+   "Regression",
+   "Tokenization",
+   "Convolution",
+   "Hallucination"
+  ],
+  "answer": [
+   3
+  ],
+  "why": "Hallucination is plausible but false model output."
+ },
+ {
+  "id": 108,
+  "domain": "Generative AI & Prompt Engineering",
+  "q": "Which two reduce hallucinations? (Select two.)",
+  "options": [
+   "Maxing temperature",
+   "Grounding with data",
+   "Removing context",
+   "Clear system prompts"
+  ],
+  "answer": [
+   1,
+   3
+  ],
+  "why": "Grounding and precise prompting reduce fabrication."
+ },
+ {
+  "id": 109,
+  "domain": "Generative AI & Prompt Engineering",
+  "q": "'Zero-shot' prompting means:",
+  "options": [
+   "Adding spoken audio input",
+   "Retraining the whole model",
+   "Giving five worked examples",
+   "No examples in the prompt"
+  ],
+  "answer": [
+   3
+  ],
+  "why": "Zero-shot gives instructions without examples."
+ },
+ {
+  "id": 110,
+  "domain": "Generative AI & Prompt Engineering",
+  "q": "Embeddings in a generative solution are mainly used to:",
+  "options": [
+   "Compress the audio",
+   "Render the user interface",
+   "Enable semantic search",
+   "Encrypt the prompts"
+  ],
+  "answer": [
+   2
+  ],
+  "why": "Embeddings enable semantic search that powers retrieval."
+ },
+ {
+  "id": 111,
+  "domain": "Generative AI & Prompt Engineering",
+  "q": "Which describes a typical RAG pipeline?",
+  "options": [
+   "Embed, retrieve, ground, generate",
+   "Render, classify, then cluster",
+   "Generate, then delete the data",
+   "Translate, then summarize only"
+  ],
+  "answer": [
+   0
+  ],
+  "why": "RAG embeds the query, retrieves, grounds, then generates."
+ },
+ {
+  "id": 112,
+  "domain": "Generative AI & Prompt Engineering",
+  "q": "A 'token' for LLM pricing and limits is:",
+  "options": [
+   "A GPU core",
+   "A unit of text",
+   "A database row",
+   "A security cert"
+  ],
+  "answer": [
+   1
+  ],
+  "why": "Tokens are text units billed and constrained by context."
+ },
+ {
+  "id": 113,
+  "domain": "Generative AI & Prompt Engineering",
+  "q": "The 'context window' of an LLM is:",
+  "options": [
+   "The number of users",
+   "The screen resolution",
+   "Max tokens it considers",
+   "The training epochs"
+  ],
+  "answer": [
+   2
+  ],
+  "why": "The context window is the token limit for input plus output."
+ },
+ {
+  "id": 114,
+  "domain": "Generative AI & Prompt Engineering",
+  "q": "Which two are prompt engineering techniques? (Select two.)",
+  "options": [
+   "Providing examples",
+   "Clear system message",
+   "Truncating randomly",
+   "Deleting the weights"
+  ],
+  "answer": [
+   0,
+   1
+  ],
+  "why": "Few-shot examples and clear system messages are core techniques."
+ },
+ {
+  "id": 115,
+  "domain": "Generative AI & Prompt Engineering",
+  "q": "When is fine-tuning preferable to prompting or RAG?",
+  "options": [
+   "To avoid any model training",
+   "When you have no training data",
+   "Specialized task with data",
+   "For a single one-off answer"
+  ],
+  "answer": [
+   2
+  ],
+  "why": "Fine-tuning suits specialized, repeatable tasks with good data."
+ },
+ {
+  "id": 116,
+  "domain": "Generative AI & Prompt Engineering",
+  "q": "A 'foundation model' is best described as:",
+  "options": [
+   "A single spreadsheet formula",
+   "Broadly pretrained, adaptable",
+   "A small rules-based script",
+   "A relational database index"
+  ],
+  "answer": [
+   1
+  ],
+  "why": "Foundation models are broadly pretrained and adaptable."
+ },
+ {
+  "id": 117,
+  "domain": "Generative AI & Prompt Engineering",
+  "q": "Chain-of-thought prompting encourages the model to:",
+  "options": [
+   "Show reasoning steps",
+   "Skip the question",
+   "Encrypt its reasoning",
+   "Return only images"
+  ],
+  "answer": [
+   0
+  ],
+  "why": "Chain-of-thought elicits step-by-step reasoning."
+ },
+ {
+  "id": 118,
+  "domain": "Generative AI & Prompt Engineering",
+  "q": "Which is an example of a generative AI workload?",
+  "options": [
+   "Sorting a number list",
+   "Indexing a database",
+   "Drafting an email",
+   "Pinging a server"
+  ],
+  "answer": [
+   2
+  ],
+  "why": "Generating text from an instruction is generative AI."
+ },
+ {
+  "id": 119,
+  "domain": "Generative AI & Prompt Engineering",
+  "q": "A 'multimodal' generative model can:",
+  "options": [
+   "Only handle plain text",
+   "Only handle audio",
+   "Only handle numbers",
+   "Handle text and images"
+  ],
+  "answer": [
+   3
+  ],
+  "why": "Multimodal models work across modalities."
+ },
+ {
+  "id": 120,
+  "domain": "Generative AI & Prompt Engineering",
+  "q": "Which two are used for image generation? (Select two.)",
+  "options": [
+   "DALL-E",
+   "The Whisper model",
+   "Diffusion models",
+   "BERT classifier"
+  ],
+  "answer": [
+   0,
+   2
+  ],
+  "why": "DALL-E and diffusion models generate images."
+ },
+ {
+  "id": 121,
+  "domain": "Generative AI & Prompt Engineering",
+  "q": "Lowering the temperature makes output:",
+  "options": [
+   "More random output",
+   "Encrypted output",
+   "More deterministic",
+   "Always longer output"
+  ],
+  "answer": [
+   2
+  ],
+  "why": "Lower temperature yields more focused, deterministic output."
+ },
+ {
+  "id": 122,
+  "domain": "Generative AI & Prompt Engineering",
+  "q": "Which prompt best yields a structured response?",
+  "options": [
+   "Clear, specific instructions",
+   "A completely empty prompt",
+   "A single random word",
+   "Only punctuation marks"
+  ],
+  "answer": [
+   0
+  ],
+  "why": "Specific, constraint-rich prompts guide better output."
+ },
+ {
+  "id": 123,
+  "domain": "Generative AI & Prompt Engineering",
+  "q": "'max_tokens' in a request controls:",
+  "options": [
+   "The active user count",
+   "The number of GPUs",
+   "The database size",
+   "Max response length"
+  ],
+  "answer": [
+   3
+  ],
+  "why": "max_tokens caps generated output length."
+ },
+ {
+  "id": 124,
+  "domain": "Generative AI & Prompt Engineering",
+  "q": "'Grounding data' from a vector store in RAG is:",
+  "options": [
+   "Random noise added in",
+   "Retrieved relevant context",
+   "A hardware GPU driver",
+   "The model license file"
+  ],
+  "answer": [
+   1
+  ],
+  "why": "Grounding data are retrieved chunks added as context."
+ },
+ {
+  "id": 125,
+  "domain": "Generative AI & Prompt Engineering",
+  "q": "A key limit of relying only on pretrained knowledge is that it:",
+  "options": [
+   "May be stale or private-blind",
+   "It only works offline",
+   "It cannot be prompted",
+   "It can never generate text"
+  ],
+  "answer": [
+   0
+  ],
+  "why": "Pretrained knowledge can be outdated or lack private data."
+ },
+ {
+  "id": 126,
+  "domain": "Generative AI & Prompt Engineering",
+  "q": "Which two are appropriate uses of generative AI? (Select two.)",
+  "options": [
+   "Drafting marketing copy",
+   "Guaranteeing 100% facts",
+   "Removing all oversight",
+   "Summarizing reports"
+  ],
+  "answer": [
+   0,
+   3
+  ],
+  "why": "Summarizing and drafting fit; factual guarantees do not."
+ },
+ {
+  "id": 127,
+  "domain": "Generative AI & Prompt Engineering",
+  "q": "A prompt template is useful because it:",
+  "options": [
+   "Standardizes reusable prompts",
+   "Encrypts the API calls",
+   "Detects faces in images",
+   "Provisions new GPUs"
+  ],
+  "answer": [
+   0
+  ],
+  "why": "Prompt templates parameterize prompts for reuse."
+ },
+ {
+  "id": 128,
+  "domain": "Generative AI & Prompt Engineering",
+  "q": "Why do clear system prompts matter for safety?",
+  "options": [
+   "They compress the models",
+   "They only raise token cost",
+   "They set behavior boundaries",
+   "They translate the output"
+  ],
+  "answer": [
+   2
+  ],
+  "why": "System prompts define guardrails for safe, on-task behavior."
+ },
+ {
+  "id": 129,
+  "domain": "Azure AI Foundry & Deployment",
+  "q": "Microsoft Foundry is best described as a platform to:",
+  "options": [
+   "Edit data spreadsheets",
+   "Build and deploy AI apps",
+   "Run a relational SQL database",
+   "Filter network traffic"
+  ],
+  "answer": [
+   1
+  ],
+  "why": "Foundry builds, deploys, and manages AI solutions and agents."
+ },
+ {
+  "id": 130,
+  "domain": "Azure AI Foundry & Deployment",
+  "q": "The model catalog in Foundry lets you:",
+  "options": [
+   "Store relational SQL tables",
+   "Compress input images",
+   "Configure DNS records",
+   "Select models to deploy"
+  ],
+  "answer": [
+   3
+  ],
+  "why": "The catalog offers models to compare, select, and deploy."
+ },
+ {
+  "id": 131,
+  "domain": "Azure AI Foundry & Deployment",
+  "q": "Which Foundry option gives a pay-per-call, no-infra endpoint?",
+  "options": [
+   "A printed report",
+   "A spreadsheet",
+   "Serverless API",
+   "Your own rack server"
+  ],
+  "answer": [
+   2
+  ],
+  "why": "Serverless API gives a managed, pay-per-use endpoint."
+ },
+ {
+  "id": 132,
+  "domain": "Azure AI Foundry & Deployment",
+  "q": "Which Foundry option gives dedicated compute and more control?",
+  "options": [
+   "A DNS record",
+   "Managed Compute",
+   "A style sheet",
+   "A CSV export"
+  ],
+  "answer": [
+   1
+  ],
+  "why": "Managed Compute deploys to dedicated managed infrastructure."
+ },
+ {
+  "id": 133,
+  "domain": "Azure AI Foundry & Deployment",
+  "q": "To test a model's responses without code, you would use:",
+  "options": [
+   "The portal playground",
+   "A single firewall rule",
+   "A spreadsheet macro",
+   "A raw system disk image"
+  ],
+  "answer": [
+   0
+  ],
+  "why": "The Foundry playground tests prompts and models interactively."
+ },
+ {
+  "id": 134,
+  "domain": "Azure AI Foundry & Deployment",
+  "q": "An 'agent' in Foundry is best described as:",
+  "options": [
+   "A physical hardware robot",
+   "A physical network switch",
+   "A database update trigger",
+   "A tool-using AI assistant"
+  ],
+  "answer": [
+   3
+  ],
+  "why": "A Foundry agent pairs a model with instructions and tools."
+ },
+ {
+  "id": 135,
+  "domain": "Azure AI Foundry & Deployment",
+  "q": "Which SDK builds a chat client calling a Foundry model?",
+  "options": [
+   "A disk partitioner",
+   "The Foundry SDK",
+   "A CSS framework",
+   "A spreadsheet library"
+  ],
+  "answer": [
+   1
+  ],
+  "why": "The Foundry SDK builds client apps that call deployed models."
+ },
+ {
+  "id": 136,
+  "domain": "Azure AI Foundry & Deployment",
+  "q": "Which format is used for Foundry/Azure OpenAI REST calls?",
+  "options": [
+   "YAML",
+   "CSV",
+   "JSON",
+   "XML"
+  ],
+  "answer": [
+   2
+  ],
+  "why": "REST calls to these endpoints use JSON."
+ },
+ {
+  "id": 137,
+  "domain": "Azure AI Foundry & Deployment",
+  "q": "Azure AI Content Understanding is used to:",
+  "options": [
+   "Manage the DNS zones",
+   "Compile the C# code",
+   "Provision virtual networks",
+   "Extract info from documents"
+  ],
+  "answer": [
+   3
+  ],
+  "why": "Content Understanding extracts info from multimodal content."
+ },
+ {
+  "id": 138,
+  "domain": "Azure AI Foundry & Deployment",
+  "q": "Which two can Content Understanding help with? (Select two.)",
+  "options": [
+   "Soldering circuit boards",
+   "Extracting audio and video",
+   "Racking physical servers",
+   "Extracting invoice fields"
+  ],
+  "answer": [
+   1,
+   3
+  ],
+  "why": "It extracts info from documents/forms and audio/video."
+ },
+ {
+  "id": 139,
+  "domain": "Azure AI Foundry & Deployment",
+  "q": "The 'safety system' layer is responsible for:",
+  "options": [
+   "Mitigating harmful output",
+   "Assigning IP addresses",
+   "Rendering the user interface",
+   "Storing the embeddings"
+  ],
+  "answer": [
+   0
+  ],
+  "why": "The safety system applies filters to reduce harmful content."
+ },
+ {
+  "id": 140,
+  "domain": "Azure AI Foundry & Deployment",
+  "q": "Content filters in Foundry help by:",
+  "options": [
+   "Encrypting the model weights",
+   "Raising the token limits",
+   "Adding GPUs automatically",
+   "Blocking harmful categories"
+  ],
+  "answer": [
+   3
+  ],
+  "why": "Content filters classify and block harmful categories."
+ },
+ {
+  "id": 141,
+  "domain": "Azure AI Foundry & Deployment",
+  "q": "A valid reason to choose Managed Compute over serverless:",
+  "options": [
+   "The lowest-effort quick test",
+   "Having no model to deploy",
+   "Dedicated, predictable capacity",
+   "Never managing infrastructure"
+  ],
+  "answer": [
+   2
+  ],
+  "why": "Managed Compute suits workloads needing dedicated capacity."
+ },
+ {
+  "id": 142,
+  "domain": "Azure AI Foundry & Deployment",
+  "q": "A 'lightweight client application' is best described as:",
+  "options": [
+   "A physical hardware GPU",
+   "A small app calling an endpoint",
+   "A complete operating system",
+   "A relational database schema"
+  ],
+  "answer": [
+   1
+  ],
+  "why": "A lightweight client consumes a deployed endpoint to add AI."
+ },
+ {
+  "id": 143,
+  "domain": "Azure AI Foundry & Deployment",
+  "q": "When deploying a model, which parameter would you set?",
+  "options": [
+   "The motherboard model",
+   "The office Wi-Fi password",
+   "The building floor plan",
+   "Deployment name and quota"
+  ],
+  "answer": [
+   3
+  ],
+  "why": "You set deployment name, capacity/quota, and version."
+ },
+ {
+  "id": 144,
+  "domain": "Azure AI Foundry & Deployment",
+  "q": "A multimodal model interpreting image input enables:",
+  "options": [
+   "Compiling program code",
+   "Configuring a router",
+   "Answering about an image",
+   "Formatting a hard drive"
+  ],
+  "answer": [
+   2
+  ],
+  "why": "Multimodal models accept images and reason about them."
+ },
+ {
+  "id": 145,
+  "domain": "Azure AI Foundry & Deployment",
+  "q": "Which two consume a deployed Foundry model? (Select two.)",
+  "options": [
+   "The Foundry SDK",
+   "REST API calls",
+   "Mailing a disk",
+   "Sending a fax"
+  ],
+  "answer": [
+   0,
+   1
+  ],
+  "why": "Deployed models are consumed via REST APIs and SDKs."
+ },
+ {
+  "id": 146,
+  "domain": "Azure AI Foundry & Deployment",
+  "q": "Generative models creating visual output support:",
+  "options": [
+   "Making images from text",
+   "Running virus scans",
+   "Assigning static IPs",
+   "Indexing SQL tables"
+  ],
+  "answer": [
+   0
+  ],
+  "why": "Image-generation models create visuals from text prompts."
+ },
+ {
+  "id": 147,
+  "domain": "Azure AI Foundry & Deployment",
+  "q": "Before an app can call a Foundry model, it must first be:",
+  "options": [
+   "Converted into audio",
+   "Deployed to an endpoint",
+   "Deleted from the workspace",
+   "Printed out on paper"
+  ],
+  "answer": [
+   1
+  ],
+  "why": "Deployment creates the callable endpoint."
+ },
+ {
+  "id": 148,
+  "domain": "Azure AI Foundry & Deployment",
+  "q": "Which statement about single-agent solutions is TRUE?",
+  "options": [
+   "Agents require no model",
+   "Agents can never be tested",
+   "Build and test in the portal",
+   "Agents only output images"
+  ],
+  "answer": [
+   2
+  ],
+  "why": "You can build and test a single agent in the portal, then add a client."
+ },
+ {
+  "id": 149,
+  "domain": "Azure AI Foundry & Deployment",
+  "q": "Quota on a Foundry deployment is used to:",
+  "options": [
+   "Manage throughput and cost",
+   "Encrypt the training data",
+   "Change the model language",
+   "Detect objects in images"
+  ],
+  "answer": [
+   0
+  ],
+  "why": "Quota/rate limits manage throughput, capacity, and cost."
+ },
+ {
+  "id": 150,
+  "domain": "Azure AI Foundry & Deployment",
+  "q": "Which two are responsible AI practices when deploying? (Select two.)",
+  "options": [
+   "Removing all human review",
+   "Being transparent to users",
+   "Enabling content filters",
+   "Maxing all temperatures"
+  ],
+  "answer": [
+   1,
+   2
+  ],
+  "why": "Content filtering and transparency support responsible AI."
+ },
+ {
+  "id": 151,
+  "domain": "Responsible AI",
+  "q": "Which responsible AI principle addresses treating all groups equitably?",
+  "options": [
+   "Reliability",
+   "Accountability",
+   "Fairness",
+   "Transparency"
+  ],
+  "answer": [
+   2
+  ],
+  "why": "Fairness means the system treats all people and groups equitably."
+ },
+ {
+  "id": 152,
+  "domain": "Responsible AI",
+  "q": "Ensuring a model performs consistently and safely under expected conditions reflects:",
+  "options": [
+   "Data minimization practices",
+   "Model explainability",
+   "Inclusiveness only",
+   "Reliability and safety"
+  ],
+  "answer": [
+   3
+  ],
+  "why": "Reliability and safety cover consistent, safe operation under expected and unexpected conditions."
+ },
+ {
+  "id": 153,
+  "domain": "Responsible AI",
+  "q": "Protecting user data and controlling access primarily supports which principle?",
+  "options": [
+   "Design inclusiveness",
+   "Privacy and security",
+   "Transparency reports",
+   "Fairness in scoring"
+  ],
+  "answer": [
+   1
+  ],
+  "why": "Privacy and security protect personal data and secure the system against misuse."
+ },
+ {
+  "id": 154,
+  "domain": "Responsible AI",
+  "q": "Designing an AI experience usable by people with disabilities reflects:",
+  "options": [
+   "Reliability",
+   "Accountability",
+   "Inclusiveness",
+   "Data privacy"
+  ],
+  "answer": [
+   2
+  ],
+  "why": "Inclusiveness ensures AI empowers everyone, including people with disabilities."
+ },
+ {
+  "id": 155,
+  "domain": "Responsible AI",
+  "q": "Making AI systems understandable so users know how decisions are made reflects:",
+  "options": [
+   "Inclusiveness",
+   "Fairness",
+   "Reliability",
+   "Transparency"
+  ],
+  "answer": [
+   3
+  ],
+  "why": "Transparency means users can understand how the system works and makes decisions."
+ },
+ {
+  "id": 156,
+  "domain": "Responsible AI",
+  "q": "Which principle holds people responsible for how AI systems operate?",
+  "options": [
+   "Accountability",
+   "Reliability",
+   "Inclusiveness",
+   "Transparency"
+  ],
+  "answer": [
+   0
+  ],
+  "why": "Accountability means people remain answerable for AI systems and their impact."
+ },
+ {
+  "id": 157,
+  "domain": "Responsible AI",
+  "q": "A hiring model that favors one gender over another violates which principle?",
+  "options": [
+   "Transparency",
+   "Privacy",
+   "Fairness",
+   "Reliability"
+  ],
+  "answer": [
+   2
+  ],
+  "why": "Biased outcomes across groups are a fairness violation."
+ },
+ {
+  "id": 158,
+  "domain": "Responsible AI",
+  "q": "Which two practices support the transparency principle? (Select two.)",
+  "options": [
+   "Explaining model limitations",
+   "Hiding all model details",
+   "Encrypting the model outputs",
+   "Documenting how it works"
+  ],
+  "answer": [
+   0,
+   3
+  ],
+  "why": "Explaining limitations and documenting behavior make a system transparent."
+ },
+ {
+  "id": 159,
+  "domain": "Responsible AI",
+  "q": "Providing a way to disable or override an AI decision most supports:",
+  "options": [
+   "Data minimization",
+   "Accountability",
+   "Inclusiveness",
+   "Fairness across groups"
+  ],
+  "answer": [
+   1
+  ],
+  "why": "Human oversight and override mechanisms support accountability."
+ },
+ {
+  "id": 160,
+  "domain": "Responsible AI",
+  "q": "Which two are ways to improve fairness in an AI solution? (Select two.)",
+  "options": [
+   "Maximize temperature",
+   "Evaluate across groups",
+   "Reduce dataset bias",
+   "Remove all logging"
+  ],
+  "answer": [
+   1,
+   2
+  ],
+  "why": "Assessing performance across groups and reducing bias improve fairness."
+ },
+ {
+  "id": 161,
+  "domain": "Responsible AI",
+  "q": "A content safety filter that blocks harmful output primarily supports:",
+  "options": [
+   "Data portability rights",
+   "Transparency notes",
+   "Design inclusiveness",
+   "Reliability and safety"
+  ],
+  "answer": [
+   3
+  ],
+  "why": "Blocking harmful output is a reliability and safety measure."
+ },
+ {
+  "id": 162,
+  "domain": "Responsible AI",
+  "q": "Collecting only the data needed for a task supports which principle?",
+  "options": [
+   "Fairness in output",
+   "Privacy and security",
+   "System transparency",
+   "Broad inclusiveness"
+  ],
+  "answer": [
+   1
+  ],
+  "why": "Data minimization is part of privacy and security."
+ },
+ {
+  "id": 163,
+  "domain": "Responsible AI",
+  "q": "Which best illustrates a reliability and safety concern?",
+  "options": [
+   "Unpredictable failures in edge cases",
+   "An unclear privacy notice",
+   "A biased training sample",
+   "An inaccessible interface"
+  ],
+  "answer": [
+   0
+  ],
+  "why": "Inconsistent or unsafe behavior in edge cases is a reliability/safety issue."
+ },
+ {
+  "id": 164,
+  "domain": "Responsible AI",
+  "q": "Publishing a transparency note about an AI model helps users:",
+  "options": [
+   "Increase the token limit",
+   "Encrypt their personal data",
+   "Understand its intended uses",
+   "Bypass the safety filter"
+  ],
+  "answer": [
+   2
+  ],
+  "why": "Transparency notes describe capabilities, limitations, and intended use."
+ },
+ {
+  "id": 165,
+  "domain": "Responsible AI",
+  "q": "Which scenario most clearly raises an inclusiveness concern?",
+  "options": [
+   "A verbose system prompt",
+   "A high per-token cost",
+   "A slow API response time",
+   "Voice UI failing certain accents"
+  ],
+  "answer": [
+   3
+  ],
+  "why": "Excluding users by accent or ability is an inclusiveness problem."
+ },
+ {
+  "id": 166,
+  "domain": "Computer Vision & Image Generation",
+  "q": "Which task assigns a single label to an entire image?",
+  "options": [
+   "Image classification",
+   "Text extraction only",
+   "Semantic mapping",
+   "Object detection"
+  ],
+  "answer": [
+   0
+  ],
+  "why": "Image classification assigns one label describing the whole image."
+ },
+ {
+  "id": 167,
+  "domain": "Computer Vision & Image Generation",
+  "q": "Which task locates objects and returns bounding boxes?",
+  "options": [
+   "Image classification",
+   "Object detection",
+   "Speech synthesis",
+   "Language detection"
+  ],
+  "answer": [
+   1
+  ],
+  "why": "Object detection finds objects and returns their bounding boxes."
+ },
+ {
+  "id": 168,
+  "domain": "Computer Vision & Image Generation",
+  "q": "Extracting printed or handwritten text from an image uses:",
+  "options": [
+   "Object detection alone",
+   "Sentiment analysis of the text",
+   "Optical character recognition",
+   "Key phrase extraction of terms"
+  ],
+  "answer": [
+   2
+  ],
+  "why": "OCR reads printed or handwritten text from images."
+ },
+ {
+  "id": 169,
+  "domain": "Computer Vision & Image Generation",
+  "q": "Generating a descriptive sentence for an image is called:",
+  "options": [
+   "Image captioning",
+   "Depth estimation",
+   "Face verification",
+   "Image classification"
+  ],
+  "answer": [
+   0
+  ],
+  "why": "Image captioning generates a natural-language description of an image."
+ },
+ {
+  "id": 170,
+  "domain": "Computer Vision & Image Generation",
+  "q": "Detecting the location of human faces in a photo is:",
+  "options": [
+   "Scene tagging",
+   "Face detection",
+   "Face invention",
+   "Text detection"
+  ],
+  "answer": [
+   1
+  ],
+  "why": "Face detection locates human faces within an image."
+ },
+ {
+  "id": 171,
+  "domain": "Computer Vision & Image Generation",
+  "q": "Which model type creates a new image from a text prompt?",
+  "options": [
+   "A tabular regression model",
+   "Classification model",
+   "A data clustering model",
+   "Image-generation model"
+  ],
+  "answer": [
+   3
+  ],
+  "why": "Image-generation models synthesize new images from text prompts."
+ },
+ {
+  "id": 172,
+  "domain": "Computer Vision & Image Generation",
+  "q": "Which two are computer vision tasks? (Select two.)",
+  "options": [
+   "Image classification",
+   "Sentiment analysis",
+   "Object detection",
+   "Speech translation"
+  ],
+  "answer": [
+   0,
+   2
+  ],
+  "why": "Object detection and image classification are vision tasks."
+ },
+ {
+  "id": 173,
+  "domain": "Computer Vision & Image Generation",
+  "q": "Assigning a class to every pixel in an image is:",
+  "options": [
+   "Optical flow in video",
+   "Image object detection",
+   "Image classification",
+   "Semantic segmentation"
+  ],
+  "answer": [
+   3
+  ],
+  "why": "Semantic segmentation labels each pixel with a class."
+ },
+ {
+  "id": 174,
+  "domain": "Computer Vision & Image Generation",
+  "q": "A model that reads receipts and returns typed text uses mainly:",
+  "options": [
+   "Image generation output",
+   "Optical character recognition",
+   "Speech synthesis output",
+   "Anomaly detection on metrics"
+  ],
+  "answer": [
+   1
+  ],
+  "why": "OCR extracts the text content from document images like receipts."
+ },
+ {
+  "id": 175,
+  "domain": "Computer Vision & Image Generation",
+  "q": "Which is an appropriate use of an image-generation model?",
+  "options": [
+   "Transcribing spoken audio",
+   "Sorting a list of numbers",
+   "Creating concept art from text",
+   "Indexing a SQL data table"
+  ],
+  "answer": [
+   2
+  ],
+  "why": "Image-generation models create visuals such as concept art from prompts."
+ },
+ {
+  "id": 176,
+  "domain": "Computer Vision & Image Generation",
+  "q": "A multimodal model interpreting an uploaded photo can:",
+  "options": [
+   "Configuring a network router",
+   "Compiling the source code",
+   "Formatting a hard drive",
+   "Answer questions about it"
+  ],
+  "answer": [
+   3
+  ],
+  "why": "Multimodal models accept image input and reason about its content."
+ },
+ {
+  "id": 177,
+  "domain": "Computer Vision & Image Generation",
+  "q": "Tagging the visual content of an image with keywords is:",
+  "options": [
+   "Image tagging",
+   "Image printing",
+   "Image deletion",
+   "Image encryption"
+  ],
+  "answer": [
+   0
+  ],
+  "why": "Image tagging returns descriptive keywords for image content."
+ },
+ {
+  "id": 178,
+  "domain": "Computer Vision & Image Generation",
+  "q": "Which two can a computer vision service return for a photo? (Select two.)",
+  "options": [
+   "A SQL schema",
+   "A spoken reply",
+   "Descriptive tags",
+   "Detected objects"
+  ],
+  "answer": [
+   2,
+   3
+  ],
+  "why": "Vision services return detected objects and descriptive tags."
+ },
+ {
+  "id": 179,
+  "domain": "Computer Vision & Image Generation",
+  "q": "Confirming whether two face images are the same person is:",
+  "options": [
+   "Face verification",
+   "Scene tagging",
+   "Text extraction",
+   "Face generation"
+  ],
+  "answer": [
+   0
+  ],
+  "why": "Face verification checks whether two faces belong to the same person."
+ },
+ {
+  "id": 180,
+  "domain": "Computer Vision & Image Generation",
+  "q": "Which best fits object detection over image classification?",
+  "options": [
+   "Labeling a whole scene",
+   "Translating a caption",
+   "Reading a paragraph",
+   "Counting cars in a lot"
+  ],
+  "answer": [
+   3
+  ],
+  "why": "Detecting and counting multiple objects needs object detection, not one label."
+ },
+ {
+  "id": 181,
+  "domain": "Information Extraction (Content Understanding)",
+  "q": "Azure Content Understanding is used to extract information from:",
+  "options": [
+   "Only spoken audio input",
+   "Documents, images, audio, video",
+   "Only plain-text files",
+   "Only SQL data tables"
+  ],
+  "answer": [
+   1
+  ],
+  "why": "Content Understanding extracts information across documents, images, audio, and video."
+ },
+ {
+  "id": 182,
+  "domain": "Information Extraction (Content Understanding)",
+  "q": "Pulling fields like total and date from an invoice is:",
+  "options": [
+   "Document field extraction",
+   "Speech synthesis output",
+   "Sentiment score output",
+   "Image generation output"
+  ],
+  "answer": [
+   0
+  ],
+  "why": "Content Understanding extracts structured fields from documents and forms."
+ },
+ {
+  "id": 183,
+  "domain": "Information Extraction (Content Understanding)",
+  "q": "Which is a valid Content Understanding scenario for video?",
+  "options": [
+   "Rendering new 3D content",
+   "Compressing to audio track",
+   "Encrypting the video content",
+   "Extracting key moments and text"
+  ],
+  "answer": [
+   3
+  ],
+  "why": "Content Understanding can extract information such as text and key moments from video."
+ },
+ {
+  "id": 184,
+  "domain": "Information Extraction (Content Understanding)",
+  "q": "Extracting insights from a recorded call uses Content Understanding on:",
+  "options": [
+   "A firewall log",
+   "Audio",
+   "A SQL table",
+   "A CSS file"
+  ],
+  "answer": [
+   1
+  ],
+  "why": "Content Understanding extracts information from audio such as recorded calls."
+ },
+ {
+  "id": 185,
+  "domain": "Information Extraction (Content Understanding)",
+  "q": "Which two are Content Understanding inputs? (Select two.)",
+  "options": [
+   "Forms and documents",
+   "Images",
+   "Disk partitions",
+   "Network router configs"
+  ],
+  "answer": [
+   0,
+   1
+  ],
+  "why": "Content Understanding processes documents/forms and images, among other media."
+ },
+ {
+  "id": 186,
+  "domain": "Information Extraction (Content Understanding)",
+  "q": "Reading key-value pairs from a scanned form is best handled by:",
+  "options": [
+   "Speech translation",
+   "Content Understanding",
+   "Image generation output",
+   "Anomaly detection"
+  ],
+  "answer": [
+   1
+  ],
+  "why": "Content Understanding extracts key-value pairs and fields from forms."
+ },
+ {
+  "id": 187,
+  "domain": "Information Extraction (Content Understanding)",
+  "q": "A lightweight app that pulls totals from receipts should use:",
+  "options": [
+   "A simple rules engine",
+   "A clustering model",
+   "Content Understanding",
+   "A regression model"
+  ],
+  "answer": [
+   2
+  ],
+  "why": "Content Understanding is designed to extract fields such as totals from receipts."
+ },
+ {
+  "id": 188,
+  "domain": "Information Extraction (Content Understanding)",
+  "q": "Which output would you expect from Content Understanding on an image?",
+  "options": [
+   "Extracted text and fields",
+   "A newly generated painting",
+   "A trained image classifier",
+   "A spoken audio summary"
+  ],
+  "answer": [
+   0
+  ],
+  "why": "Content Understanding returns extracted text and structured fields from images."
+ },
+ {
+  "id": 189,
+  "domain": "Information Extraction (Content Understanding)",
+  "q": "Which best describes the goal of information extraction?",
+  "options": [
+   "Translate the spoken audio",
+   "Encrypt all the input files",
+   "Generate brand-new images",
+   "Turn unstructured content structured"
+  ],
+  "answer": [
+   3
+  ],
+  "why": "Information extraction converts unstructured content into structured data."
+ },
+ {
+  "id": 190,
+  "domain": "Information Extraction (Content Understanding)",
+  "q": "Which two tasks fit Content Understanding? (Select two.)",
+  "options": [
+   "Provisioning a network",
+   "Summarizing a video's text",
+   "Extracting invoice fields",
+   "Racking a physical server"
+  ],
+  "answer": [
+   1,
+   2
+  ],
+  "why": "Extracting fields and pulling text/insights from video are Content Understanding tasks."
+ },
+ {
+  "id": 191,
+  "domain": "Generative AI Models & Deployment",
+  "q": "Which describes how generative AI models produce output?",
+  "options": [
+   "Matching exact database rows",
+   "Applying fixed if-then rules",
+   "Sorting values numerically",
+   "Predicting likely next tokens"
+  ],
+  "answer": [
+   3
+  ],
+  "why": "Generative models generate content by predicting probable next tokens."
+ },
+ {
+  "id": 192,
+  "domain": "Generative AI Models & Deployment",
+  "q": "Which model would you pick to summarize and answer text questions?",
+  "options": [
+   "A clustering model",
+   "A language model",
+   "An image classifier",
+   "A speech recognizer"
+  ],
+  "answer": [
+   1
+  ],
+  "why": "A text/language model suits summarization and question answering."
+ },
+ {
+  "id": 193,
+  "domain": "Generative AI Models & Deployment",
+  "q": "Which model would you pick to describe an uploaded photo in words?",
+  "options": [
+   "A multimodal model",
+   "A regression model",
+   "A tabular model",
+   "A rules engine"
+  ],
+  "answer": [
+   0
+  ],
+  "why": "A multimodal model can take an image and produce a text description."
+ },
+ {
+  "id": 194,
+  "domain": "Generative AI Models & Deployment",
+  "q": "Which is a configuration parameter set at model deployment?",
+  "options": [
+   "The display monitor size",
+   "The Wi-Fi password",
+   "The office floor plan",
+   "Capacity or rate limit"
+  ],
+  "answer": [
+   3
+  ],
+  "why": "You configure capacity/rate limits (and name, version) when deploying."
+ },
+ {
+  "id": 195,
+  "domain": "Generative AI Models & Deployment",
+  "q": "Which two are model deployment options in Foundry? (Select two.)",
+  "options": [
+   "Serverless API",
+   "A printed report",
+   "A CSV export",
+   "Managed Compute"
+  ],
+  "answer": [
+   0,
+   3
+  ],
+  "why": "Foundry offers serverless API and managed compute deployments."
+ },
+ {
+  "id": 196,
+  "domain": "Generative AI Models & Deployment",
+  "q": "Choosing a smaller, cheaper model for simple tasks is an example of:",
+  "options": [
+   "Matching model to capability",
+   "Removing all the prompts",
+   "Disabling model deployment",
+   "Encrypting the model weights"
+  ],
+  "answer": [
+   0
+  ],
+  "why": "Selecting an appropriate model by capability and cost is a core skill."
+ },
+ {
+  "id": 197,
+  "domain": "Generative AI Models & Deployment",
+  "q": "Which two factors guide model selection? (Select two.)",
+  "options": [
+   "Task capability needed",
+   "The office location",
+   "The network cable color",
+   "Cost and latency"
+  ],
+  "answer": [
+   0,
+   3
+  ],
+  "why": "Capability fit plus cost/latency guide which model to choose."
+ },
+ {
+  "id": 198,
+  "domain": "Generative AI Models & Deployment",
+  "q": "An agentic AI workload is best described as one where the model:",
+  "options": [
+   "Uses tools to complete tasks",
+   "Only returns static text",
+   "Only stores the data rows",
+   "Only renders a single webpage"
+  ],
+  "answer": [
+   0
+  ],
+  "why": "Agentic AI uses tools and steps to accomplish goals, not just single replies."
+ },
+ {
+  "id": 199,
+  "domain": "Generative AI Models & Deployment",
+  "q": "Which scenario is an example of a generative AI workload?",
+  "options": [
+   "Formatting a system disk drive",
+   "Pinging a remote host server",
+   "Drafting a product description",
+   "Indexing a relational table"
+  ],
+  "answer": [
+   2
+  ],
+  "why": "Generating a product description from a prompt is generative AI."
+ },
+ {
+  "id": 200,
+  "domain": "Generative AI Models & Deployment",
+  "q": "Which two are appropriate agentic AI use cases? (Select two.)",
+  "options": [
+   "Formatting a text document",
+   "Sorting a fixed static list",
+   "Multi-step task automation",
+   "Booking a trip via tools"
+  ],
+  "answer": [
+   2,
+   3
+  ],
+  "why": "Agentic AI suits tool-using, multi-step automation."
+ }
+]

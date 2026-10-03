@@ -9,9 +9,21 @@ export const SLIDE_W = 1600;
 export const SLIDE_H = 900;
 
 /** Renders one slide on a fixed 1600×900 canvas. */
-export function SlideView({ slide, index, total, revealed }: { slide: Slide; index: number; total: number; revealed: boolean }) {
+export function SlideView({
+  slide,
+  index,
+  total,
+  revealed,
+  still,
+}: {
+  slide: Slide;
+  index: number;
+  total: number;
+  revealed: boolean;
+  still?: boolean;
+}) {
   const variant = slide.variant ?? "default";
-  const ctx = { revealed };
+  const ctx = { revealed, still };
 
   if (variant === "title" || variant === "section" || variant === "end") {
     return (
