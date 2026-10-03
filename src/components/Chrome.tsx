@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
-import { ChevronLeft, ChevronRight, GraduationCap, Keyboard, LayoutGrid, Maximize, Minimize, Moon, NotebookPen, PanelLeft, Presentation, Sun, X } from "lucide-react";
+import { ChevronLeft, ChevronRight, GraduationCap, Keyboard, LayoutGrid, Maximize, Minimize, Moon, PanelLeft, Sun, X } from "lucide-react";
 import { slides } from "@/content/slides";
 import { deck, toggleFullscreen, toggleTheme, useFullscreen, useTheme } from "@/lib/stores";
 import { SlideFrame, SlideView } from "./SlideView";
@@ -46,23 +46,17 @@ export function Toolbar({
   index,
   hidden,
   sidebar,
-  notes,
   overview,
   onSidebar,
-  onNotes,
   onOverview,
-  onPresenter,
   onHelp,
 }: {
   index: number;
   hidden: boolean;
   sidebar: boolean;
-  notes: boolean;
   overview: boolean;
   onSidebar: () => void;
-  onNotes: () => void;
   onOverview: () => void;
-  onPresenter: () => void;
   onHelp: () => void;
 }) {
   const theme = useTheme();
@@ -84,17 +78,11 @@ export function Toolbar({
         <ChevronRight size={22} />
       </ToolButton>
       <span className="tool-sep" />
-      <ToolButton label="Speaker notes" shortcut="N" onClick={onNotes} active={notes}>
-        <NotebookPen size={20} />
-      </ToolButton>
       <ToolButton label="Slide overview" shortcut="G" onClick={onOverview} active={overview}>
         <LayoutGrid size={20} />
       </ToolButton>
       <ToolButton label="Practice test & flashcards" shortcut="E" onClick={openReview}>
         <GraduationCap size={20} />
-      </ToolButton>
-      <ToolButton label="Presenter view" shortcut="P" onClick={onPresenter}>
-        <Presentation size={20} />
       </ToolButton>
       <ToolButton label={theme === "dark" ? "Light mode" : "Dark mode"} shortcut="T" onClick={toggleTheme}>
         {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}

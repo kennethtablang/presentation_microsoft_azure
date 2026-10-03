@@ -120,12 +120,9 @@ export function Deck() {
         index={index}
         hidden={chromeHidden}
         sidebar={sidebar}
-        notes={notes}
         overview={overview}
         onSidebar={() => setSidebar((v) => !v)}
-        onNotes={() => setNotes((v) => !v)}
         onOverview={() => setOverview((v) => !v)}
-        onPresenter={() => openPresenter(index)}
         onHelp={() => setHelp((v) => !v)}
       />
 

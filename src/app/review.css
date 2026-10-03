@@ -1041,3 +1041,56 @@
     flex: 1;
   }
 }
+
+/* Exam time limit */
+
+.setup-note {
+  font-size: 13.5px;
+  color: var(--text-3);
+  line-height: 1.45;
+}
+
+.chip-input {
+  cursor: text;
+}
+
+.chip-input input {
+  width: 56px;
+  padding: 2px 6px;
+  border: 0;
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--text) 10%, transparent);
+  color: inherit;
+  font: inherit;
+  text-align: center;
+  outline: none;
+}
+
+.chip-input.is-on input {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.countdown {
+  padding: 4px 10px;
+  border-radius: 999px;
+  color: var(--text);
+  background: color-mix(in srgb, var(--text) 8%, transparent);
+  transition: background 0.4s var(--ease), color 0.4s var(--ease);
+}
+
+.countdown.is-warn {
+  color: var(--amber);
+  background: color-mix(in srgb, var(--amber) 18%, transparent);
+}
+
+.countdown.is-danger {
+  color: #fff;
+  background: color-mix(in srgb, var(--pink) 85%, transparent);
+  animation: pulse 1s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  50% {
+    box-shadow: 0 0 0 6px color-mix(in srgb, var(--pink) 25%, transparent);
+  }
+}

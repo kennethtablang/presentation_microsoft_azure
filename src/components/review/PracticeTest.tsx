@@ -7,7 +7,9 @@ import { buildTest, domains, isFullyCorrect, pointsFor, shuffle, shuffleOptions,
 import { useNow } from "@/lib/stores";
 
 type Mode = "practice" | "exam";
-type Settings = { count: number; domains: string[]; mode: Mode };
+/** Exam-mode time limit: none, about one minute per question, or a fixed number of minutes. */
+type TimeLimit = "off" | "auto" | number;
+type Settings = { count: number; domains: string[]; mode: Mode; timeLimit: TimeLimit };
 type Run = {
   questions: ExamQuestion[];
   picked: number[][];
@@ -16,10 +18,22 @@ type Run = {
   index: number;
   startedAt: number;
   finishedAt: number | null;
+  /** When the time limit runs out (exam mode only); null means untimed. */
+  deadline: number | null;
+  timeUp: boolean;
   settings: Settings;
 };
 
 const PRESETS = [10, 25, 50, 100, 200];
+const TIME_PRESETS = [15, 30, 45, 60, 90];
+const WARN_MS = 5 * 60_000;
+const DANGER_MS = 60_000;
+
+/** Minutes allowed for a test of `count` questions, or null when untimed. */
+function limitMinutes(limit: TimeLimit, mode: Mode, count: number): number | null {
+  if (mode !== "exam" || limit === "off") return null;
+  return limit === "auto" ? Math.max(1, count) : limit;
+}
 const PASS = 0.7;
 
 function fmt(ms: number) {
@@ -29,20 +43,24 @@ function fmt(ms: number) {
 }
 
 function newRun(questions: ExamQuestion[], settings: Settings): Run {
+  const startedAt = Date.now();
+  const minutes = limitMinutes(settings.timeLimit, settings.mode, questions.length);
   return {
     questions,
     picked: questions.map(() => []),
     checked: questions.map(() => false),
     flagged: questions.map(() => false),
     index: 0,
-    startedAt: Date.now(),
+    startedAt,
     finishedAt: null,
+    deadline: minutes === null ? null : startedAt + minutes * 60_000,
+    timeUp: false,
     settings,
   };
 }
 
 export function PracticeTest() {
-  const [settings, setSettings] = useState<Settings>({ count: 25, domains: domains.map((d) => d.name), mode: "practice" });
+  const [settings, setSettings] = useState<Settings>({ count: 25, domains: domains.map((d) => d.name), mode: "practice", timeLimit: "auto" });
   const [run, setRun] = useState<Run | null>(null);
 
   const start = (s: Settings) => setRun(newRun(buildTest(s.count, s.domains), s));
@@ -170,11 +188,61 @@ function Setup({ settings, onChange, onStart }: { settings: Settings; onChange: 
           </div>
         </div>
 
+        {settings.mode === "exam" && <TimeLimitPicker settings={settings} count={count} onChange={onChange} />}
+
         <button type="button" className="primary-btn" disabled={pool === 0} onClick={onStart}>
           <Play size={18} /> Start {count || 0}-question test
+          {limitMinutes(settings.timeLimit, settings.mode, count) !== null && ` · ${limitMinutes(settings.timeLimit, settings.mode, count)} min`}
         </button>
       </div>
     </section>
+  );
+}
+
+function TimeLimitPicker({ settings, count, onChange }: { settings: Settings; count: number; onChange: (s: Settings) => void }) {
+  const custom = typeof settings.timeLimit === "number" && !TIME_PRESETS.includes(settings.timeLimit);
+  const [raw, setRaw] = useState(typeof settings.timeLimit === "number" ? String(settings.timeLimit) : "");
+  const set = (timeLimit: TimeLimit) => onChange({ ...settings, timeLimit });
+
+  return (
+    <div className="setup-row">
+      <span className="setup-label">Time limit</span>
+      <div className="chip-row">
+        <button type="button" className={`chip ${settings.timeLimit === "off" ? "is-on" : ""}`} onClick={() => set("off")}>
+          No limit
+        </button>
+        <button type="button" className={`chip ${settings.timeLimit === "auto" ? "is-on" : ""}`} onClick={() => set("auto")}>
+          Auto · {Math.max(1, count)} min
+        </button>
+        {TIME_PRESETS.map((m) => (
+          <button key={m} type="button" className={`chip ${settings.timeLimit === m ? "is-on" : ""}`} onClick={() => set(m)}>
+            {m} min
+          </button>
+        ))}
+        <label className={`chip chip-input ${custom ? "is-on" : ""}`}>
+          Custom
+          <input
+            type="number"
+            inputMode="numeric"
+            min={1}
+            max={300}
+            placeholder="min"
+            value={raw}
+            aria-label="Custom time limit in minutes"
+            onChange={(e) => {
+              setRaw(e.target.value);
+              const n = Number.parseInt(e.target.value, 10);
+              if (Number.isFinite(n) && n >= 1) set(Math.min(300, n));
+            }}
+          />
+        </label>
+      </div>
+      <p className="setup-note">
+        {settings.timeLimit === "off"
+          ? "Untimed. The clock still shows how long you've taken."
+          : "The clock counts down and the test submits automatically when time runs out. Auto gives about one minute per question, close to the real exam's pace."}
+      </p>
+    </div>
   );
 }
 
@@ -216,7 +284,14 @@ function Taking({ run, setRun, onQuit }: { run: Run; setRun: (r: Run) => void; o
     update({ checked: c });
   };
 
-  const finish = () => setRun({ ...run, checked: run.checked.map(() => true), finishedAt: Date.now() });
+  const finish = (timeUp = false) => setRun({ ...run, checked: run.checked.map(() => true), finishedAt: Date.now(), timeUp });
+
+  // Time limit: submit automatically when the countdown reaches zero.
+  const remaining = run.deadline !== null && now ? run.deadline - now : null;
+  const expired = remaining !== null && remaining <= 0;
+  useEffect(() => {
+    if (expired) finish(true);
+  });
 
   const primary = () => {
     if (practice && !checked) {
@@ -265,9 +340,19 @@ function Taking({ run, setRun, onQuit }: { run: Run; setRun: (r: Run) => void; o
         <div className="test-progress" aria-label={`Question ${run.index + 1} of ${total}`}>
           <div className="test-progress-fill" style={{ width: `${((run.index + 1) / total) * 100}%` }} />
         </div>
-        <span className="test-meta">
-          <Timer size={15} /> {now ? fmt(now - run.startedAt) : "00:00"}
-        </span>
+        {remaining !== null ? (
+          <span
+            className={`test-meta countdown ${remaining <= DANGER_MS ? "is-danger" : remaining <= WARN_MS ? "is-warn" : ""}`}
+            role="timer"
+            aria-label={`${fmt(remaining)} remaining`}
+          >
+            <Timer size={15} /> {fmt(remaining)} left
+          </span>
+        ) : (
+          <span className="test-meta">
+            <Timer size={15} /> {now ? fmt(now - run.startedAt) : "00:00"}
+          </span>
+        )}
         <span className="test-meta">
           {run.index + 1} / {total}
         </span>
@@ -351,7 +436,7 @@ function Taking({ run, setRun, onQuit }: { run: Run; setRun: (r: Run) => void; o
                 <button type="button" className="ghost-btn" onClick={() => go(run.picked.findIndex((p) => p.length === 0))}>
                   Go to first unanswered
                 </button>
-                <button type="button" className="primary-btn small" onClick={finish}>
+                <button type="button" className="primary-btn small" onClick={() => finish()}>
                   Finish test
                 </button>
               </div>
@@ -452,12 +537,16 @@ function Results({
           <span>{Math.round(pct * 100)}%</span>
         </div>
         <div className="results-summary">
-          <p className="kicker">{pct >= PASS ? "Passed the practice target" : "Keep practicing"}</p>
+          <p className="kicker">
+            {run.timeUp ? "Time's up · " : ""}
+            {pct >= PASS ? "Passed the practice target" : "Keep practicing"}
+          </p>
           <h1>
             {stats.points} / {stats.max} points
           </h1>
           <p className="subtitle">
-            {stats.full} of {run.questions.length} questions fully correct · {fmt(elapsed)} · target {Math.round(PASS * 100)}%
+            {stats.full} of {run.questions.length} questions fully correct · {fmt(elapsed)}
+            {run.deadline !== null && ` of ${fmt(run.deadline - run.startedAt)}`} · target {Math.round(PASS * 100)}%
           </p>
           <div className="results-actions">
             <button type="button" className="primary-btn" onClick={onRetake}>
