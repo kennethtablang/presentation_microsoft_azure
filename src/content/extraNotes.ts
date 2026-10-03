@@ -44,11 +44,6 @@ export const extraNotes: Record<string, Notes> = {
     ask: [{ q: "A flood-response team wants to know how much of a barangay is underwater. Which task?", a: "Semantic segmentation: it labels every pixel, so you can measure area." }],
   },
   "m5-faces": {
-    say: [
-      "Be careful with the difference between face detection, finding that a face exists, and facial recognition, identifying who it is. Recognition is heavily restricted because of privacy and fairness risks.",
-      "Generative AI also works for images: diffusion models start from random noise and refine it step by step.",
-    ],
-    ask: [{ q: "A parking system that reads plate numbers: which two tasks does it combine?", a: "Object detection to find the plate, OCR to read it." }],
     deeper: ["Microsoft restricts access to facial recognition features behind an application and use-case review — a concrete example of accountability in practice."],
   },
   "ex5-matching": {
@@ -93,19 +88,11 @@ export const extraNotes: Record<string, Notes> = {
     say: ["Each outcome matches one Part 1 concept. If you understood the concept, the tool is just buttons."],
     deeper: ["Outcome 8 (Foundry IQ) is the capstone: it combines agents (Session 4) with RAG (Session 3)."],
   },
-  "s4-recall": {
-    say: ["Every workload you studied has a real tool in Microsoft Azure, and you will use them through a website, no coding needed."],
-    ask: [{ q: "Name the six AI workloads from Part 1.", a: "Generative AI and agents, NLP, speech, computer vision, information extraction, RAG." }],
-  },
   "p2m1-azure": {
     deeper: ["Make cloud cost tangible: an idle deployed resource can keep billing. That's why every lab ends with cleanup."],
   },
   "p2m1-secure": {
     say: ["Microsoft promises three things when you build here: the latest technology, security, and scale."],
-  },
-  "p2m2-deploy": {
-    ask: [{ q: "After adding the instructions, what changed in the answer?", a: "Shorter, on-topic, consistent tone: the system prompt from Part 1 at work." }],
-    deeper: ["Lab (pairs): each pair deploys a model, writes instructions for a role of their choice, and tests three questions."],
   },
   "p2m2-agent": {
     ask: [{ q: "Why not just let the model do the math itself?", a: "LLMs predict tokens and can get arithmetic wrong; a code tool computes it exactly." }],

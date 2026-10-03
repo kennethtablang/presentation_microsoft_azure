@@ -2,6 +2,7 @@ import type { Block, Slide } from "@/lib/types";
 import { part1 } from "./part1";
 import { part2 } from "./part2";
 import { extraNotes } from "./extraNotes";
+import { notesV2 } from "./notesV2";
 
 type Q = { q: string; options: string[]; answer: number; why: string };
 
@@ -243,7 +244,7 @@ const intro: Slide[] = [
         ],
       },
     ],
-    notes: { say: ["Lines in these notes marked Say are the talk track; Ask lines are prompts to the class. Paraphrase freely."] },
+    notes: { say: ["The speaker notes follow the v2 script: plain paragraphs are what you say; bracketed lines are cues for what to do, write, or expect. Use your own words wherever they come more naturally."] },
   },
 ];
 
@@ -275,16 +276,22 @@ const allSlides: Slide[] = [
   ...closing,
 ];
 
+/**
+ * Final notes per slide: the v2 conversational script where one exists (it replaces the
+ * v1 "Say"/"Ask" lines), plus the supplementary discussion notes from extraNotes.
+ */
 export const slides: Slide[] = allSlides.map((s) => {
-  const extra = extraNotes[s.id];
-  if (!extra) return s;
+  const v2 = notesV2[s.id];
+  const extra = extraNotes[s.id] ?? {};
+  const old = s.notes;
   return {
     ...s,
     notes: {
-      time: s.notes.time ?? extra.time,
-      say: [...(s.notes.say ?? []), ...(extra.say ?? [])],
-      ask: [...(s.notes.ask ?? []), ...(extra.ask ?? [])],
-      deeper: [...(s.notes.deeper ?? []), ...(extra.deeper ?? [])],
+      time: v2?.time ?? old.time ?? extra.time,
+      script: v2?.script,
+      say: v2 ? [] : [...(old.say ?? []), ...(extra.say ?? [])],
+      ask: v2 ? [...(v2.ask ?? []), ...(extra.ask ?? [])] : [...(old.ask ?? []), ...(extra.ask ?? [])],
+      deeper: [...(v2?.deeper ?? old.deeper ?? []), ...(extra.deeper ?? [])],
     },
   };
 });

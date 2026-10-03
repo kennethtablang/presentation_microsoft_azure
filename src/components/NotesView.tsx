@@ -1,8 +1,21 @@
 import type { Notes } from "@/lib/types";
 import { Icon } from "./Icon";
 
+/** One line of the talk track: spoken text, a stage cue, or an expected answer. */
+function ScriptLine({ line }: { line: string }) {
+  if (!line.startsWith("[")) return <p className="script-say">{line}</p>;
+  const text = line.replace(/^\[/, "").replace(/\]$/, "");
+  const expect = /^(Expect|Answer|Answers)\b/i.test(text);
+  return (
+    <p className={expect ? "script-expect" : "script-cue"}>
+      {expect && <Icon name="check" size={15} />}
+      <span>{text}</span>
+    </p>
+  );
+}
+
 export function NotesView({ notes }: { notes: Notes }) {
-  const empty = !notes.say?.length && !notes.ask?.length && !notes.deeper?.length;
+  const empty = !notes.script?.length && !notes.say?.length && !notes.ask?.length && !notes.deeper?.length;
   return (
     <div className="notes">
       {notes.time && (
@@ -11,6 +24,16 @@ export function NotesView({ notes }: { notes: Notes }) {
         </span>
       )}
       {empty && <p className="notes-empty">No speaker notes for this slide. Let the slide speak, then invite questions.</p>}
+      {!!notes.script?.length && (
+        <section className="script">
+          <h4>
+            <Icon name="quote" size={16} /> Script
+          </h4>
+          {notes.script.map((line, i) => (
+            <ScriptLine key={i} line={line} />
+          ))}
+        </section>
+      )}
       {!!notes.say?.length && (
         <section>
           <h4>
@@ -24,7 +47,7 @@ export function NotesView({ notes }: { notes: Notes }) {
       {!!notes.ask?.length && (
         <section>
           <h4>
-            <Icon name="question" size={16} /> Ask the class
+            <Icon name="question" size={16} /> {notes.script?.length ? "More to ask" : "Ask the class"}
           </h4>
           {notes.ask.map((a, i) => (
             <div key={i} className="notes-ask">

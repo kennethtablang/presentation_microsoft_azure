@@ -67,6 +67,11 @@ export type Block =
 
 export type Notes = {
   time?: string;
+  /**
+   * The v2 conversational talk track, in order. Plain lines are spoken;
+   * lines starting with "[" are cues (what to do, write, or expect).
+   */
+  script?: string[];
   say?: string[];
   ask?: { q: string; a?: string }[];
   deeper?: string[];

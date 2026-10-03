@@ -187,7 +187,7 @@ function BlockView({ block, ctx }: { block: Block; ctx: Ctx }) {
               <div className="bar-track">
                 <div className="bar-fill" style={{ width: `${it.p * 100}%` }} />
               </div>
-              <span className="prob-p">{it.p.toFixed(2)}</span>
+              <span className="prob-p">{Math.round(it.p * 100)}%</span>
             </div>
           ))}
         </div>
