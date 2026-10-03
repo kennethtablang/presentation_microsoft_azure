@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
-import { ChevronLeft, ChevronRight, GraduationCap, Keyboard, LayoutGrid, Maximize, Minimize, Moon, PanelLeft, Sun, X } from "lucide-react";
+import { ChevronLeft, ChevronRight, GraduationCap, LayoutGrid, Maximize, Minimize, Moon, PanelLeft, Sun, X } from "lucide-react";
 import { slides } from "@/content/slides";
 import { deck, toggleFullscreen, toggleTheme, useFullscreen, useTheme } from "@/lib/stores";
 import { SlideFrame, SlideView } from "./SlideView";
@@ -49,7 +49,6 @@ export function Toolbar({
   overview,
   onSidebar,
   onOverview,
-  onHelp,
 }: {
   index: number;
   hidden: boolean;
@@ -57,7 +56,6 @@ export function Toolbar({
   overview: boolean;
   onSidebar: () => void;
   onOverview: () => void;
-  onHelp: () => void;
 }) {
   const theme = useTheme();
   const fullscreen = useFullscreen();
@@ -89,9 +87,6 @@ export function Toolbar({
       </ToolButton>
       <ToolButton label={fullscreen ? "Exit full screen" : "Full screen"} shortcut="F" onClick={toggleFullscreen}>
         {fullscreen ? <Minimize size={20} /> : <Maximize size={20} />}
-      </ToolButton>
-      <ToolButton label="Keyboard shortcuts" shortcut="?" onClick={onHelp}>
-        <Keyboard size={20} />
       </ToolButton>
     </nav>
   );
@@ -180,6 +175,7 @@ export function Overview({ index, onClose }: { index: number; onClose: () => voi
             key={s.id}
             type="button"
             className={`thumb ${i === index ? "is-current" : ""}`}
+            style={{ "--i": Math.abs(i - index) } as React.CSSProperties}
             onClick={() => {
               deck.goto(i);
               onClose();

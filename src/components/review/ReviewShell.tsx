@@ -29,7 +29,12 @@ export function ReviewShell({ children }: { children: React.ReactNode }) {
           <span className="kicker">AI-901 review</span>
           <strong>Practice &amp; flashcards</strong>
         </div>
-        <nav className="review-tabs" aria-label="Review mode">
+        <nav
+          className="review-tabs"
+          aria-label="Review mode"
+          style={{ "--active": Math.max(0, tabs.findIndex((t) => t.href === pathname)) } as React.CSSProperties}
+        >
+          <span className="review-tabs-pill" aria-hidden />
           {tabs.map(({ href, label, icon: Icon }) => (
             <Link key={href} href={href} className={`review-tab ${pathname === href ? "is-active" : ""}`} aria-current={pathname === href ? "page" : undefined}>
               <Icon size={17} />

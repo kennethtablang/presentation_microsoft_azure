@@ -7,8 +7,13 @@
   --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "SF Pro", var(--font-inter), "Helvetica Neue", "Segoe UI Variable Display", "Segoe UI", system-ui, sans-serif;
   --font-code: "SF Mono", ui-monospace, var(--font-mono), Menlo, Consolas, monospace;
 
+  /* iOS-style springs (damping ratio · response), sampled into CSS linear().
+     Browsers without linear() fall back to the cubic-bezier values below. */
   --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
   --spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-smooth: var(--ease);
+  --ease-snappy: var(--ease);
+  --ease-bouncy: var(--spring);
 
   /* Apple system palette */
   --blue: #0a84ff;
@@ -78,6 +83,26 @@
   --blob-4: #ff9ec4;
   --blob-opacity: 0.6;
   color-scheme: light;
+}
+
+@supports (transition-timing-function: linear(0, 1)) {
+  :root {
+    /* damping 1.0 · response 0.42s: no overshoot, like iOS "smooth" */
+    --ease-smooth: linear(0, 0.0242, 0.0829, 0.1605, 0.2463, 0.3334, 0.4174, 0.4957, 0.567, 0.6307, 0.6868, 0.7357, 0.7779, 0.8141, 0.845, 0.8711, 0.8931, 0.9115, 0.927, 0.9398, 0.9505, 0.9594, 0.9667, 0.9728, 0.9777, 0.9818, 0.9852, 0.9879, 0.9902, 0.992, 0.9935, 0.9947, 0.9957, 0.9965, 0.9972, 0.9977, 0.9982, 0.9985, 0.9988, 1);
+    /* damping 0.82 · response 0.45s: a hint of overshoot, like iOS "snappy" */
+    --ease-snappy: linear(0, 0.0218, 0.0772, 0.1536, 0.2416, 0.3339, 0.4254, 0.5126, 0.5933, 0.6661, 0.7304, 0.7861, 0.8337, 0.8736, 0.9065, 0.9332, 0.9545, 0.9712, 0.984, 0.9935, 1.0004, 1.0052, 1.0083, 1.0101, 1.0109, 1.0111, 1.0107, 1.01, 1.0091, 1.0081, 1.0071, 1.0061, 1.0052, 1.0043, 1.0035, 1.0028, 1.0022, 1.0017, 1.0013, 1);
+    /* damping 0.68 · response 0.5s: playful, like iOS "bouncy" */
+    --ease-bouncy: linear(0, 0.0316, 0.1113, 0.2197, 0.3415, 0.4654, 0.5834, 0.6903, 0.783, 0.8604, 0.9225, 0.9703, 1.0053, 1.0293, 1.0442, 1.052, 1.0543, 1.0526, 1.0484, 1.0425, 1.0359, 1.0292, 1.0227, 1.0169, 1.0119, 1.0077, 1.0043, 1.0017, 0.9997, 0.9984, 0.9976, 0.9972, 0.9971, 0.9971, 0.9974, 0.9977, 0.998, 0.9984, 0.9988, 1);
+    --ease: var(--ease-smooth);
+    --spring: var(--ease-bouncy);
+  }
+}
+
+/* Lets the score ring's fill animate from 0 (custom properties are not animatable unless registered). */
+@property --p {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0;
 }
 
 * {
@@ -268,7 +293,7 @@ p {
   background: linear-gradient(90deg, var(--teal), var(--blue), var(--violet), var(--pink));
   border-radius: 0 3px 3px 0;
   box-shadow: 0 0 12px var(--blue);
-  transition: width 0.5s var(--ease);
+  transition: width 0.62s var(--ease-snappy);
 }
 
 .stage {
@@ -327,8 +352,19 @@ p {
 
 .toolbar.is-hidden {
   opacity: 0;
-  transform: translate(-50%, 24px);
+  transform: translate(-50%, 24px) scale(0.94);
   pointer-events: none;
+}
+
+.toolbar {
+  animation: toolbarIn 0.83s var(--ease-bouncy) 0.15s backwards;
+}
+
+@keyframes toolbarIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 30px) scale(0.9);
+  }
 }
 
 .tool-btn {
@@ -342,7 +378,7 @@ p {
   background: transparent;
   color: var(--text);
   cursor: pointer;
-  transition: background 0.25s var(--ease), transform 0.3s var(--spring), color 0.25s;
+  transition: background 0.25s var(--ease), transform 0.5s var(--ease-bouncy), color 0.25s;
 }
 
 .tool-btn:hover {
@@ -350,7 +386,8 @@ p {
 }
 
 .tool-btn:active {
-  transform: scale(0.88);
+  transform: scale(0.86);
+  transition-duration: 0.12s;
 }
 
 .tool-btn.is-active {
@@ -397,9 +434,10 @@ p {
   flex-direction: column;
   gap: 14px;
   padding: 20px 14px 14px 18px;
-  transform: translateX(calc(-100% - 40px));
+  transform: translateX(calc(-100% - 40px)) scale(0.96);
+  transform-origin: left center;
   opacity: 0;
-  transition: transform 0.5s var(--ease), opacity 0.4s var(--ease), background 0.5s var(--ease);
+  transition: transform 0.62s var(--ease-snappy), opacity 0.35s var(--ease), background 0.5s var(--ease);
 }
 
 .sidebar.is-open {
@@ -510,9 +548,10 @@ p {
   display: flex;
   flex-direction: column;
   padding: 22px 16px 16px 24px;
-  transform: translateX(calc(100% + 40px));
+  transform: translateX(calc(100% + 40px)) scale(0.96);
+  transform-origin: right center;
   opacity: 0;
-  transition: transform 0.5s var(--ease), opacity 0.4s var(--ease), background 0.5s var(--ease);
+  transition: transform 0.62s var(--ease-snappy), opacity 0.35s var(--ease), background 0.5s var(--ease);
 }
 
 .notes-drawer.is-open {
@@ -669,7 +708,24 @@ p {
   background: var(--overlay);
   -webkit-backdrop-filter: blur(30px) saturate(160%);
   backdrop-filter: blur(30px) saturate(160%);
-  animation: fadeIn 0.3s var(--ease);
+  animation: fadeIn 0.35s var(--ease);
+}
+
+.overview .overlay-head {
+  animation: rise 0.62s var(--ease-snappy) both;
+}
+
+/* Thumbnails ripple outward from the current slide (--i = distance from it). */
+.overview .thumb {
+  animation: thumbIn 0.62s var(--ease-snappy) both;
+  animation-delay: calc(min(var(--i, 0), 24) * 22ms);
+}
+
+@keyframes thumbIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.9);
+  }
 }
 
 .overview {
@@ -711,7 +767,7 @@ p {
   border: 1px solid var(--glass-border);
   background: color-mix(in srgb, var(--bg) 70%, transparent);
   box-shadow: 0 10px 30px -14px rgba(0, 0, 0, 0.5);
-  transition: transform 0.35s var(--spring), box-shadow 0.3s, border-color 0.3s;
+  transition: transform 0.5s var(--ease-bouncy), box-shadow 0.3s, border-color 0.3s;
 }
 
 .thumb:hover .slide-frame {
@@ -763,7 +819,7 @@ p {
   max-height: calc(100vh - 40px);
   overflow-y: auto;
   padding: 26px 28px;
-  animation: popIn 0.4s var(--spring);
+  animation: popIn 0.83s var(--ease-bouncy);
 }
 
 .shortcut-list {
@@ -839,7 +895,7 @@ kbd {
 @keyframes popIn {
   from {
     opacity: 0;
-    transform: scale(0.94) translateY(10px);
+    transform: scale(0.88) translateY(14px);
   }
 }
 
@@ -918,11 +974,47 @@ kbd {
   font-variant-numeric: tabular-nums;
 }
 
-/* Entrance: each top-level element floats in, staggered. */
+/* Slide transitions: the outgoing slide drifts away while the new one's content
+   floats in from the direction of travel, staggered (--dir: +1 forward, -1 back). */
+.slide-layer {
+  position: absolute;
+  inset: 0;
+}
+
+.slide-exit {
+  pointer-events: none;
+  animation: slideOut 0.45s var(--ease-smooth) both;
+}
+
+.slide-exit *,
+.slide-exit *::before,
+.slide-exit *::after {
+  animation: none !important;
+  transition: none !important;
+}
+
+@keyframes slideOut {
+  to {
+    opacity: 0;
+    transform: translateX(calc(var(--dir, 1) * -80px)) scale(0.96);
+  }
+}
+
 .slide-anim .slide-head > *,
 .slide-anim .slide-body > *,
 .slide-anim .hero > * {
-  animation: rise 0.6s var(--ease) both;
+  animation: slideIn 0.75s var(--ease-snappy) both;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(calc(var(--dir, 1) * 70px)) scale(0.97);
+  }
+}
+
+.slide-anim .slide-foot {
+  animation: fadeIn 0.6s var(--ease) 0.2s both;
 }
 .slide-anim .slide-head > *:nth-child(2) {
   animation-delay: 0.05s;
@@ -958,7 +1050,7 @@ kbd {
 @keyframes rise {
   from {
     opacity: 0;
-    transform: translateY(18px) scale(0.985);
+    transform: translateY(18px) scale(0.97);
   }
 }
 
@@ -1285,12 +1377,13 @@ kbd {
 /* Reveal / redaction */
 .reveal {
   border-radius: 8px;
-  transition: color 0.45s var(--ease), background 0.45s var(--ease), box-shadow 0.45s var(--ease);
+  transition: color 0.55s var(--ease-smooth), background 0.55s var(--ease-smooth), box-shadow 0.55s var(--ease-smooth), filter 0.55s var(--ease-smooth);
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
 }
 
 .reveal:not(.is-shown) {
+  filter: blur(2px);
   color: transparent !important;
   background: var(--reveal-mask);
   box-shadow: inset 0 0 0 1px var(--line);
@@ -1516,7 +1609,7 @@ td .reveal.is-shown {
   border-radius: inherit;
   background: linear-gradient(90deg, var(--teal), var(--blue));
   box-shadow: 0 0 14px color-mix(in srgb, var(--blue) 50%, transparent), inset 0 1px 0 rgba(255, 255, 255, 0.4);
-  animation: grow 1s var(--ease) both 0.25s;
+  animation: grow 0.9s var(--ease-snappy) both 0.3s;
   transform-origin: left;
 }
 
@@ -1776,6 +1869,7 @@ td .reveal.is-shown {
 }
 
 .quiz-options li.is-correct {
+  animation: correctPop 0.83s var(--ease-bouncy);
   color: var(--text);
   font-weight: 600;
   background: color-mix(in srgb, var(--green) 18%, transparent);
@@ -1790,6 +1884,23 @@ td .reveal.is-shown {
 
 .quiz-options li.is-dim {
   opacity: 0.45;
+}
+
+@keyframes correctPop {
+  35% {
+    transform: scale(1.04);
+  }
+}
+
+.callout-answer .reveal.is-shown,
+td .reveal.is-shown {
+  animation: revealPop 0.62s var(--ease-snappy);
+}
+
+@keyframes revealPop {
+  from {
+    opacity: 0.4;
+  }
 }
 
 .quiz-why {

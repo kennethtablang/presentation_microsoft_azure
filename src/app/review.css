@@ -1094,3 +1094,203 @@
     box-shadow: 0 0 0 6px color-mix(in srgb, var(--pink) 25%, transparent);
   }
 }
+
+/* ═══════════════ Motion (iOS-style springs; tokens live in globals.css) ═══════════════ */
+
+/* Segmented control: one pill slides between the tabs instead of each tab lighting up. */
+.review-tabs {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.review-tabs-pill {
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  left: 4px;
+  width: calc(50% - 4px);
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--blue) 88%, transparent);
+  box-shadow: 0 6px 16px -8px var(--blue), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  transform: translateX(calc(var(--active, 0) * 100%));
+  transition: transform 0.62s var(--ease-snappy);
+}
+
+.review-tab {
+  position: relative;
+  z-index: 1;
+  justify-content: center;
+}
+
+.review-tab.is-active {
+  background: transparent;
+  box-shadow: none;
+}
+
+.review-bar {
+  animation: barIn 0.83s var(--ease-bouncy) backwards;
+}
+
+@keyframes barIn {
+  from {
+    opacity: 0;
+    transform: translateY(-16px) scale(0.96);
+  }
+}
+
+.review-setup,
+.test,
+.study,
+.results {
+  animation: rise 0.75s var(--ease-snappy) both;
+}
+
+.setup-card > *,
+.results > * {
+  animation: rise 0.75s var(--ease-snappy) both;
+}
+
+.setup-card > :nth-child(2),
+.results > :nth-child(2) {
+  animation-delay: 0.06s;
+}
+
+.setup-card > :nth-child(3),
+.results > :nth-child(3) {
+  animation-delay: 0.12s;
+}
+
+.setup-card > :nth-child(4),
+.results > :nth-child(4) {
+  animation-delay: 0.18s;
+}
+
+.setup-card > :nth-child(5) {
+  animation-delay: 0.24s;
+}
+
+/* Taps: everything presses in, then springs back. */
+.chip,
+.mode-card,
+.test-option,
+.nav-dot,
+.primary-btn,
+.ghost-btn,
+.grade-btn {
+  transition: transform 0.5s var(--ease-bouncy), background 0.3s var(--ease), border-color 0.3s var(--ease), box-shadow 0.3s var(--ease),
+    color 0.2s, opacity 0.3s;
+}
+
+.chip:active,
+.mode-card:active,
+.nav-dot:active {
+  transform: scale(0.94);
+  transition-duration: 0.12s;
+}
+
+.test-option:active:not(:disabled) {
+  transform: scale(0.98);
+  transition-duration: 0.12s;
+}
+
+.test-option.is-picked .opt-letter {
+  animation: pickPop 0.83s var(--ease-bouncy);
+}
+
+@keyframes pickPop {
+  30% {
+    transform: scale(1.25);
+  }
+}
+
+.test-option.is-correct,
+.test-option.is-wrong {
+  animation: settle 0.62s var(--ease-snappy);
+}
+
+.test-option.is-wrong {
+  animation-name: shake;
+}
+
+@keyframes settle {
+  40% {
+    transform: scale(1.02);
+  }
+}
+
+@keyframes shake {
+  20% {
+    transform: translateX(-6px);
+  }
+  45% {
+    transform: translateX(5px);
+  }
+  70% {
+    transform: translateX(-3px);
+  }
+}
+
+/* Each new question glides in. */
+.test-card {
+  animation: questionIn 0.62s var(--ease-snappy) both;
+}
+
+@keyframes questionIn {
+  from {
+    opacity: 0;
+    transform: translateX(36px) scale(0.98);
+  }
+}
+
+.feedback {
+  animation: rise 0.62s var(--ease-snappy) both;
+}
+
+.test-progress-fill {
+  transition: width 0.62s var(--ease-snappy);
+}
+
+/* Score ring fills from zero, then the number fades up. */
+.score-ring {
+  animation: ringFill 1.4s var(--ease-smooth) 0.15s both;
+}
+
+@keyframes ringFill {
+  from {
+    --p: 0;
+    transform: scale(0.85);
+  }
+}
+
+.score-ring span {
+  animation: rise 0.75s var(--ease-snappy) 0.35s both;
+}
+
+.review-item {
+  animation: rise 0.62s var(--ease-snappy) both;
+}
+
+/* Flashcards: springy flip, new cards slide in like iOS cards. */
+.flashcard {
+  animation: cardIn 0.75s var(--ease-snappy) both;
+}
+
+@keyframes cardIn {
+  from {
+    opacity: 0;
+    transform: translateX(60px) rotate(2deg) scale(0.96);
+  }
+}
+
+.flashcard-inner {
+  transition: transform 0.83s var(--ease-bouncy);
+}
+
+.flashcard:active .flashcard-inner {
+  scale: 0.98;
+}
+
+.launch-card {
+  transition: transform 0.6s var(--ease-bouncy), box-shadow 0.3s var(--ease);
+}

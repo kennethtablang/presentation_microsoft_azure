@@ -359,7 +359,7 @@ function Taking({ run, setRun, onQuit }: { run: Run; setRun: (r: Run) => void; o
       </div>
 
       <div className="test-layout">
-        <article className="glass test-card">
+        <article key={run.index} className="glass test-card">
           <div className="test-card-head">
             <span className="tag">{q.domain}</span>
             <button

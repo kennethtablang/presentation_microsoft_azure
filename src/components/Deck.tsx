@@ -29,6 +29,16 @@ export function Deck() {
 
   const slide = slides[index];
 
+  // Remember the slide we're leaving so it can animate out while the new one animates in.
+  // Direction (+1 forward, -1 back) decides which side each slide moves toward.
+  const [trans, setTrans] = useState({ index, revealed, prev: null as number | null, prevRevealed: false, dir: 1 });
+  if (trans.index !== index) {
+    setTrans({ index, revealed, prev: trans.index, prevRevealed: trans.revealed, dir: index > trans.index ? 1 : -1 });
+  } else if (trans.revealed !== revealed) {
+    setTrans({ ...trans, revealed });
+  }
+  const dirStyle = { "--dir": trans.dir } as React.CSSProperties;
+
   useGlassSheen();
   useDeckKeys({
     sidebar: () => setSidebar((v) => !v),
@@ -95,7 +105,20 @@ export function Deck() {
         }}
       >
         <SlideFrame>
-          <div key={slide.id} className="slide-anim">
+          {trans.prev !== null && trans.prev !== index && (
+            <div
+              key={`exit-${slides[trans.prev].id}`}
+              className="slide-layer slide-exit"
+              style={dirStyle}
+              aria-hidden
+              onAnimationEnd={(e) => {
+                if (e.target === e.currentTarget) setTrans((t) => ({ ...t, prev: null }));
+              }}
+            >
+              <SlideView slide={slides[trans.prev]} index={trans.prev} total={slides.length} revealed={trans.prevRevealed} still />
+            </div>
+          )}
+          <div key={slide.id} className="slide-layer slide-anim" style={dirStyle}>
             <SlideView slide={slide} index={index} total={slides.length} revealed={revealed} />
           </div>
         </SlideFrame>
@@ -123,7 +146,6 @@ export function Deck() {
         overview={overview}
         onSidebar={() => setSidebar((v) => !v)}
         onOverview={() => setOverview((v) => !v)}
-        onHelp={() => setHelp((v) => !v)}
       />
 
       {overview && <Overview index={index} onClose={() => setOverview(false)} />}
